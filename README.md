@@ -17,7 +17,7 @@ The final PDF's reserved viewer URL is:
 
 https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf
 
-The closing slide already contains a QR for that URL. `slides.pdf` is intentionally
+The dedicated QR slide already contains a code for that URL. `slides.pdf` is intentionally
 absent and ignored by Git while editing. The QR will not provide public audience
 access until the approved PDF is uploaded and public visibility is separately
 authorized. No automatic PDF publication or visibility change is configured.
@@ -29,10 +29,12 @@ authorized. No automatic PDF publication or visibility change is configured.
 - `assets/`: figures, screenshots, logos and four QR images.
 - `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
 
-Current Overleaf snapshot: `eba7fd56201172732e8f3bea3a67ff8741f2ec4a`.
+Current Overleaf snapshot: `4f7e33ef53a10fd75bae5159352f1545e3aae2d3`.
 All 21 Overleaf files are mirrored unchanged; this README and `.gitignore` are
-repository-specific additions. The deck contains 21 pages, with a 23-minute
-narration plan within the 25-minute slot. The video is a separate offline companion.
+repository-specific additions. The deck contains 22 pages, with a 23-minute
+narration plan within the 25-minute slot. Gratitude is on page 20, the dedicated
+QR page is 21, and references are on page 22. The ORF card shows ~12,600 genes
+without the construct count. The video is a separate offline companion.
 
 Continue editing through the established Org-to-Overleaf pipeline. Direct
 Overleaf edits take content priority; preserve and reconcile them before

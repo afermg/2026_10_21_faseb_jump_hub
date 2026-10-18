@@ -90,7 +90,7 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \begin{center}
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering CRISPR knockout\par\medskip{\Large\bfseries 7,975}\par gene targets}}
 \quad
-\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Transient open reading frame (ORF) overexpression\par\smallskip{\Large\bfseries 15,128}\par constructs\par($\sim$12,600 genes)}}
+\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Transient open reading frame (ORF) overexpression\par\smallskip{\Large\bfseries $\sim$12,600}\par genes}}
 \quad
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering Compound treatment\par\medskip{\Large\bfseries 115,794}\par compounds}}
 \end{center}
@@ -101,7 +101,8 @@ Profiles summarize cellular appearance so we can compare and search large datase
 
 # Speaker note: Counts use consortium metadata revision 016e865fa0691244e0860943e41c7d6a88ed2580, not JUMP-lite.
 # Count distinct JCP2022 IDs present in wells, excluding negative-control and empty IDs; retain positive controls.
-# Total 138,897. ORF: 15,128 constructs, 12,598 nonmissing annotated gene/locus IDs, rounded on the slide.
+# Total 138,897 perturbation IDs. ORF: 15,128 constructs, 12,598 nonmissing annotated gene/locus IDs, rounded on the slide.
+# Presenter requested genes only on the ORF card. The overall perturbation total is not the sum of gene-level card counts.
 # Definitions and input hashes are in docs/jump-perturbation-counts.json.
 # This merges the former audience-question slide into JUMP, keeping that question before the Hub overview.
 
@@ -363,40 +364,47 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 # These are conclusions, not required workflow steps. Foundation-building is ongoing, not a claim of a fully autonomous validated system.
 # Shared tools reduce variation in agent-chosen implementations; versioned inputs, parameters and biological validation still matter.
 
-** Thank you --- explore the projects
+** Thank you
 #+BEGIN_EXPORT latex
 \centering
 \includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
 \includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
-\includegraphics[width=0.98\linewidth,height=0.36\textheight,keepaspectratio]{assets/jump-partners.png}\par\smallskip
+\includegraphics[width=0.98\linewidth,height=0.60\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
 {\small GSK provided part of the funding for this work.}\par
+#+END_EXPORT
+
+# Speaker note: Thank Broad, Purdue and the JUMP partners. The partner sheet is historical.
+# Only JUMP prefixes were added to its headings; logos and collaborator entries are unchanged.
+# Edinburgh is credited on Kenneth's application slide, not repeated here. Purdue remains the confirmed affiliation.
+# The presenter requested separate gratitude and QR slides; advance to the QR page after thanking the contributors.
+
+** Explore the projects and slides
+#+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.23\textwidth}
 \centering
 \small\href{https://github.com/afermg/JUMP_lite}{JUMP-lite}\par\smallskip
-\href{https://github.com/afermg/JUMP_lite}{\includegraphics[width=20mm]{assets/qr-jump-lite.png}}
+\href{https://github.com/afermg/JUMP_lite}{\includegraphics[width=30mm]{assets/qr-jump-lite.png}}
 \end{column}
 \begin{column}{0.23\textwidth}
 \centering
 \small\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}\par\smallskip
-\href{https://broadinstitute.github.io/jump_hub/}{\includegraphics[width=20mm]{assets/qr-jump-hub.png}}
+\href{https://broadinstitute.github.io/jump_hub/}{\includegraphics[width=30mm]{assets/qr-jump-hub.png}}
 \end{column}
 \begin{column}{0.23\textwidth}
 \centering
 \small\href{https://github.com/afermg/cp_measure}{cp\_measure}\par\smallskip
-\href{https://github.com/afermg/cp_measure}{\includegraphics[width=20mm]{assets/qr-cp-measure.png}}
+\href{https://github.com/afermg/cp_measure}{\includegraphics[width=30mm]{assets/qr-cp-measure.png}}
 \end{column}
 \begin{column}{0.23\textwidth}
 \centering
 \small\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{Slides (PDF)}\par\smallskip
-\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{\includegraphics[width=20mm]{assets/qr-slides.png}}
+\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{\includegraphics[width=30mm]{assets/qr-slides.png}}
 \end{column}
 \end{columns}
 #+END_EXPORT
 
-# Speaker note: Leave this combined acknowledgements/QR slide visible at the end. The partner sheet is historical.
-# Only JUMP prefixes were added to its headings; logos and collaborator entries are unchanged.
-# Edinburgh is credited on Kenneth's application slide; the presenter requested removing its duplicate line here. Purdue remains the confirmed affiliation.
+# Speaker note: Leave this dedicated QR slide visible at the end. The four destinations are unchanged; the codes are enlarged to 30 mm.
 # The fourth QR targets the GitHub PDF viewer in afermg/2026_10_21_faseb_jump_hub, branch main, slides.pdf.
 # The repository remains private until the presenter explicitly authorizes making it public. The PDF must not be uploaded until final approval.
 # The QR is prepared but the PDF is intentionally absent; public audience access also requires the separate visibility approval. Do not expose other private projects.
