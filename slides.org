@@ -61,7 +61,7 @@ Profiles are numerical descriptions of cells.
 \begin{block}{Engineered features: CellProfiler}
 \begin{itemize}
 \item Size, shape, intensity, texture and spatial relationships.
-\item Explicit measurement definitions.
+\item Interpretable but somewhat redundant.
 \end{itemize}
 \end{block}
 \end{column}
@@ -74,8 +74,6 @@ Profiles are numerical descriptions of cells.
 \end{block}
 \end{column}
 \end{columns}
-\medskip
-\centering Compare perturbations $\cdot$ Group similar phenotypes $\cdot$ Prioritize follow-up
 #+END_EXPORT
 
 # Speaker note: Both routes produce vectors; cell/image features can be aggregated into well/perturbation profiles.
@@ -84,6 +82,7 @@ Profiles are numerical descriptions of cells.
 
 ** JUMP: Joint Undertaking for Morphological Profiling
 - Public Cell Painting data: *12 laboratories*, nearly *139,000 perturbations*.
+- *~58.3 million single-channel TIFF images*.
 
 #+BEGIN_EXPORT latex
 \begin{center}
@@ -106,9 +105,34 @@ Profiles are numerical descriptions of cells.
 # Total 138,897 perturbation IDs. ORF: 15,128 constructs, 12,598 nonmissing annotated gene/locus IDs, rounded on the slide.
 # Presenter requested genes only on the ORF card. The overall perturbation total is not the sum of gene-level card counts.
 # Definitions and input hashes are in docs/jump-perturbation-counts.json.
+# Image count: 58,267,491 TIFF files summed across the 12 rows of stats/cpg0016_source_images_tiff_count.csv at the same pinned dataset revision; rounded to 58.3 million.
+# This is the published cpg0016 image-archive count (including controls), not cells or five-channel sites. Do not divide by five to claim a field count: the published site-count total does not reconcile with the TIFF total through a five-channel factor; accounting/coverage was not reconciled here.
+# Exact source URLs, input hashes and sums are in docs/jump-image-counts.json.
 # The principal dataset spans 12 data-generating centers. Its 13 Metadata_Source IDs include source_7 and source_13 from the same center.
 # Verified in JUMP Hub data_description.md and terra_workspace.md at e742f5aa37472eb17f326ba8315d22b27e58f330; not every lab acquired every modality or perturbation.
 # This merges the former audience-question slide into JUMP, keeping that question before the Hub overview.
+
+** How do better models become tools that experimental biologists can use?
+#+BEGIN_EXPORT latex
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Method development}
+Does the model improve benchmark performance?
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Experimental biology}
+Can I use it to answer my biological question?
+\end{block}
+\end{column}
+\end{columns}
+\bigskip
+Setup, computing resources and coding can prevent practical use.
+#+END_EXPORT
+
+# Speaker note: We invest heavily in comparing models, but less in making those advances usable by experimental biologists.
+# Frame this as the motivation for the talk, not a measured claim about every ML researcher. Benchmarks remain necessary for testing methods.
+# JUMP Hub and the notebook demo address practical access. JUMP-lite supports method development; neither replaces experimental validation.
 
 ** We make JUMP accessible via the JUMP Hub
 #+BEGIN_EXPORT latex
@@ -216,7 +240,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 - Shared tools support reproducible workflows.
 - Biological experts validate the results.
 
-# Speaker note: Researchers and agents can use the same documentation and tools. Optional model extensions through Nahual are on additional page 23.
+# Speaker note: Researchers and agents can use the same documentation and tools. Optional model extensions through Nahual are on additional page 25.
 
 # Speaker note: Use an external AI assistant, not a built-in Hub chatbot. Generated code is a draft requiring verification.
 # Presenter experience: without shared tools, agents may solve the same problem in different ways. Tested implementations, recorded parameters and versions support consistency; experts validate the biological interpretation.
@@ -235,7 +259,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 - Each dot is a cell: 2,223 from one Target-2 plate.
 - Select cells; inspect images, area and other features.
 
-# Playback cue: PDF page 13, visible slide number 12. Play jump-cell-interactivity.mp4 in a local player.
+# Playback cue: PDF page 14, visible slide number 13. Play jump-cell-interactivity.mp4 in a local player; return to PDF page 15.
 # The MP4 is a companion file, not embedded media. Narrate select -> inspect -> change channel -> reset -> select elsewhere.
 # Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0). Both snapshot images and their demo links are clickable.
 # Prefer local playback on stage; the public link is for later viewing.
@@ -268,10 +292,10 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \textbf{Profiles} & cp\_measure: images + masks $\rightarrow$ profiles. \\[0.65em]
 %\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
 \textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
-\textbf{Notebooks} & marimo: reactive notebooks and apps. \\[0.65em]
+\textbf{Notebooks} & marimo: reactive notebooks and dashboards. \\[0.65em]
 \textbf{Python setup} & uv: environments, packages and lockfiles.
 \end{tabular}\par\vspace{1em}
-\centering\textbf{AI can turn these tools into workflows.}
+\centering\textbf{AI can turn these individual tools into workflows.}
 #+END_EXPORT
 
 # Speaker note: This is a complementary toolbox, not a required five-step pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
@@ -337,42 +361,41 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 # Historical benchmark context, no longer a visible bullet: published median intensity-kernel speedup (28.07x), not evidence for that CellProfiler comparison or whole-pipeline speedup.
 # Benchmark: synthetic 256/512/1024-pixel images, 16/64/256 objects, matched dependencies, single thread; retained in historical evidence only, not References.
 
-** Developing new methods? Benchmark workflows with JUMP-lite
-#+ATTR_LATEX: :width 0.96\linewidth :height 0.60\textheight :options keepaspectratio
-[[file:assets/jump-lite-paper.png]]
-
-Use our compressed images to contrast your own vs the state-of-the-art.
-
-# Speaker note: Preserve the requested new-data framing. JUMP-lite supplies reference data, not a turnkey analysis engine.
-# Explain dataset selection and smaller size, not codec/model infrastructure. Figure 1a,b is from the cited preprint.
-# The preceding Target-2 recording is a separate subanalysis, not the main release cohort.
-
-** From lysosomal probes to spatial omics
+** Applications across biological questions
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.34\textwidth}
+\begin{column}{0.48\textwidth}
 \begin{block}{Evaluate lysosomal probes}
 \small Kenneth Li, University of Edinburgh\par
-\normalsize
 \begin{itemize}
-\item Evaluate lysosomal acidification probes in cardiomyocytes.
+\item Lysosomal acidification probes in cardiomyocytes.
 \item Uptake, localization and morphology over time.
 \end{itemize}
 \end{block}
 \end{column}
-\begin{column}{0.32\textwidth}
+\begin{column}{0.48\textwidth}
+\begin{block}{MisLocus: protein mislocalisation}
+\small
+\begin{itemize}
+\item Can rare genetic mutations change where proteins are located?
+\item Compare microscopy of reference and variant proteins.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
 \begin{block}{Compare imaging modalities}
-\small Minh Doan, GSK \par
-\normalsize
+\small Minh Doan, GSK\par
 \begin{itemize}
 \item Bright-field, Cell Painting, cell cycle and viability.
 \item Shared and complementary compound responses.
 \end{itemize}
 \end{block}
 \end{column}
-\begin{column}{0.30\textwidth}
+\begin{column}{0.48\textwidth}
 \begin{block}{Connect to spatial omics software}
-\small Tim Treis, Helmholtz-Munich \par
+\small Tim Treis, Helmholtz-Munich\par
 \begin{itemize}
 \item Integration of morphological features with Squidpy.
 \end{itemize}
@@ -381,7 +404,10 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \end{columns}
 #+END_EXPORT
 
-# Speaker note: The presenter confirmed that lysosomal-probe evaluation and Kenneth's cardiomyocyte work are the same project; they are one column.
+# Speaker note: MisLocus uses microscopy to study variant-induced protein mislocalisation by comparing reference and variant proteins in the public VarChAMP collection.
+# The rare-mutation framing was supplied by the presenter. Not every variant mislocalises, and localisation changes alone do not establish clinical pathogenicity.
+# MisLocus contributes image-analysis resources and evaluation, not the underlying image acquisition. No new result or diagnostic claim is shown.
+# Speaker note: The presenter confirmed that lysosomal-probe evaluation and Kenneth's cardiomyocyte work are the same project; they are one example.
 # Kenneth's system/tasks are verified from the user-identified repository at 0bbf6c86aa51b1cd6c70b5b49485ae06cf875f93.
 # No unpublished result, private microscopy figure, internal data URL, or efficacy claim is shown.
 # Probe localization/intensity alone does not establish lysosomal pH; calibration, controls and spectral spillover matter.
@@ -390,12 +416,22 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 # The concordance notebook compares active-compound sets and activity rankings across assays; no new concordance result or metric is claimed here.
 # The spatial integration is supported by cp_measure's published Xenium/H&E/Squidpy example, not a built-in Hub capability.
 
+** Reality check: from profiles to biology
+- Batch effects can resemble biology.
+- Similar profiles do not establish a shared mechanism.
+- The bottleneck is experimental follow-up.
+
+# Speaker note: Batch correction helps but does not replace experimental design, matched controls and independent replication.
+# Profiles prioritize hypotheses; test them with targeted experiments and independent readouts in the appropriate biological context.
+# Closing line: We can generate hypotheses faster than we can experimentally validate them.
+# This is a practical caution, not a measured throughput claim or a guarantee that correction removes all batch effects. Allow 30 seconds.
+
 ** Take-home messages
-- *Profiles:* quantify cell state.
-- *Access:* JUMP data and tools for researchers and AI agents.
-- *Workflows:* building foundations for agent-driven analysis, from images to insights.
-- *Experts:* biological validation remains essential.
-- *Tools:* reproducible methods support consistent analysis.
+- Profiles: quantify cell state.
+- Access: JUMP data and tools for researchers and AI agents.
+- Workflows: building foundations for agent-driven analysis, from images to insights.
+- Experts: biological validation remains essential.
+- Tools: reproducible methods support consistent analysis.
 
 # Speaker note: The presenter requested explicit take-home points on expert validation and reproducible tools.
 # The first three retain the approved core messages; expert validation is separated from the third, and reproducible tools are added as the fifth.
@@ -408,7 +444,7 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
 \includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
 \includegraphics[width=0.98\linewidth,height=0.60\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
-{\small Supported by GSK and NIH MIRA (R35 GM122547).}\par
+{\small Work on cp\_measure and JUMP-lite was supported by GSK and NIH MIRA (R35 GM122547).}\par
 #+END_EXPORT
 
 # Speaker note: Thank Broad, Purdue and the JUMP partners, and acknowledge GSK and NIH MIRA support.
@@ -428,7 +464,7 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \begin{itemize}
 \item \href{https://doi.org/10.1038/nprot.2016.105}{Bray et al. (2016). Cell Painting.}\newline Nature Protocols.
 \item \href{https://doi.org/10.1038/s41573-020-00117-w}{Chandrasekaran et al. (2021).}\newline Image-based profiling. Nature Reviews Drug Discovery.
-\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{perturbation counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{12 centers}.
+\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{perturbation counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{12 centers}; \href{https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv}{image count}.
 \item \href{https://doi.org/10.1186/gb-2006-7-10-r100}{Carpenter et al. (2006). CellProfiler.}\newline Genome Biology.
 \end{itemize}
 \end{column}
@@ -480,6 +516,35 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 # The QR is prepared but the PDF is intentionally absent; public audience access also requires the separate visibility approval. Do not expose other private projects.
 
 * Additional slides
+
+** JUMP-lite: compression reduces storage
+#+BEGIN_EXPORT latex
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.42\textwidth}
+\centering
+\textbf{Original TIFFs}\par\bigskip
+{\fontsize{38}{44}\selectfont 8.7 TB}
+\end{column}
+\begin{column}{0.10\textwidth}
+\centering\Huge $\longrightarrow$
+\end{column}
+\begin{column}{0.42\textwidth}
+\centering
+\textbf{JPEG XL (lossy)}\par\bigskip
+{\fontsize{38}{44}\selectfont 92 GB}
+\end{column}
+\end{columns}
+\bigskip\bigskip
+\centering Same image set $\cdot$ $\sim$94$\times$ smaller
+#+END_EXPORT
+
+# Speaker note: Additional slide after the main-talk QR, at the presenter's request; not scheduled narration.
+# Compare the same JUMP-lite image cohort: 8.7 TB of original/raw TIFFs versus 92.0 GB at medium-quality (MQ) lossy JPEG XL compression.
+# Source: arXiv:2608.07632v3, section 3.1, reports these sizes and approximately 94-fold reduction. Values are rounded published totals, not a new measurement.
+# Do not use 115 TB as the compression-only baseline: that is the larger JUMP release and also includes the effect of subset selection.
+# The 4.8 TB Zstd store is losslessly compressed, not an uncompressed baseline. The two numeric columns are not an area-proportional chart.
+# Lossy compression changes pixel values; validate suitability for the intended analysis. This slide makes no performance-equivalence or lossless-quality claim.
+# The earlier Target-2 recording is a separate subanalysis, not the main release cohort.
 
 ** Nahual: swap models within one workflow
 #+BEGIN_EXPORT latex

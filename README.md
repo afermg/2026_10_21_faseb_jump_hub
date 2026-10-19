@@ -1,86 +1,65 @@
 # Uncovering biological relationships through morphological profiling: The JUMP-Cell Painting dataset and tools
 
-**Alán F. Muñoz** · Carpenter-Shen Lab, Purdue University
+**Alán F. Muñoz · Carpenter-Shen Lab, Purdue University**
 
-**21 October 2026** · FASEB: Organelle Cross-Talk in Cellular Homeostasis
+FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
-Slides for the FASEB 2026 talk, following the date-prefixed naming convention of
-my other talks and posters. This repository mirrors the current Overleaf source.
+Private source mirror. Compile **slides.tex** with **XeLaTeX**; unowned legacy
+`main.tex` is preserved but is not the root. All **20 Overleaf files** are mirrored
+unchanged from `361356cb0d96181a05f709e54815a00e8e6ae1cf`; this README and
+`.gitignore` are repository-specific additions. The unused JUMP-lite paper PNG
+is retained in source history, not the consumed bundle.
 
-## Private editing stage — no PDF release yet
+## Current deck
 
-**Keep this repository private until the presenter explicitly instructs otherwise.**
-**Do not commit or push the presentation PDF until the presenter explicitly approves the final slides.**
-These are separate approval gates; approval for one does not imply the other.
+**27 pages: 23 main-talk pages and four additional slides.** Narration is planned
+for 23 minutes within the 25-minute slot. Stop on the QR page.
 
-The final PDF's reserved viewer URL is:
+- JUMP overview (5): ~58.3 million single-channel TIFF images, alongside the
+  existing laboratory and perturbation counts. The public cpg0016 TIFF-count
+  table totals 58,267,491; these are neither imaging sites nor cells.
+- Applications (18): lysosomal probes, MisLocus, imaging modalities and Squidpy.
+- Reality check (19): batch effects, similarity versus mechanism, and the
+  experimental-follow-up bottleneck.
+- Close: take-homes (20), Thank you (21), References (22), QR (23).
+- Additional: JUMP-lite (24), Nahual (25), word2vec (26), cell vectors (27).
 
-https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf
+JUMP-lite now shows only **8.7 TB → 92 GB (~94× smaller)** for the same image
+cohort, using lossy JPEG XL. The original 115 TB JUMP archive would also involve
+subset selection. The numerical columns are not an area-proportional chart.
 
-The dedicated QR slide already contains a code for that URL. `slides.pdf` is intentionally
-absent and ignored by Git while editing. The QR will not provide public audience
-access until the approved PDF is uploaded and public visibility is separately
-authorized. No automatic PDF publication or visibility change is configured.
+Direct author wording is preserved, including marimo dashboards, individual
+tools, plain take-home labels and GSK/NIH MIRA funding scoped to cp_measure and
+JUMP-lite. The original Mac-edited workflow remains exact. The detailed Nahual
+slide stays hidden. Both vector teaching diagrams use illustrative coordinates,
+not measured results; word2vec is an analogy, not the cell-feature algorithm.
 
-## Source and build
+## Playback and sources
 
-- `slides.org`: authoring source mirrored from Overleaf.
-- `slides.tex`: **current presentation root**, compiled with XeLaTeX.
-- `assets/`: figures, screenshots, logos and two QR images.
-- `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
+Play the separate 23.16-second video at **PDF 14 / visible slide 13**, then return
+to PDF 15. The two snapshots and text link open the public CC BY 4.0 recording:
+<https://doi.org/10.5281/zenodo.23462248>. Video is not embedded in the PDF.
 
-Current Overleaf snapshot: `846e20489ca0cf997d5b91952f76e75dbe3f3a82`.
-All 21 Overleaf files are mirrored unchanged; this README and `.gitignore` are
-repository-specific additions. The deck contains **22 main-talk pages and three
-additional slides** (25 total), with a 23-minute narration plan within the 25-minute slot.
-The main content pages have 34.9% less extractable text (782→509); supporting
-explanations remain in speaker notes. This count excludes numbers and unchanged
-text within images. The latest pass removes three redundant bullets and two
-word2vec explanatory sentences. Page 20 acknowledges GSK and NIH MIRA
-(R35 GM122547), awarded to Anne E. Carpenter.
-Page 3 uses the presenter's Mac-edited vector workflow reconstruction. The
-toolbox on page 15 includes marimo and uv; cp_measure and JUMP-lite follow.
-The shortened live JUMP-lite wording and removal of the historical benchmark
-citation are preserved. The main talk closes with Thank you (20), References
-(21) and QR (22). **Additional pages 23–25** contain Nahual, a word2vec
-country-capital analogy, and the cell-vector comparison. Both vector examples
-use explicitly illustrative coordinates, not measured/trained-model output.
-The detailed Nahual slide stays hidden. ORF notes now specify lentiviral delivery
-and a 48-hour readout rather than implying transient expression.
+- Image count: <https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv>
+- Compression comparison: <https://arxiv.org/abs/2608.07632v3>, section 3.1.
+- JUMP Hub: <https://broad.io/jump>
 
-`assets/vector-interpretability.pdf`, `assets/cell-painting-edited.pdf` and
-`assets/word2vec-example.pdf` are vector figure source assets, not the presentation
-PDF. `.gitignore` permits only these specific figure PDFs; `slides.pdf` remains
-absent and ignored.
+## Release holds
 
-The ORF card shows ~12,600 genes without the construct count; the dataset
-introduction identifies 12 acquiring laboratories. The video remains a separate
-offline companion and is also public on
-[Zenodo](https://doi.org/10.5281/zenodo.23462248) under CC BY 4.0. Both snapshot
-images on PDF pages 13/14 and the demo text link on page 14 open the recording.
-Page 22 contains only JUMP Hub and Slides (PDF), with two 40-mm QR codes and the
-visible shortlink `broad.io/jump`. The latest live snapshot was preserved before
-the requested text-reduction pass; collaborator credits and scientific meaning
-are retained.
-Only the MP4 was uploaded to Zenodo; the PDF and repository-publication gates
-above remain unchanged.
+Keep this repository **private until explicitly authorized otherwise**.
+The presentation **slides.pdf remains absent and ignored**, pending final-slide
+approval. PDF upload and public visibility are independent approvals.
+The Slides QR reserves
+`https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf`;
+audience access is not yet available. Both 40-mm codes and their payloads remain
+unchanged. Review source comments/history before any public release.
 
-Continue editing through the established Org-to-Overleaf pipeline. Direct
-Overleaf edits take content priority; preserve and reconcile them before
-publishing. Refresh this source mirror after publication. There is no automatic
-GitHub synchronization.
+Only these three specific vector figure PDFs are permitted source artwork:
 
-Compile `slides.tex` twice with XeLaTeX and the required Beamer/Fira packages for
-local previews. Generating a local preview does not authorize a PDF upload.
-Before any later public release, review editorial comments and source history
-for private operational information. The original authoring and Overleaf
-projects must remain private unless separately authorized.
+- `assets/cell-painting-edited.pdf`
+- `assets/vector-interpretability.pdf`
+- `assets/word2vec-example.pdf`
 
-## Credits
-
-Scientific references and tool links appear immediately before the main-talk closing QR slide.
-Illustration/logo credits are no longer displayed there, at the presenter's
-request. Their provenance remains in the private authoring repository's
-[`docs/provenance.md`](https://github.com/afermg/org-overleaf-sync/blob/main/docs/provenance.md)
-and retained Git history. Third-party images, logos and tools retain their
-respective rights and licences; no blanket licence is applied here.
+These are not presentation-PDF releases. No reuse license is implied for earlier
+figures, institutional logos or other third-party material. Scientific qualifications
+and full provenance remain in the canonical authoring repository and local notes.

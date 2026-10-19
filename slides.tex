@@ -29,7 +29,7 @@
 
 \maketitle
 \section*{Conference draft}
-\label{sec:org0000016}
+\label{sec:org0000017}
 \begin{frame}[label={sec:org0000001}]{What is Cell Painting?}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.36\textwidth}
@@ -58,7 +58,7 @@ Profiles are numerical descriptions of cells.
 \begin{block}{Engineered features: CellProfiler}
 \begin{itemize}
 \item Size, shape, intensity, texture and spatial relationships.
-\item Explicit measurement definitions.
+\item Interpretable but somewhat redundant.
 \end{itemize}
 \end{block}
 \end{column}
@@ -71,12 +71,11 @@ Profiles are numerical descriptions of cells.
 \end{block}
 \end{column}
 \end{columns}
-\medskip
-\centering Compare perturbations $\cdot$ Group similar phenotypes $\cdot$ Prioritize follow-up
 \end{frame}
 \begin{frame}[label={sec:org0000004}]{JUMP: Joint Undertaking for Morphological Profiling}
 \begin{itemize}
 \item Public Cell Painting data: \alert{12 laboratories}, nearly \alert{139,000 perturbations}.
+\item \alert{\textasciitilde{}58.3 million single-channel TIFF images}.
 \end{itemize}
 
 \begin{center}
@@ -91,7 +90,23 @@ Profiles are numerical descriptions of cells.
 \item Which gene, compound or phenotype interests you?
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org0000005}]{We make JUMP accessible via the JUMP Hub}
+\begin{frame}[label={sec:org0000005}]{How do better models become tools that experimental biologists can use?}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Method development}
+Does the model improve benchmark performance?
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Experimental biology}
+Can I use it to answer my biological question?
+\end{block}
+\end{column}
+\end{columns}
+\bigskip
+Setup, computing resources and coding can prevent practical use.
+\end{frame}
+\begin{frame}[label={sec:org0000006}]{We make JUMP accessible via the JUMP Hub}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.58\textwidth}
 \centering
@@ -107,7 +122,7 @@ Profiles are numerical descriptions of cells.
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org0000006}]{Was my gene or compound tested?}
+\begin{frame}[label={sec:org0000007}]{Was my gene or compound tested?}
 \begin{itemize}
 \item Find your gene or compound.
 \item Choose knockout, overexpression or compound treatment.
@@ -118,7 +133,7 @@ Profiles are numerical descriptions of cells.
 \includegraphics[keepaspectratio,width=0.90\linewidth,height=0.42\textheight]{assets/hub-identifiers.png}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org0000007}]{Which perturbations produce related phenotypes?}
+\begin{frame}[label={sec:org0000008}]{Which perturbations produce related phenotypes?}
 \alert{MYT1 example}
 
 \begin{center}
@@ -129,7 +144,7 @@ Profiles are numerical descriptions of cells.
 \item Prioritize matches for follow-up.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org0000008}]{How does cell morphology change?}
+\begin{frame}[label={sec:org0000009}]{How does cell morphology change?}
 \alert{AVPR2 overexpression example}
 
 \begin{center}
@@ -141,7 +156,7 @@ Profiles are numerical descriptions of cells.
 \item Check images: mitochondria versus actin, Golgi and plasma membrane.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org0000009}]{Use JUMP as a screen for your phenotype}
+\begin{frame}[label={sec:org000000a}]{Use JUMP as a screen for your phenotype}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.46\textwidth}
 \textbf{Feature families}\par\medskip
@@ -164,14 +179,14 @@ Profiles are numerical descriptions of cells.
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org000000a}]{What do the perturbed cells look like?}
+\begin{frame}[label={sec:org000000b}]{What do the perturbed cells look like?}
 \alert{MYT1 and PROZ gallery examples}
 
 \begin{center}
 \includegraphics[keepaspectratio,width=0.93\linewidth,height=0.55\textheight]{assets/hub-gallery.png}
 \end{center}
 \end{frame}
-\begin{frame}[label={sec:org000000b}]{Ask an AI assistant to build a notebook}
+\begin{frame}[label={sec:org000000c}]{Ask an AI assistant to build a notebook}
 \begin{quote}
 Using JUMP Hub docs, link selected cells to images and measurements. Record identifiers and analysis steps.
 \end{quote}
@@ -181,7 +196,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \item Biological experts validate the results.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org000000c}]{Identify and explore cell subpopulations}
+\begin{frame}[label={sec:org000000d}]{Identify and explore cell subpopulations}
 \alert{Interactive marimo notebook}
 
 \begin{center}
@@ -193,7 +208,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \item Select cells; inspect images, area and other features.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org000000d}]{How do cells in another region compare?}
+\begin{frame}[label={sec:org000000e}]{How do cells in another region compare?}
 \begin{center}
 \href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
 \end{center}
@@ -204,18 +219,18 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \item \href{https://doi.org/10.5281/zenodo.23462248}{Watch demo (23 s)}.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org000000e}]{Modern tools make image analysis more accessible}
+\begin{frame}[label={sec:org000000f}]{Modern tools make image analysis more accessible}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
 \textbf{Segmentation} & Cellpose: cell and nucleus masks. \\[0.65em]
 \textbf{Profiles} & cp\_measure: images + masks $\rightarrow$ profiles. \\[0.65em]
 %\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
 \textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
-\textbf{Notebooks} & marimo: reactive notebooks and apps. \\[0.65em]
+\textbf{Notebooks} & marimo: reactive notebooks and dashboards. \\[0.65em]
 \textbf{Python setup} & uv: environments, packages and lockfiles.
 \end{tabular}\par\vspace{1em}
-\centering\textbf{AI can turn these tools into workflows.}
+\centering\textbf{AI can turn these individual tools into workflows.}
 \end{frame}
-\begin{frame}[label={sec:org000000f}]{Extract morphological profiles from your own images}
+\begin{frame}[label={sec:org0000010}]{Extract morphological profiles from your own images}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.44\textwidth}
 \centering
@@ -231,38 +246,40 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org0000010}]{Developing new methods? Benchmark workflows with JUMP-lite}
-\begin{center}
-\includegraphics[keepaspectratio,width=0.96\linewidth,height=0.60\textheight]{assets/jump-lite-paper.png}
-\end{center}
-
-Use our compressed images to contrast your own vs the state-of-the-art.
-\end{frame}
-\begin{frame}[label={sec:org0000011}]{From lysosomal probes to spatial omics}
+\begin{frame}[label={sec:org0000011}]{Applications across biological questions}
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.34\textwidth}
+\begin{column}{0.48\textwidth}
 \begin{block}{Evaluate lysosomal probes}
 \small Kenneth Li, University of Edinburgh\par
-\normalsize
 \begin{itemize}
-\item Evaluate lysosomal acidification probes in cardiomyocytes.
+\item Lysosomal acidification probes in cardiomyocytes.
 \item Uptake, localization and morphology over time.
 \end{itemize}
 \end{block}
 \end{column}
-\begin{column}{0.32\textwidth}
+\begin{column}{0.48\textwidth}
+\begin{block}{MisLocus: protein mislocalisation}
+\small
+\begin{itemize}
+\item Can rare genetic mutations change where proteins are located?
+\item Compare microscopy of reference and variant proteins.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
 \begin{block}{Compare imaging modalities}
-\small Minh Doan, GSK \par
-\normalsize
+\small Minh Doan, GSK\par
 \begin{itemize}
 \item Bright-field, Cell Painting, cell cycle and viability.
 \item Shared and complementary compound responses.
 \end{itemize}
 \end{block}
 \end{column}
-\begin{column}{0.30\textwidth}
+\begin{column}{0.48\textwidth}
 \begin{block}{Connect to spatial omics software}
-\small Tim Treis, Helmholtz-Munich \par
+\small Tim Treis, Helmholtz-Munich\par
 \begin{itemize}
 \item Integration of morphological features with Squidpy.
 \end{itemize}
@@ -270,23 +287,30 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org0000012}]{Take-home messages}
+\begin{frame}[label={sec:org0000012}]{Reality check: from profiles to biology}
 \begin{itemize}
-\item \alert{Profiles:} quantify cell state.
-\item \alert{Access:} JUMP data and tools for researchers and AI agents.
-\item \alert{Workflows:} building foundations for agent-driven analysis, from images to insights.
-\item \alert{Experts:} biological validation remains essential.
-\item \alert{Tools:} reproducible methods support consistent analysis.
+\item Batch effects can resemble biology.
+\item Similar profiles do not establish a shared mechanism.
+\item The bottleneck is experimental follow-up.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org0000013}]{Thank you}
+\begin{frame}[label={sec:org0000013}]{Take-home messages}
+\begin{itemize}
+\item Profiles: quantify cell state.
+\item Access: JUMP data and tools for researchers and AI agents.
+\item Workflows: building foundations for agent-driven analysis, from images to insights.
+\item Experts: biological validation remains essential.
+\item Tools: reproducible methods support consistent analysis.
+\end{itemize}
+\end{frame}
+\begin{frame}[label={sec:org0000014}]{Thank you}
 \centering
 \includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
 \includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
 \includegraphics[width=0.98\linewidth,height=0.60\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
-{\small Supported by GSK and NIH MIRA (R35 GM122547).}\par
+{\small Work on cp\_measure and JUMP-lite was supported by GSK and NIH MIRA (R35 GM122547).}\par
 \end{frame}
-\begin{frame}[label={sec:org0000014}]{References}
+\begin{frame}[label={sec:org0000015}]{References}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.31\textwidth}
 \small
@@ -294,7 +318,7 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \begin{itemize}
 \item \href{https://doi.org/10.1038/nprot.2016.105}{Bray et al. (2016). Cell Painting.}\newline Nature Protocols.
 \item \href{https://doi.org/10.1038/s41573-020-00117-w}{Chandrasekaran et al. (2021).}\newline Image-based profiling. Nature Reviews Drug Discovery.
-\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{perturbation counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{12 centers}.
+\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{perturbation counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{12 centers}; \href{https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv}{image count}.
 \item \href{https://doi.org/10.1186/gb-2006-7-10-r100}{Carpenter et al. (2006). CellProfiler.}\newline Genome Biology.
 \end{itemize}
 \end{column}
@@ -321,7 +345,7 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org0000015}]{JUMP Hub and slides}
+\begin{frame}[label={sec:org0000016}]{JUMP Hub and slides}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \centering
@@ -337,9 +361,28 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \end{columns}
 \end{frame}
 \section*{Additional slides}
-\label{sec:org000001a}
+\label{sec:org000001c}
 
-\begin{frame}[label={sec:org0000017}]{Nahual: swap models within one workflow}
+\begin{frame}[label={sec:org0000018}]{JUMP-lite: compression reduces storage}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.42\textwidth}
+\centering
+\textbf{Original TIFFs}\par\bigskip
+{\fontsize{38}{44}\selectfont 8.7 TB}
+\end{column}
+\begin{column}{0.10\textwidth}
+\centering\Huge $\longrightarrow$
+\end{column}
+\begin{column}{0.42\textwidth}
+\centering
+\textbf{JPEG XL (lossy)}\par\bigskip
+{\fontsize{38}{44}\selectfont 92 GB}
+\end{column}
+\end{columns}
+\bigskip\bigskip
+\centering Same image set $\cdot$ $\sim$94$\times$ smaller
+\end{frame}
+\begin{frame}[label={sec:org0000019}]{Nahual: swap models within one workflow}
 \centering
 {\Large\bfseries Swap models. Keep your workflow.}\par\bigskip
 \renewcommand{\arraystretch}{1.8}
@@ -349,14 +392,14 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
 \end{tabular}
 \end{frame}
-\begin{frame}[label={sec:org0000018}]{Words as vectors: word2vec}
+\begin{frame}[label={sec:org000001a}]{Words as vectors: word2vec}
 \begin{center}
 \includegraphics[keepaspectratio,width=0.99\linewidth,height=0.78\textheight]{assets/word2vec-example.pdf}
 \end{center}
 
 \hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
 \end{frame}
-\begin{frame}[label={sec:org0000019}]{From words to cells: vectors for comparison}
+\begin{frame}[label={sec:org000001b}]{From words to cells: vectors for comparison}
 \begin{center}
 \includegraphics[keepaspectratio,width=0.99\linewidth,height=0.83\textheight]{assets/vector-interpretability.pdf}
 \end{center}
