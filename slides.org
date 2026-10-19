@@ -276,7 +276,6 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 
 - Second selection: 224 cells.
 - Compare images and measurements.
-- [[https://doi.org/10.5281/zenodo.23462248][Watch demo (23 s)]].
 
 # Speaker note: One plate, six wells, twelve fields; no treatment or control assignments.
 # The reference is all loaded cells, including the selection. Feature-based selection changes distributions by construction.
@@ -293,7 +292,6 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 %\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
 \textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
 \textbf{Notebooks} & marimo: reactive notebooks and dashboards. \\[0.65em]
-\textbf{Python setup} & uv: environments, packages and lockfiles.
 \end{tabular}\par\vspace{1em}
 \centering\textbf{AI can turn these individual tools into workflows.}
 #+END_EXPORT
@@ -365,8 +363,8 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
-\begin{block}{Evaluate lysosomal probes}
-\small Kenneth Li, University of Edinburgh\par
+\begin{block}{Evaluat new lysosomal probes}
+\small Kenneth Li, Vendrell Lab, University of Edinburgh\par
 \begin{itemize}
 \item Lysosomal acidification probes in cardiomyocytes.
 \item Uptake, localization and morphology over time.
@@ -375,7 +373,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{block}{MisLocus: protein mislocalisation}
-\small
+\small Johan Fredin, Carpenter-Shen Lab, Purdue University\par
 \begin{itemize}
 \item Can rare genetic mutations change where proteins are located?
 \item Compare microscopy of reference and variant proteins.
@@ -386,7 +384,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \begin{block}{Compare imaging modalities}
-\small Minh Doan, GSK\par
+\small Minh Doan, GSK Bioimaging Analytics\par
 \begin{itemize}
 \item Bright-field, Cell Painting, cell cycle and viability.
 \item Shared and complementary compound responses.
@@ -395,7 +393,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{block}{Connect to spatial omics software}
-\small Tim Treis, Helmholtz-Munich\par
+\small Tim Treis, Treis Lab, Helmholtz-Munich\par
 \begin{itemize}
 \item Integration of morphological features with Squidpy.
 \end{itemize}
@@ -433,11 +431,13 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \centering
 \includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
 \includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
+{\small Carpenter-Singh Lab \quad\textbullet\quad Carpenter-Shen Lab}\par\smallskip
 \includegraphics[width=0.98\linewidth,height=0.60\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
 {\small Work on cp\_measure and JUMP-lite was supported by GSK and NIH MIRA (R35 GM122547).}\par
 #+END_EXPORT
 
-# Speaker note: Thank Broad, Purdue and the JUMP partners, and acknowledge GSK and NIH MIRA support.
+# Speaker note: Thank the Carpenter-Singh Lab, Carpenter-Shen Lab, Broad, Purdue and the JUMP partners, and acknowledge GSK and NIH MIRA support.
+# The presenter will explain orally that the lab moved a couple of months ago; no move date or additional relocation claim is added to the slide.
 # R35 GM122547 is awarded to Anne E. Carpenter, not to the presenter individually; the presenter confirmed support through this grant.
 # Verified in cp_measure (arXiv:2507.01163v1, Acknowledgements) and Chandrasekaran et al. (2025), doi:10.1038/s41592-025-02753-9, Acknowledgments.
 # The partner sheet is historical.

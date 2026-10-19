@@ -6,7 +6,7 @@ FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
 Private source mirror. Compile **slides.tex** with **XeLaTeX**; unowned legacy
 `main.tex` is preserved but is not the root. All **20 Overleaf files** are mirrored
-unchanged from `0a8936336e2b3fda33ec1809c17fc31a1ab440b8`; this README and
+unchanged from `11de3c8edad1e5d3fd0a5a379b2957f2a7661fd2`; this README and
 `.gitignore` are repository-specific additions. The unused JUMP-lite paper PNG
 is retained in source history, not the consumed bundle.
 
@@ -32,14 +32,17 @@ subset selection. The numerical columns are not an area-proportional chart.
 
 Direct author wording is preserved, including marimo dashboards, individual
 tools, plain take-home labels and GSK/NIH MIRA funding scoped to cp_measure and
-JUMP-lite. The original Mac-edited workflow remains exact. The detailed Nahual
+JUMP-lite. Thank you (PDF 20) now names both **Carpenter-Singh Lab** and
+**Carpenter-Shen Lab**; the presenter explains the move orally. The latest author
+application credits and removal of the visible uv row/demo-text link are preserved.
+The original Mac-edited workflow remains exact. The detailed Nahual
 slide stays hidden. Both vector teaching diagrams use illustrative coordinates,
 not measured results; word2vec is an analogy, not the cell-feature algorithm.
 
 ## Playback and sources
 
 Play the separate 23.16-second video at **PDF 14 / visible slide 13**, then return
-to PDF 15. The two snapshots and text link open the public CC BY 4.0 recording:
+to PDF 15. The two snapshot-image links open the public CC BY 4.0 recording:
 <https://doi.org/10.5281/zenodo.23462248>. Video is not embedded in the PDF.
 
 - Image count: <https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv>
