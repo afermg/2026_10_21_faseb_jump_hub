@@ -3,6 +3,7 @@
 # These specific vector figures are source artwork, not the presentation PDF.
 !assets/vector-interpretability.pdf
 !assets/cell-painting-edited.pdf
+!assets/word2vec-example.pdf
 
 # TeX build products.
 *.aux

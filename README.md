@@ -29,20 +29,26 @@ authorized. No automatic PDF publication or visibility change is configured.
 - `assets/`: figures, screenshots, logos and two QR images.
 - `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
 
-Current Overleaf snapshot: `a61fb1f9ff306b129c53e958346b53740a091980`.
-All 20 Overleaf files are mirrored unchanged; this README and `.gitignore` are
-repository-specific additions. The deck contains **22 main-talk pages and two
-additional slides**, with a 23-minute narration plan within the 25-minute slot.
+Current Overleaf snapshot: `def3b89f4a9f544e5e447c4c2f4b656d3744cf34`.
+All 21 Overleaf files are mirrored unchanged; this README and `.gitignore` are
+repository-specific additions. The deck contains **22 main-talk pages and three
+additional slides** (25 total), with a 23-minute narration plan within the 25-minute slot.
+The main content pages have 32.7% less extractable text; supporting explanations
+remain in speaker notes. This count excludes unchanged text within images.
 Page 3 uses the presenter's Mac-edited vector workflow reconstruction. The
 toolbox on page 15 includes marimo and uv; cp_measure and JUMP-lite follow.
 The shortened live JUMP-lite wording and removal of the historical benchmark
 citation are preserved. The main talk closes with Thank you (20), References
-(21) and QR (22). **Additional pages 23/24** contain the Nahual model-swapping
-overview and illustrative vector comparison. The detailed Nahual slide stays hidden.
+(21) and QR (22). **Additional pages 23–25** contain Nahual, a word2vec
+country-capital analogy, and the cell-vector comparison. Both vector examples
+use explicitly illustrative coordinates, not measured/trained-model output.
+The detailed Nahual slide stays hidden. ORF notes now specify lentiviral delivery
+and a 48-hour readout rather than implying transient expression.
 
-`assets/vector-interpretability.pdf` and `assets/cell-painting-edited.pdf` are
-vector figure source assets, not the presentation PDF. `.gitignore` permits
-only these two specific figure PDFs; `slides.pdf` remains absent and ignored.
+`assets/vector-interpretability.pdf`, `assets/cell-painting-edited.pdf` and
+`assets/word2vec-example.pdf` are vector figure source assets, not the presentation
+PDF. `.gitignore` permits only these specific figure PDFs; `slides.pdf` remains
+absent and ignored.
 
 The ORF card shows ~12,600 genes without the construct count; the dataset
 introduction identifies 12 acquiring laboratories. The video remains a separate
@@ -50,8 +56,9 @@ offline companion and is also public on
 [Zenodo](https://doi.org/10.5281/zenodo.23462248) under CC BY 4.0. Both snapshot
 images on PDF pages 13/14 and the demo text link on page 14 open the recording.
 Page 22 contains only JUMP Hub and Slides (PDF), with two 40-mm QR codes and the
-visible shortlink `broad.io/jump`. Direct Overleaf edits through `bf0e603`,
-including the revised wording and collaborator credits, are preserved.
+visible shortlink `broad.io/jump`. The latest live snapshot was preserved before
+the requested text-reduction pass; collaborator credits and scientific meaning
+are retained.
 Only the MP4 was uploaded to Zenodo; the PDF and repository-publication gates
 above remain unchanged.
 

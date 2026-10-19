@@ -34,9 +34,9 @@
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.36\textwidth}
 \begin{itemize}
-\item A fluorescence microscopy assay for measuring cell morphology.
-\item Six dyes reveal cellular structures across five imaging channels.
-\item Shape, intensity and texture describe responses to genes and compounds.
+\item Fluorescence microscopy of cell morphology.
+\item Six dyes, five imaging channels.
+\item Shape, intensity and texture reveal cellular responses.
 \end{itemize}
 \end{column}
 \begin{column}{0.60\textwidth}
@@ -51,26 +51,26 @@
 \end{center}
 
 \begin{itemize}
-\item Stain and image cells, measure their appearance, and compare morphological profiles.
+\item Stain → image → measure → compare.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org0000003}]{Why turn images into profiles?}
-Profiles summarize cellular appearance so we can compare and search large datasets.
+Profiles are numerical descriptions of cells.
 
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \begin{block}{Engineered features: CellProfiler}
 \begin{itemize}
-\item Predefined measurements of size, shape, intensity, texture and spatial relationships.
-\item Each feature has an explicit measurement definition.
+\item Size, shape, intensity, texture and spatial relationships.
+\item Explicit measurement definitions.
 \end{itemize}
 \end{block}
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{block}{Learned representations}
 \begin{itemize}
-\item Models learn visual features from training data using neural networks.
-\item Images or cells are encoded as numerical feature vectors (embeddings).
+\item Features learned from images by neural networks.
+\item Numerical vectors (embeddings).
 \end{itemize}
 \end{block}
 \end{column}
@@ -80,20 +80,19 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \end{frame}
 \begin{frame}[label={sec:org0000004}]{JUMP: Joint Undertaking for Morphological Profiling}
 \begin{itemize}
-\item A public Cell Painting dataset acquired across \alert{12 laboratories}, covering nearly 139,000 chemical and genetic perturbations.
+\item Public Cell Painting data: \alert{12 laboratories}, nearly \alert{139,000 perturbations}.
 \end{itemize}
 
 \begin{center}
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering CRISPR knockout\par\medskip{\Large\bfseries 7,975}\par gene targets}}
 \quad
-\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Transient open reading frame (ORF) overexpression\par\smallskip{\Large\bfseries $\sim$12,600}\par genes}}
+\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Gene overexpression (ORF)\par\smallskip{\Large\bfseries $\sim$12,600}\par genes}}
 \quad
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering Compound treatment\par\medskip{\Large\bfseries 115,794}\par compounds}}
 \end{center}
 
 \begin{itemize}
-\item Researchers can use the images, measurements and metadata to investigate their own questions.
-\item Which gene, compound or phenotype from your lab would you like to explore?
+\item Which gene, compound or phenotype interests you?
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org0000005}]{We make JUMP accessible via the JUMP Hub}
@@ -104,19 +103,19 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \end{column}
 \begin{column}{0.39\textwidth}
 \begin{itemize}
-\item Does my gene or compound have a Cell Painting phenotype?
-\item Which perturbations produce related phenotypes?
-\item What changes in the cells and their organelles?
-\item Which cell subpopulations stand out?
+\item Does my gene or compound have a phenotype?
+\item Which phenotypes are similar?
+\item What changes in cells and organelles?
+\item Which cell populations stand out?
 \end{itemize}
 \end{column}
 \end{columns}
 \end{frame}
 \begin{frame}[label={sec:org0000006}]{Was my gene or compound tested?}
 \begin{itemize}
-\item Check whether your gene or compound is represented in JUMP.
-\item Choose the perturbation: knockout, overexpression or compound treatment.
-\item Open the associated profiles, images and experimental metadata.
+\item Find your gene or compound.
+\item Choose knockout, overexpression or compound treatment.
+\item View profiles, images and metadata.
 \end{itemize}
 
 \begin{center}
@@ -131,11 +130,11 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \end{center}
 
 \begin{itemize}
-\item Explore the ranked matches to find candidates for follow-up.
-\item Export the filtered list with its details using the table's JSON link.
+\item Prioritize matches for follow-up.
+\item Export the filtered table as JSON.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org0000008}]{How does perturbing my gene change cell morphology?}
+\begin{frame}[label={sec:org0000008}]{How does cell morphology change?}
 \alert{AVPR2 overexpression example}
 
 \begin{center}
@@ -143,29 +142,29 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \end{center}
 
 \begin{itemize}
-\item A mitochondria--AGP overlap measurement stands out among the features.
-\item Follow up by comparing mitochondrial distribution relative to actin, Golgi and plasma-membrane staining.
+\item Feature to investigate: mitochondria--AGP overlap.
+\item Check images: mitochondria versus actin, Golgi and plasma membrane.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org0000009}]{Use JUMP as a screen for your phenotype}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.46\textwidth}
-\textbf{Measure many aspects of cell state}\par\medskip
+\textbf{Feature families}\par\medskip
 \small
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.60\linewidth}@{}}
 \textbf{Size / shape} & Nuclear area, elongation \\[6pt]
 \textbf{Intensity} & Mitochondrial staining \\[6pt]
-\textbf{Texture} & Fine or coarse patterns \\[6pt]
-\textbf{Correlation} & Relationships between channels \\[6pt]
-\textbf{Distribution} & Peripheral or perinuclear signal
+\textbf{Texture} & Fine/coarse patterns \\[6pt]
+\textbf{Correlation} & Between-channel patterns \\[6pt]
+\textbf{Distribution} & Peripheral/perinuclear signal
 \end{tabular}
 \end{column}
 \begin{column}{0.50\textwidth}
 \textbf{Which perturbations change nuclear size?}
 \begin{itemize}
-\item Select nuclear area in the feature table.
-\item Rank perturbations by feature value and significance.
-\item Inspect all available images for a perturbation.
+\item Select nuclear area.
+\item Rank perturbations by feature value.
+\item Check activity, images and controls.
 \end{itemize}
 \end{column}
 \end{columns}
@@ -178,55 +177,50 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \end{center}
 
 \begin{itemize}
-\item Inspect cells across fields and imaging channels.
-\item Retrieve the images and relevant controls for a closer comparison.
+\item Inspect fields and channels; retrieve matched controls.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org000000b}]{Ask any AI assistant to explore the data for you, or build an interactive notebook}
+\begin{frame}[label={sec:org000000b}]{Ask an AI assistant to build a notebook}
 \begin{quote}
-Using the JUMP Hub documentation, write a notebook that links selected cells to their images and measurements. Include the source identifiers and save the analysis steps.
+Using JUMP Hub docs, link selected cells to images and measurements. Record identifiers and analysis steps.
 \end{quote}
 
 \begin{itemize}
-\item The tools and documentation we build for researchers can also be used by AI agents.
-\item Biological expertise is essential for validating results.
-\item Robust, reproducible tools help agents use consistent methods across analyses.
-\item Extend the notebook with image models through nahual.
+\item Shared tools support reproducible workflows.
+\item Biological experts validate the results.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org000000c}]{Identify and explore cell subpopulations}
-\alert{Interactive marimo notebook built from JUMP images and measurements}
+\alert{Interactive marimo notebook}
 
 \begin{center}
 \href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-545.png}}
 \end{center}
 
 \begin{itemize}
-\item Each dot is one of 2,223 cells from a JUMP Target-2 plate.
-\item Select cells to update their images, area distribution and measurement summaries.
+\item Each dot is a cell: 2,223 from one Target-2 plate.
+\item Select cells; inspect images, area and other features.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org000000d}]{How do cells in another region compare?}
-\alert{The same notebook, with a second selection}
-
 \begin{center}
 \href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
 \end{center}
 
 \begin{itemize}
-\item Select another region: 224 cells in this example.
-\item Compare cell images, areas and measurement summaries.
-\item \href{https://doi.org/10.5281/zenodo.23462248}{Watch the recorded demo (23 s) on Zenodo}.
+\item Second selection: 224 cells.
+\item Compare images and measurements.
+\item \href{https://doi.org/10.5281/zenodo.23462248}{Watch demo (23 s)}.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org000000e}]{Modern tools make image analysis more accessible}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
-\textbf{Segmentation} & Cellpose: masks for cells and nuclei. \\[0.65em]
-\textbf{Profiles} & cp\_measure: images and masks $\rightarrow$ quantitative profiles. \\[0.65em]
+\textbf{Segmentation} & Cellpose: cell and nucleus masks. \\[0.65em]
+\textbf{Profiles} & cp\_measure: images + masks $\rightarrow$ profiles. \\[0.65em]
 %\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
-\textbf{Next-Generation data formats} & Parquet tables, Zarr arrays and JPEG XL image compression. \\[0.65em]
-\textbf{Notebooks} & marimo: reactive notebooks and interactive apps. \\[0.65em]
-\textbf{Python setup} & uv: fast package management, environments and lockfiles.
+\textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
+\textbf{Notebooks} & marimo: reactive notebooks and apps. \\[0.65em]
+\textbf{Python setup} & uv: environments, packages and lockfiles.
 \end{tabular}\par\vspace{1em}
 \centering\textbf{AI can turn these tools into workflows.}
 \end{frame}
@@ -239,8 +233,8 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \begin{column}{0.53\textwidth}
 \textbf{cp\_measure: feature extraction in Python}
 \begin{itemize}
-\item Build profiles of thousands of features across channels and cell compartments.
-\item Integrate to your own Python pipelines.
+\item Thousands of features across channels and compartments.
+\item Fits your Python pipeline.
 \item Fastest software to obtain interpretable morphological features (>2x CellProfiler).
 \end{itemize}
 \end{column}
@@ -261,7 +255,7 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \normalsize
 \begin{itemize}
 \item Evaluate lysosomal acidification probes in cardiomyocytes.
-\item Measure probe uptake, lysosomal localization and morphological changes over time.
+\item Uptake, localization and morphology over time.
 \end{itemize}
 \end{block}
 \end{column}
@@ -270,8 +264,8 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \small Minh Doan, GSK \par
 \normalsize
 \begin{itemize}
-\item Compare bright-field, Cell Painting, cell-cycle and viability readouts.
-\item Identify shared and complementary compound responses across assays.
+\item Bright-field, Cell Painting, cell cycle and viability.
+\item Shared and complementary compound responses.
 \end{itemize}
 \end{block}
 \end{column}
@@ -287,11 +281,11 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \end{frame}
 \begin{frame}[label={sec:org0000012}]{Take-home messages}
 \begin{itemize}
-\item Morphological profiles provide a quantitative representation of cell state.
-\item We make JUMP data and query tools accessible to both researchers and AI agents.
-\item We are building the foundations for agent-driven workflows that connect new microscopy images to quantitative insights.
-\item Biological expertise is essential: experts remain in the loop to validate results.
-\item Robust, reproducible tools help agents use consistent methods across analyses.
+\item \alert{Profiles:} quantify cell state.
+\item \alert{Access:} JUMP data and tools for researchers and AI agents.
+\item \alert{Workflows:} building foundations for agent-driven analysis, from images to insights.
+\item \alert{Experts:} biological validation remains essential.
+\item \alert{Tools:} reproducible methods support consistent analysis.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org0000013}]{Thank you}
@@ -352,7 +346,7 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \end{columns}
 \end{frame}
 \section*{Additional slides}
-\label{sec:org0000019}
+\label{sec:org000001a}
 
 \begin{frame}[label={sec:org0000017}]{Nahual: swap models within one workflow}
 \centering
@@ -364,7 +358,14 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
 \end{tabular}
 \end{frame}
-\begin{frame}[label={sec:org0000018}]{Cells as vectors: useful does not always mean interpretable}
+\begin{frame}[label={sec:org0000018}]{Words as vectors: word2vec}
+\begin{center}
+\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.78\textheight]{assets/word2vec-example.pdf}
+\end{center}
+
+\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
+\end{frame}
+\begin{frame}[label={sec:org0000019}]{From words to cells: vectors for comparison}
 \begin{center}
 \includegraphics[keepaspectratio,width=0.99\linewidth,height=0.83\textheight]{assets/vector-interpretability.pdf}
 \end{center}

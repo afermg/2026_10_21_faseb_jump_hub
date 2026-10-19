@@ -29,9 +29,9 @@
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.36\textwidth}
 \begin{itemize}
-\item A fluorescence microscopy assay for measuring cell morphology.
-\item Six dyes reveal cellular structures across five imaging channels.
-\item Shape, intensity and texture describe responses to genes and compounds.
+\item Fluorescence microscopy of cell morphology.
+\item Six dyes, five imaging channels.
+\item Shape, intensity and texture reveal cellular responses.
 \end{itemize}
 \end{column}
 \begin{column}{0.60\textwidth}
@@ -47,30 +47,30 @@
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.72\textheight :options keepaspectratio
 [[file:assets/cell-painting-edited.pdf]]
 
-- Stain and image cells, measure their appearance, and compare morphological profiles.
+- Stain → image → measure → compare.
 
 # Speaker note: The presenter edited this reconstruction in Inkscape on the Mac; the deck uses a vector PDF exported there with outlined text.
 # The editable SVG is retained separately. Schematic details are illustrative, not recovered quantitative data; original source and Mac-edit hashes are recorded in docs/assets.json.
 # Similarity helps prioritize biological hypotheses; it does not establish mechanism.
 
 ** Why turn images into profiles?
-Profiles summarize cellular appearance so we can compare and search large datasets.
+Profiles are numerical descriptions of cells.
 
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \begin{block}{Engineered features: CellProfiler}
 \begin{itemize}
-\item Predefined measurements of size, shape, intensity, texture and spatial relationships.
-\item Each feature has an explicit measurement definition.
+\item Size, shape, intensity, texture and spatial relationships.
+\item Explicit measurement definitions.
 \end{itemize}
 \end{block}
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{block}{Learned representations}
 \begin{itemize}
-\item Models learn visual features from training data using neural networks.
-\item Images or cells are encoded as numerical feature vectors (embeddings).
+\item Features learned from images by neural networks.
+\item Numerical vectors (embeddings).
 \end{itemize}
 \end{block}
 \end{column}
@@ -84,20 +84,23 @@ Profiles summarize cellular appearance so we can compare and search large datase
 # Neither route alone establishes mechanism or removes batch effects. Do not claim one universally outperforms the other.
 
 ** JUMP: Joint Undertaking for Morphological Profiling
-- A public Cell Painting dataset acquired across *12 laboratories*, covering nearly 139,000 chemical and genetic perturbations.
+- Public Cell Painting data: *12 laboratories*, nearly *139,000 perturbations*.
 
 #+BEGIN_EXPORT latex
 \begin{center}
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering CRISPR knockout\par\medskip{\Large\bfseries 7,975}\par gene targets}}
 \quad
-\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Transient open reading frame (ORF) overexpression\par\smallskip{\Large\bfseries $\sim$12,600}\par genes}}
+\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Gene overexpression (ORF)\par\smallskip{\Large\bfseries $\sim$12,600}\par genes}}
 \quad
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering Compound treatment\par\medskip{\Large\bfseries 115,794}\par compounds}}
 \end{center}
 #+END_EXPORT
 
-- Researchers can use the images, measurements and metadata to investigate their own questions.
-- Which gene, compound or phenotype from your lab would you like to explore?
+- Which gene, compound or phenotype interests you?
+
+# Speaker note: ORF means open reading frame. JUMP used lentiviral ORF delivery, a 48-hour readout and no blasticidin selection in imaging wells; do not label this transient expression merely because the assay is short-term.
+# The introduced coding sequence supports extra protein production; it does not activate the endogenous promoter, guarantee protein activity or ensure uniform expression in every cell.
+# Source: Chandrasekaran et al. (2025), doi:10.1038/s41592-025-02753-9, Methods: Time point and ORF experiments. Researchers can reuse images, measurements and metadata.
 
 # Speaker note: Counts use consortium metadata revision 016e865fa0691244e0860943e41c7d6a88ed2580, not JUMP-lite.
 # Count distinct JCP2022 IDs present in wells, excluding negative-control and empty IDs; retain positive controls.
@@ -117,10 +120,10 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \end{column}
 \begin{column}{0.39\textwidth}
 \begin{itemize}
-\item Does my gene or compound have a Cell Painting phenotype?
-\item Which perturbations produce related phenotypes?
-\item What changes in the cells and their organelles?
-\item Which cell subpopulations stand out?
+\item Does my gene or compound have a phenotype?
+\item Which phenotypes are similar?
+\item What changes in cells and organelles?
+\item Which cell populations stand out?
 \end{itemize}
 \end{column}
 \end{columns}
@@ -132,9 +135,9 @@ Profiles summarize cellular appearance so we can compare and search large datase
 # Homepage captured 18 October 2026; other interface screenshots are historical examples.
 
 ** Was my gene or compound tested?
-- Check whether your gene or compound is represented in JUMP.
-- Choose the perturbation: knockout, overexpression or compound treatment.
-- Open the associated profiles, images and experimental metadata.
+- Find your gene or compound.
+- Choose knockout, overexpression or compound treatment.
+- View profiles, images and metadata.
 
 #+ATTR_LATEX: :width 0.90\linewidth :height 0.42\textheight :options keepaspectratio
 [[file:assets/hub-identifiers.png]]
@@ -147,20 +150,20 @@ Profiles summarize cellular appearance so we can compare and search large datase
 #+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
 [[file:assets/hub-matches.png]]
 
-- Explore the ranked matches to find candidates for follow-up.
-- Export the filtered list with its details using the table's JSON link.
+- Prioritize matches for follow-up.
+- Export the filtered table as JSON.
 
 # Speaker note: JSON export is documented by the current JUMP_rr tutorial. Do not promise a CSV button.
 # Profile similarity is not proof of a shared mechanism. This historical MYT1 example is separate from AVPR2 below.
 
-** How does perturbing my gene change cell morphology?
+** How does cell morphology change?
 *AVPR2 overexpression example*
 
 #+ATTR_LATEX: :width 0.98\linewidth :height 0.47\textheight :options keepaspectratio
 [[file:assets/hub-features.png]]
 
-- A mitochondria--AGP overlap measurement stands out among the features.
-- Follow up by comparing mitochondrial distribution relative to actin, Golgi and plasma-membrane staining.
+- Feature to investigate: mitochondria--AGP overlap.
+- Check images: mitochondria versus actin, Golgi and plasma membrane.
 
 # Speaker note: JCP2022_905491 maps to AVPR2 in the pinned ORF metadata, so the perturbation is overexpression.
 # Screenshot: Cells / Correlation_K_Mito / AGP, normalized feature median -0.21309228714749423.
@@ -172,22 +175,22 @@ Profiles summarize cellular appearance so we can compare and search large datase
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.46\textwidth}
-\textbf{Measure many aspects of cell state}\par\medskip
+\textbf{Feature families}\par\medskip
 \small
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.60\linewidth}@{}}
 \textbf{Size / shape} & Nuclear area, elongation \\[6pt]
 \textbf{Intensity} & Mitochondrial staining \\[6pt]
-\textbf{Texture} & Fine or coarse patterns \\[6pt]
-\textbf{Correlation} & Relationships between channels \\[6pt]
-\textbf{Distribution} & Peripheral or perinuclear signal
+\textbf{Texture} & Fine/coarse patterns \\[6pt]
+\textbf{Correlation} & Between-channel patterns \\[6pt]
+\textbf{Distribution} & Peripheral/perinuclear signal
 \end{tabular}
 \end{column}
 \begin{column}{0.50\textwidth}
 \textbf{Which perturbations change nuclear size?}
 \begin{itemize}
-\item Select nuclear area in the feature table.
-\item Rank perturbations by feature value and significance.
-\item Inspect all available images for a perturbation.
+\item Select nuclear area.
+\item Rank perturbations by feature value.
+\item Check activity, images and controls.
 \end{itemize}
 \end{column}
 \end{columns}
@@ -204,20 +207,19 @@ Profiles summarize cellular appearance so we can compare and search large datase
 #+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
 [[file:assets/hub-gallery.png]]
 
-- Inspect cells across fields and imaging channels.
-- Retrieve the images and relevant controls for a closer comparison.
+- Inspect fields and channels; retrieve matched controls.
 
 # Speaker note: PROZ is not a negative-control label; the historical gallery is not a matched-control comparison.
 
-** Ask any AI assistant to explore the data for you, or build an interactive notebook
+** Ask an AI assistant to build a notebook
 #+BEGIN_QUOTE
-Using the JUMP Hub documentation, write a notebook that links selected cells to their images and measurements. Include the source identifiers and save the analysis steps.
+Using JUMP Hub docs, link selected cells to images and measurements. Record identifiers and analysis steps.
 #+END_QUOTE
 
-- The tools and documentation we build for researchers can also be used by AI agents.
-- Biological expertise is essential for validating results.
-- Robust, reproducible tools help agents use consistent methods across analyses.
-- Extend the notebook with image models through nahual.
+- Shared tools support reproducible workflows.
+- Biological experts validate the results.
+
+# Speaker note: Researchers and agents can use the same documentation and tools. Optional model extensions through Nahual are on additional page 23.
 
 # Speaker note: Use an external AI assistant, not a built-in Hub chatbot. Generated code is a draft requiring verification.
 # Presenter experience: without shared tools, agents may solve the same problem in different ways. Tested implementations, recorded parameters and versions support consistency; experts validate the biological interpretation.
@@ -225,7 +227,7 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 # The following recorded marimo notebook is implemented; it is a separate single-cell example, not a gene/control study.
 
 ** Identify and explore cell subpopulations
-*Interactive marimo notebook built from JUMP images and measurements*
+*Interactive marimo notebook*
 
 #+BEGIN_EXPORT latex
 \begin{center}
@@ -233,8 +235,8 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \end{center}
 #+END_EXPORT
 
-- Each dot is one of 2,223 cells from a JUMP Target-2 plate.
-- Select cells to update their images, area distribution and measurement summaries.
+- Each dot is a cell: 2,223 from one Target-2 plate.
+- Select cells; inspect images, area and other features.
 
 # Playback cue: PDF page 13, visible slide number 12. Play jump-cell-interactivity.mp4 in a local player.
 # The MP4 is a companion file, not embedded media. Narrate select -> inspect -> change channel -> reset -> select elsewhere.
@@ -245,17 +247,15 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 # If playback fails, use this still and the next slide without troubleshooting on stage.
 
 ** How do cells in another region compare?
-*The same notebook, with a second selection*
-
 #+BEGIN_EXPORT latex
 \begin{center}
 \href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
 \end{center}
 #+END_EXPORT
 
-- Select another region: 224 cells in this example.
-- Compare cell images, areas and measurement summaries.
-- [[https://doi.org/10.5281/zenodo.23462248][Watch the recorded demo (23 s) on Zenodo]].
+- Second selection: 224 cells.
+- Compare images and measurements.
+- [[https://doi.org/10.5281/zenodo.23462248][Watch demo (23 s)]].
 
 # Speaker note: One plate, six wells, twelve fields; no treatment or control assignments.
 # The reference is all loaded cells, including the selection. Feature-based selection changes distributions by construction.
@@ -267,12 +267,12 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 ** Modern tools make image analysis more accessible
 #+BEGIN_EXPORT latex
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
-\textbf{Segmentation} & Cellpose: masks for cells and nuclei. \\[0.65em]
-\textbf{Profiles} & cp\_measure: images and masks $\rightarrow$ quantitative profiles. \\[0.65em]
+\textbf{Segmentation} & Cellpose: cell and nucleus masks. \\[0.65em]
+\textbf{Profiles} & cp\_measure: images + masks $\rightarrow$ profiles. \\[0.65em]
 %\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
-\textbf{Next-Generation data formats} & Parquet tables, Zarr arrays and JPEG XL image compression. \\[0.65em]
-\textbf{Notebooks} & marimo: reactive notebooks and interactive apps. \\[0.65em]
-\textbf{Python setup} & uv: fast package management, environments and lockfiles.
+\textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
+\textbf{Notebooks} & marimo: reactive notebooks and apps. \\[0.65em]
+\textbf{Python setup} & uv: environments, packages and lockfiles.
 \end{tabular}\par\vspace{1em}
 \centering\textbf{AI can turn these tools into workflows.}
 #+END_EXPORT
@@ -326,8 +326,8 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \begin{column}{0.53\textwidth}
 \textbf{cp\_measure: feature extraction in Python}
 \begin{itemize}
-\item Build profiles of thousands of features across channels and cell compartments.
-\item Integrate to your own Python pipelines.
+\item Thousands of features across channels and compartments.
+\item Fits your Python pipeline.
 \item Fastest software to obtain interpretable morphological features (>2x CellProfiler).
 \end{itemize}
 \end{column}
@@ -359,7 +359,7 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \normalsize
 \begin{itemize}
 \item Evaluate lysosomal acidification probes in cardiomyocytes.
-\item Measure probe uptake, lysosomal localization and morphological changes over time.
+\item Uptake, localization and morphology over time.
 \end{itemize}
 \end{block}
 \end{column}
@@ -368,8 +368,8 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \small Minh Doan, GSK \par
 \normalsize
 \begin{itemize}
-\item Compare bright-field, Cell Painting, cell-cycle and viability readouts.
-\item Identify shared and complementary compound responses across assays.
+\item Bright-field, Cell Painting, cell cycle and viability.
+\item Shared and complementary compound responses.
 \end{itemize}
 \end{block}
 \end{column}
@@ -394,11 +394,11 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 # The spatial integration is supported by cp_measure's published Xenium/H&E/Squidpy example, not a built-in Hub capability.
 
 ** Take-home messages
-- Morphological profiles provide a quantitative representation of cell state.
-- We make JUMP data and query tools accessible to both researchers and AI agents.
-- We are building the foundations for agent-driven workflows that connect new microscopy images to quantitative insights.
-- Biological expertise is essential: experts remain in the loop to validate results.
-- Robust, reproducible tools help agents use consistent methods across analyses.
+- *Profiles:* quantify cell state.
+- *Access:* JUMP data and tools for researchers and AI agents.
+- *Workflows:* building foundations for agent-driven analysis, from images to insights.
+- *Experts:* biological validation remains essential.
+- *Tools:* reproducible methods support consistent analysis.
 
 # Speaker note: The presenter requested explicit take-home points on expert validation and reproducible tools.
 # The first three retain the approved core messages; expert validation is separated from the third, and reproducible tools are added as the fifth.
@@ -498,11 +498,27 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 # Model-specific input preparation, dimensions, parameters, dependencies, licences and validation still apply. No universal plug-and-play or same-output guarantee is claimed.
 # Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
 
-** Cells as vectors: useful does not always mean interpretable
+** Words as vectors: word2vec
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.78\textheight :options keepaspectratio
+[[file:assets/word2vec-example.pdf]]
+
+#+BEGIN_EXPORT latex
+\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
+#+END_EXPORT
+
+# Speaker note: Start with words before moving to cells. Word2vec learns numerical word representations from language context.
+# The country-capital analogy is a teaching example: Paris minus France plus Italy can point toward Rome in a learned vector space.
+# These two-dimensional positions are invented, not a trained model output or a quantitative test. The arithmetic is approximate and depends on training and evaluation.
+# Real embeddings have many dimensions; individual axes are not predefined concepts such as age, gender or biological properties. Learned relations can reflect corpus biases.
+# The user-supplied Words As Vectors image inspired the teaching sequence; this is original vector artwork, not a claim that its hand-labelled axes are real word2vec coordinates.
+
+** From words to cells: vectors for comparison
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
 [[file:assets/vector-interpretability.pdf]]
 
-# Speaker note: Additional slide for questions. This original illustration is a teaching cartoon, not measured data.
+# Speaker note: Additional slide for questions. Transition: word vectors describe language context; cell profiles describe morphological appearance.
+# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
+# This original illustration is a teaching cartoon, not measured data.
 # A/B are non-senescent examples and C/D senescent examples. A/C show interconnected mitochondria; B/D show fragmented mitochondria.
 # The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
 # Both groups include both mitochondrial patterns: no causal link between senescence and fragmentation is asserted. Fragmented means separate mitochondrial elements, not cristae partitioning.
