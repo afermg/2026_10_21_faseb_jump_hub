@@ -416,16 +416,6 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 # The concordance notebook compares active-compound sets and activity rankings across assays; no new concordance result or metric is claimed here.
 # The spatial integration is supported by cp_measure's published Xenium/H&E/Squidpy example, not a built-in Hub capability.
 
-** Reality check: from profiles to biology
-- Batch effects can resemble biology.
-- Similar profiles do not establish a shared mechanism.
-- The bottleneck is experimental follow-up.
-
-# Speaker note: Batch correction helps but does not replace experimental design, matched controls and independent replication.
-# Profiles prioritize hypotheses; test them with targeted experiments and independent readouts in the appropriate biological context.
-# Closing line: We can generate hypotheses faster than we can experimentally validate them.
-# This is a practical caution, not a measured throughput claim or a guarantee that correction removes all batch effects. Allow 30 seconds.
-
 ** Take-home messages
 - Profiles: quantify cell state.
 - Access: JUMP data and tools for researchers and AI agents.
@@ -545,6 +535,17 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 # The 4.8 TB Zstd store is losslessly compressed, not an uncompressed baseline. The two numeric columns are not an area-proportional chart.
 # Lossy compression changes pixel values; validate suitability for the intended analysis. This slide makes no performance-equivalence or lossless-quality claim.
 # The earlier Target-2 recording is a separate subanalysis, not the main release cohort.
+
+** Reality check: from profiles to biology
+- Batch effects can resemble biology.
+- Similar profiles do not establish a shared mechanism.
+- The bottleneck is experimental follow-up.
+
+# Speaker note: Batch correction helps but does not replace experimental design, matched controls and independent replication.
+# Profiles prioritize hypotheses; test them with targeted experiments and independent readouts in the appropriate biological context.
+# Closing line: We can generate hypotheses faster than we can experimentally validate them.
+# This is a practical caution, not a measured throughput claim or a guarantee that correction removes all batch effects.
+# Additional slide after QR and JUMP-lite, at the presenter's request; not scheduled narration.
 
 ** Nahual: swap models within one workflow
 #+BEGIN_EXPORT latex
