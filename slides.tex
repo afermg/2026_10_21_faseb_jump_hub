@@ -165,7 +165,7 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \begin{itemize}
 \item Select nuclear area in the feature table.
 \item Rank perturbations by feature value and significance.
-\item Inspect candidate images and compare replicate measurements.
+\item Inspect all available images for a perturbation.
 \end{itemize}
 \end{column}
 \end{columns}
@@ -182,7 +182,7 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \item Retrieve the images and relevant controls for a closer comparison.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org000000b}]{Ask an AI assistant to write your exploration notebook}
+\begin{frame}[label={sec:org000000b}]{Ask any AI assistant to explore the data for you, or build an interactive notebook}
 \begin{quote}
 Using the JUMP Hub documentation, write a notebook that links selected cells to their images and measurements. Include the source identifiers and save the analysis steps.
 \end{quote}
@@ -204,7 +204,6 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \begin{itemize}
 \item Each dot is one of 2,223 cells from a JUMP Target-2 plate.
 \item Select cells to update their images, area distribution and measurement summaries.
-\item \href{https://doi.org/10.5281/zenodo.23462248}{Watch the recorded demo (23 s) on Zenodo}.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org000000d}]{How do cells in another region compare?}
@@ -220,16 +219,15 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \item \href{https://doi.org/10.5281/zenodo.23462248}{Watch the recorded demo (23 s) on Zenodo}.
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org000000e}]{Develop and benchmark workflows with JUMP-lite}
-\begin{center}
-\includegraphics[keepaspectratio,width=0.96\linewidth,height=0.60\textheight]{assets/jump-lite-paper.png}
-\end{center}
-
-\begin{itemize}
-\item Use compact reference images to develop and compare computational methods.
-\item Test an analysis workflow before applying it to your own images.
-\item Connect reference data and measurement tools into an end-to-end analysis.
-\end{itemize}
+\begin{frame}[label={sec:org000000e}]{Modern tools make image analysis more accessible}
+\begin{tabular}{@{}p{0.23\textwidth}p{0.72\textwidth}@{}}
+\textbf{Segmentation} & Cellpose: masks for cells and nuclei. \\[0.65em]
+\textbf{Profiles} & cp\_measure: images and masks $\rightarrow$ quantitative profiles. \\[0.65em]
+\textbf{Tracking} & Trackastra for cells/nuclei; specialised trackers for organelles. \\[0.65em]
+\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
+\textbf{Data handling} & Parquet tables, Zarr arrays and JPEG XL image compression.
+\end{tabular}\par\vspace{1.5em}
+\centering\textbf{AI streamlines combining these tools into workflows.}
 \end{frame}
 \begin{frame}[label={sec:org000000f}]{Extract morphological profiles from your own images}
 \begin{columns}[c,onlytextwidth]
@@ -241,21 +239,21 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \textbf{cp\_measure: feature extraction in Python}
 \begin{itemize}
 \item Build profiles of thousands of features across channels and cell compartments.
-\item Connect your own images and masks to downstream analysis in Python.
-\item Intensity benchmark: 28$\times$ faster in v0.2.0 than v0.1.19.
+\item Integrate to your own workflows.
 \end{itemize}
 \end{column}
 \end{columns}
 \end{frame}
-\begin{frame}[label={sec:org0000010}]{Modern tools make image analysis more accessible}
-\begin{tabular}{@{}p{0.23\textwidth}p{0.72\textwidth}@{}}
-\textbf{Segmentation} & Cellpose: masks for cells and nuclei. \\[0.65em]
-\textbf{Profiles} & cp\_measure: images and masks $\rightarrow$ quantitative profiles. \\[0.65em]
-\textbf{Tracking} & Trackastra for cells/nuclei; specialised trackers for organelles. \\[0.65em]
-\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
-\textbf{Data handling} & Parquet tables, Zarr arrays and JPEG XL image compression.
-\end{tabular}\par\vspace{1.5em}
-\centering\textbf{Agents reduce the friction of combining these tools into workflows.}
+\begin{frame}[label={sec:org0000010}]{Developing new methods? Benchmark workflows with JUMP-lite}
+\begin{center}
+\includegraphics[keepaspectratio,width=0.96\linewidth,height=0.60\textheight]{assets/jump-lite-paper.png}
+\end{center}
+
+\begin{itemize}
+\item Use compact reference images to develop and compare computational methods.
+\item Test an analysis workflow before applying it to your own images.
+\item Connect reference data and measurement tools into an end-to-end analysis.
+\end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org0000011}]{From lysosomal probes to spatial omics}
 \begin{columns}[T,onlytextwidth]
@@ -287,8 +285,6 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \end{block}
 \end{column}
 \end{columns}
-\medskip
-\centering Images and masks $\rightarrow$ Quantitative profiles $\rightarrow$ Biological questions
 \end{frame}
 \begin{frame}[label={sec:org0000012}]{Take-home messages}
 \begin{itemize}
@@ -306,31 +302,20 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \includegraphics[width=0.98\linewidth,height=0.60\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
 {\small GSK provided part of the funding for this work.}\par
 \end{frame}
-\begin{frame}[label={sec:org0000014}]{Explore the projects and slides}
+\begin{frame}[label={sec:org0000014}]{JUMP Hub and slides}
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.23\textwidth}
+\begin{column}{0.48\textwidth}
 \centering
-\small\href{https://github.com/afermg/JUMP_lite}{JUMP-lite}\par\smallskip
-\href{https://github.com/afermg/JUMP_lite}{\includegraphics[width=30mm]{assets/qr-jump-lite.png}}
+\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}\par\smallskip
+\href{https://broadinstitute.github.io/jump_hub/}{\includegraphics[width=40mm]{assets/qr-jump-hub.png}}\par\smallskip
+\href{https://broad.io/jump}{\texttt{broad.io/jump}}
 \end{column}
-\begin{column}{0.23\textwidth}
+\begin{column}{0.48\textwidth}
 \centering
-\small\href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}\par\smallskip
-\href{https://broadinstitute.github.io/jump_hub/}{\includegraphics[width=30mm]{assets/qr-jump-hub.png}}
-\end{column}
-\begin{column}{0.23\textwidth}
-\centering
-\small\href{https://github.com/afermg/cp_measure}{cp\_measure}\par\smallskip
-\href{https://github.com/afermg/cp_measure}{\includegraphics[width=30mm]{assets/qr-cp-measure.png}}
-\end{column}
-\begin{column}{0.23\textwidth}
-\centering
-\small\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{Slides (PDF)}\par\smallskip
-\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{\includegraphics[width=30mm]{assets/qr-slides.png}}
+\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{Slides (PDF)}\par\smallskip
+\href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{\includegraphics[width=40mm]{assets/qr-slides.png}}
 \end{column}
 \end{columns}
-\medskip
-\centering\small\href{https://doi.org/10.5281/zenodo.23462248}{Watch the recorded demo (23 s) on Zenodo}
 \end{frame}
 \begin{frame}[label={sec:org0000015}]{References}
 \begin{columns}[T,onlytextwidth]
@@ -349,8 +334,8 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \small
 \textbf{Analysis toolbox}
 \begin{itemize}
-\item \href{https://arxiv.org/abs/2608.07632v3}{Muñoz et al. (2026). JUMP-lite, Fig. 1a,b.}\newline \href{https://github.com/afermg/JUMP_lite}{Data and documentation}.
-\item \href{https://arxiv.org/abs/2507.01163v1}{Muñoz et al. (2025). cp\_measure, Fig. 1.}\newline \href{https://github.com/afermg/cp_measure}{Code}; \href{https://github.com/afermg/cp_measure/blob/6ffe85e0e7111f4599ec5c884542a69bbbb9dc42/benchmarks/releases/v0.2.0.md}{v0.2.0 speed benchmark}.
+\item \href{https://arxiv.org/abs/2608.07632v3}{Muñoz et al. (2026). JUMP-lite.}\newline \href{https://github.com/afermg/JUMP_lite}{Data and documentation}.
+\item \href{https://arxiv.org/abs/2507.01163v1}{Muñoz et al. (2025). cp\_measure.}\newline \href{https://github.com/afermg/cp_measure}{Code}; \href{https://github.com/afermg/cp_measure/blob/6ffe85e0e7111f4599ec5c884542a69bbbb9dc42/benchmarks/releases/v0.2.0.md}{v0.2.0 speed benchmark}.
 \item \href{https://github.com/MouseLand/cellpose}{Cellpose}: cell/nucleus segmentation.
 \item \href{https://github.com/weigertlab/trackastra}{Trackastra}: cell tracking.
 \item \href{https://github.com/afermg/nahual}{nahual}: image-model interfaces.
@@ -359,13 +344,10 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \end{column}
 \begin{column}{0.31\textwidth}
 \small
-\textbf{Resources and credits}
+\textbf{Resources}
 \begin{itemize}
 \item \href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}: \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{biological questions and table export}.
 \item Recording: \href{https://github.com/afermg/JUMP_lite/blob/main/cpg_upload/TARGET2_ARTIFACTS_README.md}{JUMP Target-2 artifacts}.
-\item \href{https://github.com/afermg/2024_05_JUMPTools_CellCircuits}{Cell Circuits (2024)}: Hub images, Broad/JUMP logos.
-\item \href{https://github.com/afermg/2024_10_i2k_poster_flashtalk}{I2K (2024)}: channels and adapted profiling illustration.
-\item \href{https://www.purdue.edu/brand/visual-identity/logo/}{Purdue University}: official logo.
 \end{itemize}
 \end{column}
 \end{columns}

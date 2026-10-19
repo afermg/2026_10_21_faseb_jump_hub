@@ -26,20 +26,23 @@ authorized. No automatic PDF publication or visibility change is configured.
 
 - `slides.org`: authoring source mirrored from Overleaf.
 - `slides.tex`: **current presentation root**, compiled with XeLaTeX.
-- `assets/`: figures, screenshots, logos and four QR images.
+- `assets/`: figures, screenshots, logos and two QR images.
 - `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
 
-Current Overleaf snapshot: `de9927a06517cd1fde22e0fb4bd75b2462c524de`.
-All 21 Overleaf files are mirrored unchanged; this README and `.gitignore` are
+Current Overleaf snapshot: `6863455585a7e214dbbdca3ea853072004e6bd46`.
+All 19 Overleaf files are mirrored unchanged; this README and `.gitignore` are
 repository-specific additions. The deck contains 22 pages, with a 23-minute
 narration plan within the 25-minute slot. Gratitude is on page 20, the dedicated
 QR page is 21, and references are on page 22. The ORF card shows ~12,600 genes
 without the construct count; the dataset introduction identifies 12 acquiring
 laboratories. The video remains a separate offline companion and is also public
 on [Zenodo](https://doi.org/10.5281/zenodo.23462248) under CC BY 4.0. Both snapshot
-images and demo text links on PDF pages 13/14, plus the resources-page link on
-page 21, open the recording. Only the MP4 was uploaded to Zenodo; the PDF and
-repository-publication gates above remain unchanged.
+images on PDF pages 13/14 and the demo text link on page 14 open the recording.
+Page 21 now contains only JUMP Hub and Slides (PDF), with two 40-mm QR codes and
+the visible shortlink `broad.io/jump`. Direct Overleaf edits through `77620e9`,
+including the revised wording and tools / cp_measure / JUMP-lite ordering, are
+preserved. Only the MP4 was uploaded to Zenodo; the PDF and repository-publication
+gates above remain unchanged.
 
 Continue editing through the established Org-to-Overleaf pipeline. Direct
 Overleaf edits take content priority; preserve and reconcile them before
@@ -54,6 +57,9 @@ projects must remain private unless separately authorized.
 
 ## Credits
 
-Sources, papers, figure credits and tool links appear on the final References
-slide. Third-party images, logos and tools retain their respective rights and
-licences; no blanket licence is applied to those materials here.
+Scientific references and tool links appear on the final References slide.
+Illustration/logo credits are no longer displayed there, at the presenter's
+request. Their provenance remains in the private authoring repository's
+[`docs/provenance.md`](https://github.com/afermg/org-overleaf-sync/blob/main/docs/provenance.md)
+and retained Git history. Third-party images, logos and tools retain their
+respective rights and licences; no blanket licence is applied here.
