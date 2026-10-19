@@ -29,12 +29,15 @@ authorized. No automatic PDF publication or visibility change is configured.
 - `assets/`: figures, screenshots, logos and two QR images.
 - `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
 
-Current Overleaf snapshot: `def3b89f4a9f544e5e447c4c2f4b656d3744cf34`.
+Current Overleaf snapshot: `846e20489ca0cf997d5b91952f76e75dbe3f3a82`.
 All 21 Overleaf files are mirrored unchanged; this README and `.gitignore` are
 repository-specific additions. The deck contains **22 main-talk pages and three
 additional slides** (25 total), with a 23-minute narration plan within the 25-minute slot.
-The main content pages have 32.7% less extractable text; supporting explanations
-remain in speaker notes. This count excludes unchanged text within images.
+The main content pages have 34.9% less extractable text (782→509); supporting
+explanations remain in speaker notes. This count excludes numbers and unchanged
+text within images. The latest pass removes three redundant bullets and two
+word2vec explanatory sentences. Page 20 acknowledges GSK and NIH MIRA
+(R35 GM122547), awarded to Anne E. Carpenter.
 Page 3 uses the presenter's Mac-edited vector workflow reconstruction. The
 toolbox on page 15 includes marimo and uv; cp_measure and JUMP-lite follow.
 The shortened live JUMP-lite wording and removal of the historical benchmark

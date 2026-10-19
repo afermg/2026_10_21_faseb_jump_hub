@@ -47,8 +47,7 @@
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.72\textheight :options keepaspectratio
 [[file:assets/cell-painting-edited.pdf]]
 
-- Stain → image → measure → compare.
-
+# Speaker note: Narrate stain → image → measure → compare; the figure carries the on-screen explanation.
 # Speaker note: The presenter edited this reconstruction in Inkscape on the Mac; the deck uses a vector PDF exported there with outlined text.
 # The editable SVG is retained separately. Schematic details are illustrative, not recovered quantitative data; original source and Mac-edit hashes are recorded in docs/assets.json.
 # Similarity helps prioritize biological hypotheses; it does not establish mechanism.
@@ -151,7 +150,6 @@ Profiles are numerical descriptions of cells.
 [[file:assets/hub-matches.png]]
 
 - Prioritize matches for follow-up.
-- Export the filtered table as JSON.
 
 # Speaker note: JSON export is documented by the current JUMP_rr tutorial. Do not promise a CSV button.
 # Profile similarity is not proof of a shared mechanism. This historical MYT1 example is separate from AVPR2 below.
@@ -207,8 +205,7 @@ Profiles are numerical descriptions of cells.
 #+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
 [[file:assets/hub-gallery.png]]
 
-- Inspect fields and channels; retrieve matched controls.
-
+# Speaker note: Inspect fields and channels; retrieve matched controls.
 # Speaker note: PROZ is not a negative-control label; the historical gallery is not a matched-control comparison.
 
 ** Ask an AI assistant to build a notebook
@@ -411,10 +408,13 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
 \includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
 \includegraphics[width=0.98\linewidth,height=0.60\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
-{\small GSK provided part of the funding for this work.}\par
+{\small Supported by GSK and NIH MIRA (R35 GM122547).}\par
 #+END_EXPORT
 
-# Speaker note: Thank Broad, Purdue and the JUMP partners. The partner sheet is historical.
+# Speaker note: Thank Broad, Purdue and the JUMP partners, and acknowledge GSK and NIH MIRA support.
+# R35 GM122547 is awarded to Anne E. Carpenter, not to the presenter individually; the presenter confirmed support through this grant.
+# Verified in cp_measure (arXiv:2507.01163v1, Acknowledgements) and Chandrasekaran et al. (2025), doi:10.1038/s41592-025-02753-9, Acknowledgments.
+# The partner sheet is historical.
 # Only JUMP prefixes were added to its headings; logos and collaborator entries are unchanged.
 # Edinburgh is credited on Kenneth's application slide, not repeated here. Purdue remains the confirmed affiliation.
 # The presenter requested separate gratitude and QR slides. Show or skip References, then leave the final QR page visible.
