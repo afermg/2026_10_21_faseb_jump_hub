@@ -83,6 +83,18 @@ Profiles summarize cellular appearance so we can compare and search large datase
 # Normalization, training objectives and experimental context affect comparisons. Retain images for inspection.
 # Neither route alone establishes mechanism or removes batch effects. Do not claim one universally outperforms the other.
 
+** Cells as vectors: useful does not always mean interpretable
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
+[[file:assets/vector-interpretability.pdf]]
+
+# Speaker note: This original vector illustration is a teaching cartoon inspired by the presenter's words-as-vectors reference, not measured data.
+# A/B are non-senescent examples and C/D senescent examples. A/C show interconnected mitochondria; B/D show fragmented mitochondria.
+# The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
+# Both groups include both mitochondrial patterns: no causal link between senescence and fragmentation is asserted. Fragmented means separate mitochondrial elements, not cristae partitioning.
+# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
+# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
+# Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
+
 ** JUMP: Joint Undertaking for Morphological Profiling
 - A public Cell Painting dataset acquired across *12 laboratories*, covering nearly 139,000 chemical and genetic perturbations.
 
@@ -236,7 +248,7 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 - Each dot is one of 2,223 cells from a JUMP Target-2 plate.
 - Select cells to update their images, area distribution and measurement summaries.
 
-# Playback cue: PDF page 13, visible slide number 12. Play jump-cell-interactivity.mp4 in a local player.
+# Playback cue: PDF page 14, visible slide number 13. Play jump-cell-interactivity.mp4 in a local player.
 # The MP4 is a companion file, not embedded media. Narrate select -> inspect -> change channel -> reset -> select elsewhere.
 # Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0). Both snapshot images and their demo links are clickable.
 # Prefer local playback on stage; the public link is for later viewing.
@@ -286,7 +298,24 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 # These are complementary tools, not a claim that every packaging or reproducibility problem is solved. Biological validation remains necessary.
 # Source links are on References; illustration provenance is retained in docs/provenance.md.
 
-** Try different image-analysis models with Nahual
+** Nahual: swap models within one workflow
+#+BEGIN_EXPORT latex
+\centering
+{\Large\bfseries Swap models. Keep your workflow.}\par\bigskip
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{}l l@{}}
+\textbf{Image features} & \fbox{DINOv2}\ $\leftrightarrow$\ \fbox{DINOv3}\ $\leftrightarrow$\ \fbox{OpenPhenom}\ $\leftrightarrow$\ \fbox{MorphEm} \\
+\textbf{Segmentation} & \fbox{Cellpose}\ $\leftrightarrow$\ \fbox{StarDist} \\
+\textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
+\end{tabular}
+#+END_EXPORT
+
+# Speaker note: A deliberately simple names-only model overview, requested after the presenter hid the longer Nahual explanation.
+# Swap alternatives within a task through Nahual's common setup/process interface, not arbitrary swaps between incompatible task types.
+# Model-specific input preparation, dimensions, parameters, dependencies, licences and validation still apply. No universal plug-and-play or same-output guarantee is claimed.
+# Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
+
+** Try different image-analysis models with Nahual :noexport:
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.46\textwidth}
@@ -344,9 +373,7 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 #+ATTR_LATEX: :width 0.96\linewidth :height 0.60\textheight :options keepaspectratio
 [[file:assets/jump-lite-paper.png]]
 
-- Use compact reference images to develop and compare computational methods.
-- Test an analysis workflow before applying it to your own images.
-- Connect reference data and measurement tools into an end-to-end analysis.
+Use our compressed images to contrast your own vs the state-of-the-art.
 
 # Speaker note: Preserve the requested new-data framing. JUMP-lite supplies reference data, not a turnkey analysis engine.
 # Explain dataset selection and smaller size, not codec/model infrastructure. Figure 1a,b is from the cited preprint.

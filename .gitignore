@@ -1,5 +1,7 @@
-# PDFs stay local until the presenter explicitly approves final publication.
+# The presentation PDF stays local until explicit final-publication approval.
 *.pdf
+# This vector figure is source artwork, not the presentation PDF.
+!assets/vector-interpretability.pdf
 
 # TeX build products.
 *.aux
