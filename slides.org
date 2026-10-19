@@ -97,9 +97,23 @@ Profiles are numerical descriptions of cells.
 # The user-supplied Words As Vectors image inspired the teaching sequence; this is original vector artwork, not a claim that its hand-labelled axes are real word2vec coordinates.
 # Main-talk placement: immediately before JUMP; 30 seconds, borrowed from the earlier profiles introduction.
 
+** From words to cells: vectors for comparison
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
+[[file:assets/vector-interpretability.pdf]]
+
+# Speaker note: Follow word2vec immediately with cell vectors, before JUMP, preserving the presenter's latest direct order edit. Word vectors describe language context; cell profiles describe morphological appearance. Allow 30 seconds, borrowed from the JUMP overview.
+# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
+# This original illustration is a teaching cartoon, not measured data.
+# A/B are non-senescent examples and C/D senescent examples. The vertical axis is an illustrative mitochondrial-channel granularity measurement at a specified spatial scale.
+# The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
+# Granularity describes image-signal structure across spatial scales; it is not a direct measure of mitochondrial fragmentation, organelle number or cristae. The retained network-like/punctate cartoons do not determine the invented scores. Both example groups span the illustrated granularity values; no causal link to senescence is asserted.
+# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
+# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
+# Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
+
 ** JUMP: Joint Undertaking for Morphological Profiling
-- Public Cell Painting data: 12 laboratories, nearly *136,000 perturbations*.
-- *~58.3 million single-channel TIFF images*.
+- Public Cell Painting data: 12 laboratories, nearly 136,000 perturbations.
+- ~58.3 million images.
 
 #+BEGIN_EXPORT latex
 \begin{center}
@@ -129,20 +143,6 @@ Profiles are numerical descriptions of cells.
 # The principal dataset spans 12 data-generating centers. Its 13 Metadata_Source IDs include source_7 and source_13 from the same center.
 # Verified in JUMP Hub data_description.md and terra_workspace.md at e742f5aa37472eb17f326ba8315d22b27e58f330; not every lab acquired every modality or perturbation.
 # This merges the former audience-question slide into JUMP, keeping that question before the Hub overview.
-
-** From words to cells: vectors for comparison
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
-[[file:assets/vector-interpretability.pdf]]
-
-# Speaker note: Main-talk transition immediately after JUMP: word vectors describe language context; cell profiles describe morphological appearance. Allow 30 seconds, borrowed from the JUMP overview.
-# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
-# This original illustration is a teaching cartoon, not measured data.
-# A/B are non-senescent examples and C/D senescent examples. A/C have interconnected mitochondria; B/D have fragmented mitochondria.
-# The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
-# Both groups include both mitochondrial patterns: no causal link between senescence and fragmentation is asserted. Fragmented means separate mitochondrial elements, not cristae partitioning.
-# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
-# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
-# Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
 
 ** Computational methods improve in benchmarks, how do we ensure they benefit experimental biologists?
 #+BEGIN_EXPORT latex
@@ -198,18 +198,18 @@ Can I use it to answer my biological question?
 # Speaker note: Use the current availability tools for a new query. The illustration is an archived 2024 interface.
 
 ** Which perturbations produce related phenotypes?
-*MYT1 example*
+MYT1 example
 
 #+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
 [[file:assets/hub-matches.png]]
 
-- Prioritize matches for follow-up.
+- We precalculated statistical metrics for every pair.
 
 # Speaker note: JSON export is documented by the current JUMP_rr tutorial. Do not promise a CSV button.
 # Profile similarity is not proof of a shared mechanism. This historical MYT1 example is separate from AVPR2 below.
 
 ** How does cell morphology change?
-*AVPR2 overexpression example*
+AVPR2 overexpression example
 
 #+ATTR_LATEX: :width 0.98\linewidth :height 0.47\textheight :options keepaspectratio
 [[file:assets/hub-features.png]]
@@ -254,7 +254,7 @@ Can I use it to answer my biological question?
 # Mitochondrial staining intensity alone is not an absolute measurement of mitochondrial abundance.
 
 ** What do the perturbed cells look like?
-*MYT1 and PROZ gallery examples*
+MYT1 and PROZ gallery examples
 
 #+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
 [[file:assets/hub-gallery.png]]
@@ -317,7 +317,8 @@ Interactive marimo notebook
 ** Modern tools make image analysis more accessible
 #+BEGIN_EXPORT latex
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
-\textbf{Segmentation} & Cellpose: cell and nucleus masks. \\[0.65em]
+\textbf{Segmentation / spots} & Cellpose: cell/nucleus masks; Spotiflow: fluorescent spots. \\[0.65em]
+\textbf{Tracking} & Trackastra and Ultrack: link cells over time. \\[0.65em]
 \textbf{Profiles} & cp\_measure: images + masks $\rightarrow$ profiles. \\[0.65em]
 %\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
 \textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
@@ -327,7 +328,8 @@ Interactive marimo notebook
 #+END_EXPORT
 
 # Speaker note: This is a complementary toolbox, not a required five-step pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
-# Cellpose provides cell/nucleus segmentation. Trackastra links already segmented cells/nuclei in time-lapse data; do not claim it is validated for every organelle.
+# Cellpose provides cell/nucleus segmentation. Spotiflow detects fluorescent puncta; its Nahual wrapper converts detected centres into configurable disk labels, not measured object boundaries.
+# Trackastra links segmented cells/nuclei; Ultrack combines candidate segmentations and tracking. Restored names are task alternatives with model-specific inputs, not a claim of validated tracking for every organelle.
 # Generalist/specialised learned representations can be adapted where model weights, training interfaces and licences permit; fine-tuning needs appropriate data and held-out evaluation.
 # Parquet is columnar tabular storage, Zarr stores chunked multidimensional arrays, and JPEG XL is an image codec; they serve different roles.
 # The agent-integration claim reflects the presenter's experience, not a measured speedup or a fully autonomous workflow. Experts validate the biology.
@@ -405,7 +407,7 @@ Interactive marimo notebook
 \begin{block}{MisLocus: protein mislocalisation}
 \small Johan Fredin, Carpenter-Shen Lab, Purdue University\par
 \begin{itemize}
-\item Can rare genetic mutations change where proteins are located?
+\item Which rare genetic mutations change protein location?
 \item Compare microscopy of reference and variant proteins.
 \end{itemize}
 \end{block}
@@ -461,15 +463,31 @@ Interactive marimo notebook
 \centering
 \includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
 \includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
-{\small Carpenter-Singh Lab \quad\textbullet\quad Carpenter-Shen Lab}\par\smallskip
-{\small Anne E. Carpenter \quad Shantanu Singh \quad Beth Cimini}\par
-{\small Paula Llanos \quad Runxi Shen}\par\smallskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.34\textwidth}
+\centering\small
+\textbf{Carpenter-Singh Lab}\par
+Anne E. Carpenter\par
+Shantanu Singh
+\end{column}
+\begin{column}{0.30\textwidth}
+\centering\small
+\textbf{Cimini Lab}\par
+Beth Cimini\par
+Paula Llanos
+\end{column}
+\begin{column}{0.34\textwidth}
+\centering\small
+\textbf{Carpenter-Shen Lab}\par
+Runxi Shen
+\end{column}
+\end{columns}\par\smallskip
 \includegraphics[width=0.98\linewidth,height=0.50\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
-{\small Work on cp\_measure and JUMP-lite was supported by GSK and NIH MIRA (R35 GM122547).}\par
+{\small Work on cp\_measure was supported by GSK and NIH MIRA (R35 GM122547).}\par
 #+END_EXPORT
 
-# Speaker note: Explicitly thank Anne E. Carpenter, Shantanu Singh, Beth Cimini, Paula Llanos and Runxi Shen, alongside the Carpenter-Singh Lab, Carpenter-Shen Lab, Broad, Purdue and JUMP partners, and acknowledge GSK and NIH MIRA support.
-# The presenter requested the five individual names; Runxi's full name is confirmed on slide 1 of the supplied PowerPoint. The partner-sheet pixels are unchanged; only its display-height limit is reduced to fit the two name lines.
+# Speaker note: Explicitly thank Anne E. Carpenter and Shantanu Singh (Carpenter-Singh Lab), Beth Cimini and Paula Llanos together (Cimini Lab), and Runxi Shen (Carpenter-Shen Lab), alongside Broad, Purdue and JUMP partners, and acknowledge GSK and NIH MIRA support.
+# The presenter requested Beth and Paula under Cimini Lab. All five individual names remain; Runxi's full name is confirmed on slide 1 of the supplied PowerPoint. The partner-sheet pixels, aspect ratio and 0.50 textheight cap are unchanged.
 # The presenter will explain orally that the lab moved a couple of months ago; no move date or additional relocation claim is added to the slide.
 # R35 GM122547 is awarded to Anne E. Carpenter, not to the presenter individually; the presenter confirmed support through this grant.
 # Verified in cp_measure (arXiv:2507.01163v1, Acknowledgements) and Chandrasekaran et al. (2025), doi:10.1038/s41592-025-02753-9, Acknowledgments.
@@ -587,6 +605,7 @@ Interactive marimo notebook
 \begin{tabular}{@{}l l@{}}
 \textbf{Image features} & \fbox{DINOv2}\ $\leftrightarrow$\ \fbox{DINOv3}\ $\leftrightarrow$\ \fbox{OpenPhenom}\ $\leftrightarrow$\ \fbox{MorphEm} \\
 \textbf{Segmentation} & \fbox{Cellpose}\ $\leftrightarrow$\ \fbox{StarDist} \\
+\textbf{Spot detection} & \fbox{Spotiflow} \\
 \textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
 \end{tabular}
 #+END_EXPORT
@@ -595,3 +614,43 @@ Interactive marimo notebook
 # Swap alternatives within a task through Nahual's common setup/process interface, not arbitrary swaps between incompatible task types.
 # Model-specific input preparation, dimensions, parameters, dependencies, licences and validation still apply. No universal plug-and-play or same-output guarantee is claimed.
 # Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
+# Spotiflow is added as spot detection, not an interchangeable cell-boundary model. The Nahual wrapper rasterises detected centres into configurable disk labels for downstream measurement; disk geometry does not estimate a punctum's physical boundary.
+
+** MisLocus: a single-cell image benchmark
+#+BEGIN_EXPORT latex
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.54\textwidth}
+\centering
+\small Does a variant change where the protein is located?\par\medskip
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+LZTR1 reference\par\smallskip
+\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-reference.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+LZTR1 G248R\par\smallskip
+\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-g248r.png}
+\end{minipage}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{block}{Protein mislocalisation}
+\begin{itemize}
+\item Compare reference and variant proteins.
+\item Test for localisation changes.
+\item Evaluate image representations.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}\medskip
+\centering\small
+Johan Fredin, Carpenter-Shen Lab, Purdue University\par\smallskip
+\href{https://huggingface.co/datasets/anonymous-xyz96/MisLocus}{Dataset: MisLocus on Hugging Face}
+#+END_EXPORT
+
+# Additional visual example, adapted from slide 4 of the presenter-supplied get_slide_3.pptx; zero scheduled main-talk time. JUMP-lite remains unchanged on PDF 25.
+# Exact source microscopy pixels: image17.png is LZTR1 reference; image18.png is LZTR1 G248R, verified from slide XML image/text positions. Original aspect ratios retained; no cropping, enhancement or reanalysis.
+# Images illustrate the source's comparison; they do not by themselves establish a reproducible localisation change, causation or clinical pathogenicity. Controls, replicate analysis and independent evidence are needed.
+# The source's patient photograph, Noonan-syndrome causal framing, contact emails, redundant QR, model list and detailed workflow are omitted. Do not infer a clinical claim from these images.
+# MisLocus benchmarks image representations/analysis using the VarChAMP collection; this adaptation does not claim new image acquisition or new results. Credit retains the existing application-slide attribution.
+# The dataset link was decoded from the supplied slide's QR (image20.png) and returned HTTP 200 when checked. No manuscript, comments or unrelated proposal slides are distributed.

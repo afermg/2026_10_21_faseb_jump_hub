@@ -79,10 +79,15 @@ Profiles are numerical descriptions of cells.
 
 \hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
 \end{frame}
-\begin{frame}[label={sec:org0000005}]{JUMP: Joint Undertaking for Morphological Profiling}
+\begin{frame}[label={sec:org0000005}]{From words to cells: vectors for comparison}
+\begin{center}
+\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.83\textheight]{assets/vector-interpretability.pdf}
+\end{center}
+\end{frame}
+\begin{frame}[label={sec:org0000006}]{JUMP: Joint Undertaking for Morphological Profiling}
 \begin{itemize}
-\item Public Cell Painting data: 12 laboratories, nearly \alert{136,000 perturbations}.
-\item \alert{\textasciitilde{}58.3 million single-channel TIFF images}.
+\item Public Cell Painting data: 12 laboratories, nearly 136,000 perturbations.
+\item \textasciitilde{}58.3 million images.
 \end{itemize}
 
 \begin{center}
@@ -96,11 +101,6 @@ Profiles are numerical descriptions of cells.
 \begin{itemize}
 \item Which gene, compound or phenotype interests you?
 \end{itemize}
-\end{frame}
-\begin{frame}[label={sec:org0000006}]{From words to cells: vectors for comparison}
-\begin{center}
-\includegraphics[keepaspectratio,width=0.99\linewidth,height=0.83\textheight]{assets/vector-interpretability.pdf}
-\end{center}
 \end{frame}
 \begin{frame}[label={sec:org0000007}]{Computational methods improve in benchmarks, how do we ensure they benefit experimental biologists?}
 \begin{columns}[T,onlytextwidth]
@@ -144,18 +144,18 @@ Can I use it to answer my biological question?
 \end{center}
 \end{frame}
 \begin{frame}[label={sec:org000000a}]{Which perturbations produce related phenotypes?}
-\alert{MYT1 example}
+MYT1 example
 
 \begin{center}
 \includegraphics[keepaspectratio,width=0.93\linewidth,height=0.55\textheight]{assets/hub-matches.png}
 \end{center}
 
 \begin{itemize}
-\item Prioritize matches for follow-up.
+\item We precalculated statistical metrics for every pair.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org000000b}]{How does cell morphology change?}
-\alert{AVPR2 overexpression example}
+AVPR2 overexpression example
 
 \begin{center}
 \includegraphics[keepaspectratio,width=0.98\linewidth,height=0.47\textheight]{assets/hub-features.png}
@@ -190,7 +190,7 @@ Can I use it to answer my biological question?
 \end{columns}
 \end{frame}
 \begin{frame}[label={sec:org000000d}]{What do the perturbed cells look like?}
-\alert{MYT1 and PROZ gallery examples}
+MYT1 and PROZ gallery examples
 
 \begin{center}
 \includegraphics[keepaspectratio,width=0.93\linewidth,height=0.55\textheight]{assets/hub-gallery.png}
@@ -230,7 +230,8 @@ Interactive marimo notebook
 \end{frame}
 \begin{frame}[label={sec:org0000011}]{Modern tools make image analysis more accessible}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
-\textbf{Segmentation} & Cellpose: cell and nucleus masks. \\[0.65em]
+\textbf{Segmentation / spots} & Cellpose: cell/nucleus masks; Spotiflow: fluorescent spots. \\[0.65em]
+\textbf{Tracking} & Trackastra and Ultrack: link cells over time. \\[0.65em]
 \textbf{Profiles} & cp\_measure: images + masks $\rightarrow$ profiles. \\[0.65em]
 %\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
 \textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
@@ -269,7 +270,7 @@ Interactive marimo notebook
 \begin{block}{MisLocus: protein mislocalisation}
 \small Johan Fredin, Carpenter-Shen Lab, Purdue University\par
 \begin{itemize}
-\item Can rare genetic mutations change where proteins are located?
+\item Which rare genetic mutations change protein location?
 \item Compare microscopy of reference and variant proteins.
 \end{itemize}
 \end{block}
@@ -308,11 +309,27 @@ Interactive marimo notebook
 \centering
 \includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
 \includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
-{\small Carpenter-Singh Lab \quad\textbullet\quad Carpenter-Shen Lab}\par\smallskip
-{\small Anne E. Carpenter \quad Shantanu Singh \quad Beth Cimini}\par
-{\small Paula Llanos \quad Runxi Shen}\par\smallskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.34\textwidth}
+\centering\small
+\textbf{Carpenter-Singh Lab}\par
+Anne E. Carpenter\par
+Shantanu Singh
+\end{column}
+\begin{column}{0.30\textwidth}
+\centering\small
+\textbf{Cimini Lab}\par
+Beth Cimini\par
+Paula Llanos
+\end{column}
+\begin{column}{0.34\textwidth}
+\centering\small
+\textbf{Carpenter-Shen Lab}\par
+Runxi Shen
+\end{column}
+\end{columns}\par\smallskip
 \includegraphics[width=0.98\linewidth,height=0.50\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
-{\small Work on cp\_measure and JUMP-lite was supported by GSK and NIH MIRA (R35 GM122547).}\par
+{\small Work on cp\_measure was supported by GSK and NIH MIRA (R35 GM122547).}\par
 \end{frame}
 \begin{frame}[label={sec:org0000016}]{References}
 \begin{columns}[T,onlytextwidth]
@@ -365,7 +382,7 @@ Interactive marimo notebook
 \end{columns}
 \end{frame}
 \section*{Additional slides}
-\label{sec:org000001c}
+\label{sec:org000001d}
 
 \begin{frame}[label={sec:org0000019}]{JUMP-lite: a compact benchmark}
 \begin{columns}[c,onlytextwidth]
@@ -396,7 +413,38 @@ Interactive marimo notebook
 \begin{tabular}{@{}l l@{}}
 \textbf{Image features} & \fbox{DINOv2}\ $\leftrightarrow$\ \fbox{DINOv3}\ $\leftrightarrow$\ \fbox{OpenPhenom}\ $\leftrightarrow$\ \fbox{MorphEm} \\
 \textbf{Segmentation} & \fbox{Cellpose}\ $\leftrightarrow$\ \fbox{StarDist} \\
+\textbf{Spot detection} & \fbox{Spotiflow} \\
 \textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
 \end{tabular}
+\end{frame}
+\begin{frame}[label={sec:org000001c}]{MisLocus: a single-cell image benchmark}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.54\textwidth}
+\centering
+\small Does a variant change where the protein is located?\par\medskip
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+LZTR1 reference\par\smallskip
+\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-reference.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+LZTR1 G248R\par\smallskip
+\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-g248r.png}
+\end{minipage}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{block}{Protein mislocalisation}
+\begin{itemize}
+\item Compare reference and variant proteins.
+\item Test for localisation changes.
+\item Evaluate image representations.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}\medskip
+\centering\small
+Johan Fredin, Carpenter-Shen Lab, Purdue University\par\smallskip
+\href{https://huggingface.co/datasets/anonymous-xyz96/MisLocus}{Dataset: MisLocus on Hugging Face}
 \end{frame}
 \end{document}
