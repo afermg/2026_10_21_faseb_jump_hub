@@ -19,7 +19,7 @@
 # Audience: biologists. Slot: 25 minutes, including a prerecorded demo.
 # Planned pace: 23 minutes plus 2 minutes of buffer; see docs/presenter-notes.md.
 # Keep slides direct and question-led. Interpretation limits belong in notes.
-# References precede the final QR slide; illustration provenance stays in the evidence documents.
+# References and QR close the main talk; additional slides follow for questions. Illustration provenance stays in the evidence documents.
 # Direct Overleaf edits take content priority: preserve and port them into Org.
 # Edit deck/slides.org in the source repository; the Overleaf Org copy is one-way.
 
@@ -45,12 +45,12 @@
 
 ** Cell Painting connects images to measurements
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.72\textheight :options keepaspectratio
-[[file:assets/cell-painting.png]]
+[[file:assets/cell-painting-edited.pdf]]
 
 - Stain and image cells, measure their appearance, and compare morphological profiles.
 
-# Speaker note: The illustration is adapted for the JUMP context: its cell-source label now reads Human U2OS cells.
-# Only that label changed; source and transformation are recorded in docs/assets.json.
+# Speaker note: The presenter edited this reconstruction in Inkscape on the Mac; the deck uses a vector PDF exported there with outlined text.
+# The editable SVG is retained separately. Schematic details are illustrative, not recovered quantitative data; original source and Mac-edit hashes are recorded in docs/assets.json.
 # Similarity helps prioritize biological hypotheses; it does not establish mechanism.
 
 ** Why turn images into profiles?
@@ -82,18 +82,6 @@ Profiles summarize cellular appearance so we can compare and search large datase
 # Speaker note: Both routes produce vectors; cell/image features can be aggregated into well/perturbation profiles.
 # Normalization, training objectives and experimental context affect comparisons. Retain images for inspection.
 # Neither route alone establishes mechanism or removes batch effects. Do not claim one universally outperforms the other.
-
-** Cells as vectors: useful does not always mean interpretable
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
-[[file:assets/vector-interpretability.pdf]]
-
-# Speaker note: This original vector illustration is a teaching cartoon inspired by the presenter's words-as-vectors reference, not measured data.
-# A/B are non-senescent examples and C/D senescent examples. A/C show interconnected mitochondria; B/D show fragmented mitochondria.
-# The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
-# Both groups include both mitochondrial patterns: no causal link between senescence and fragmentation is asserted. Fragmented means separate mitochondrial elements, not cristae partitioning.
-# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
-# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
-# Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
 
 ** JUMP: Joint Undertaking for Morphological Profiling
 - A public Cell Painting dataset acquired across *12 laboratories*, covering nearly 139,000 chemical and genetic perturbations.
@@ -248,7 +236,7 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 - Each dot is one of 2,223 cells from a JUMP Target-2 plate.
 - Select cells to update their images, area distribution and measurement summaries.
 
-# Playback cue: PDF page 14, visible slide number 13. Play jump-cell-interactivity.mp4 in a local player.
+# Playback cue: PDF page 13, visible slide number 12. Play jump-cell-interactivity.mp4 in a local player.
 # The MP4 is a companion file, not embedded media. Narrate select -> inspect -> change channel -> reset -> select elsewhere.
 # Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0). Both snapshot images and their demo links are clickable.
 # Prefer local playback on stage; the public link is for later viewing.
@@ -297,23 +285,6 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 # marimo and uv address recurring Python workflow friction: reactive execution reduces hidden notebook state; uv manages Python environments and dependencies with lockfiles.
 # These are complementary tools, not a claim that every packaging or reproducibility problem is solved. Biological validation remains necessary.
 # Source links are on References; illustration provenance is retained in docs/provenance.md.
-
-** Nahual: swap models within one workflow
-#+BEGIN_EXPORT latex
-\centering
-{\Large\bfseries Swap models. Keep your workflow.}\par\bigskip
-\renewcommand{\arraystretch}{1.8}
-\begin{tabular}{@{}l l@{}}
-\textbf{Image features} & \fbox{DINOv2}\ $\leftrightarrow$\ \fbox{DINOv3}\ $\leftrightarrow$\ \fbox{OpenPhenom}\ $\leftrightarrow$\ \fbox{MorphEm} \\
-\textbf{Segmentation} & \fbox{Cellpose}\ $\leftrightarrow$\ \fbox{StarDist} \\
-\textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
-\end{tabular}
-#+END_EXPORT
-
-# Speaker note: A deliberately simple names-only model overview, requested after the presenter hid the longer Nahual explanation.
-# Swap alternatives within a task through Nahual's common setup/process interface, not arbitrary swaps between incompatible task types.
-# Model-specific input preparation, dimensions, parameters, dependencies, licences and validation still apply. No universal plug-and-play or same-output guarantee is claimed.
-# Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
 
 ** Try different image-analysis models with Nahual :noexport:
 #+BEGIN_EXPORT latex
@@ -502,8 +473,39 @@ Use our compressed images to contrast your own vs the state-of-the-art.
 \end{columns}
 #+END_EXPORT
 
-# Speaker note: Leave this dedicated QR slide visible at the end. Only JUMP Hub and Slides remain; the codes are 40 mm.
+# Speaker note: Leave this QR slide visible at the end of the main talk. The following additional slides are for questions. The two codes remain 40 mm.
 # The presenter supplied broad.io/jump as the visible shortlink. The two existing QR payloads are unchanged.
 # The Slides QR targets the GitHub PDF viewer in afermg/2026_10_21_faseb_jump_hub, branch main, slides.pdf.
 # The repository remains private until the presenter explicitly authorizes making it public. The PDF must not be uploaded until final approval.
 # The QR is prepared but the PDF is intentionally absent; public audience access also requires the separate visibility approval. Do not expose other private projects.
+
+* Additional slides
+
+** Nahual: swap models within one workflow
+#+BEGIN_EXPORT latex
+\centering
+{\Large\bfseries Swap models. Keep your workflow.}\par\bigskip
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{}l l@{}}
+\textbf{Image features} & \fbox{DINOv2}\ $\leftrightarrow$\ \fbox{DINOv3}\ $\leftrightarrow$\ \fbox{OpenPhenom}\ $\leftrightarrow$\ \fbox{MorphEm} \\
+\textbf{Segmentation} & \fbox{Cellpose}\ $\leftrightarrow$\ \fbox{StarDist} \\
+\textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
+\end{tabular}
+#+END_EXPORT
+
+# Speaker note: Additional slide for questions. The earlier detailed Nahual explanation stays hidden.
+# Swap alternatives within a task through Nahual's common setup/process interface, not arbitrary swaps between incompatible task types.
+# Model-specific input preparation, dimensions, parameters, dependencies, licences and validation still apply. No universal plug-and-play or same-output guarantee is claimed.
+# Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
+
+** Cells as vectors: useful does not always mean interpretable
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
+[[file:assets/vector-interpretability.pdf]]
+
+# Speaker note: Additional slide for questions. This original illustration is a teaching cartoon, not measured data.
+# A/B are non-senescent examples and C/D senescent examples. A/C show interconnected mitochondria; B/D show fragmented mitochondria.
+# The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
+# Both groups include both mitochondrial patterns: no causal link between senescence and fragmentation is asserted. Fragmented means separate mitochondrial elements, not cristae partitioning.
+# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
+# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
+# Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.

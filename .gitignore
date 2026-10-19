@@ -1,7 +1,8 @@
 # The presentation PDF stays local until explicit final-publication approval.
 *.pdf
-# This vector figure is source artwork, not the presentation PDF.
+# These specific vector figures are source artwork, not the presentation PDF.
 !assets/vector-interpretability.pdf
+!assets/cell-painting-edited.pdf
 
 # TeX build products.
 *.aux

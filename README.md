@@ -10,7 +10,7 @@ my other talks and posters. This repository mirrors the current Overleaf source.
 ## Private editing stage — no PDF release yet
 
 **Keep this repository private until the presenter explicitly instructs otherwise.**
-**Do not commit or push a PDF until the presenter explicitly approves the final slides.**
+**Do not commit or push the presentation PDF until the presenter explicitly approves the final slides.**
 These are separate approval gates; approval for one does not imply the other.
 
 The final PDF's reserved viewer URL is:
@@ -29,28 +29,27 @@ authorized. No automatic PDF publication or visibility change is configured.
 - `assets/`: figures, screenshots, logos and two QR images.
 - `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
 
-Current Overleaf snapshot: `e0100afbbb271de460d40eb455dd48543e6c8080`.
+Current Overleaf snapshot: `a61fb1f9ff306b129c53e958346b53740a091980`.
 All 20 Overleaf files are mirrored unchanged; this README and `.gitignore` are
-repository-specific additions. The deck contains 24 pages, with a 23-minute
-narration plan within the 25-minute slot. Page 5 contrasts interpretable named
-features with learned coordinates, using explicitly illustrative cell examples.
-The toolbox on page 16 includes marimo and uv. Page 17 shows model names and
-swap arrows within image-feature, segmentation and tracking tasks through Nahual.
-The earlier detailed Nahual slide remains hidden. cp_measure and JUMP-lite
-follow, retaining the presenter's shortened JUMP-lite wording. Gratitude is on
-page 22, references on 23, and the final QR page is 24. The historical
-speed-benchmark citation remains removed.
+repository-specific additions. The deck contains **22 main-talk pages and two
+additional slides**, with a 23-minute narration plan within the 25-minute slot.
+Page 3 uses the presenter's Mac-edited vector workflow reconstruction. The
+toolbox on page 15 includes marimo and uv; cp_measure and JUMP-lite follow.
+The shortened live JUMP-lite wording and removal of the historical benchmark
+citation are preserved. The main talk closes with Thank you (20), References
+(21) and QR (22). **Additional pages 23/24** contain the Nahual model-swapping
+overview and illustrative vector comparison. The detailed Nahual slide stays hidden.
 
-`assets/vector-interpretability.pdf` is a vector figure source asset, not the
-slide PDF; `.gitignore` permits only this specific source figure. `slides.pdf`
-remains absent and ignored.
+`assets/vector-interpretability.pdf` and `assets/cell-painting-edited.pdf` are
+vector figure source assets, not the presentation PDF. `.gitignore` permits
+only these two specific figure PDFs; `slides.pdf` remains absent and ignored.
 
 The ORF card shows ~12,600 genes without the construct count; the dataset
 introduction identifies 12 acquiring laboratories. The video remains a separate
 offline companion and is also public on
 [Zenodo](https://doi.org/10.5281/zenodo.23462248) under CC BY 4.0. Both snapshot
-images on PDF pages 14/15 and the demo text link on page 15 open the recording.
-Page 24 contains only JUMP Hub and Slides (PDF), with two 40-mm QR codes and the
+images on PDF pages 13/14 and the demo text link on page 14 open the recording.
+Page 22 contains only JUMP Hub and Slides (PDF), with two 40-mm QR codes and the
 visible shortlink `broad.io/jump`. Direct Overleaf edits through `bf0e603`,
 including the revised wording and collaborator credits, are preserved.
 Only the MP4 was uploaded to Zenodo; the PDF and repository-publication gates
@@ -69,7 +68,7 @@ projects must remain private unless separately authorized.
 
 ## Credits
 
-Scientific references and tool links appear immediately before the final QR slide.
+Scientific references and tool links appear immediately before the main-talk closing QR slide.
 Illustration/logo credits are no longer displayed there, at the presenter's
 request. Their provenance remains in the private authoring repository's
 [`docs/provenance.md`](https://github.com/afermg/org-overleaf-sync/blob/main/docs/provenance.md)
