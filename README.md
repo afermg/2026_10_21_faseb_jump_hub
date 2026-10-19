@@ -5,10 +5,10 @@
 FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
 Private source mirror. Compile **slides.tex** with **XeLaTeX**; unowned legacy
-`main.tex` is preserved but is not the root. All **20 Overleaf files** are mirrored
-unchanged from `11de3c8edad1e5d3fd0a5a379b2957f2a7661fd2`; this README and
-`.gitignore` are repository-specific additions. The unused JUMP-lite paper PNG
-is retained in source history, not the consumed bundle.
+`main.tex` is preserved but is not the root. All **21 Overleaf files** are mirrored
+unchanged from `bab3b8064d6cabaf81d5fee89ef0e73c725e43c4`; this README and
+`.gitignore` are repository-specific additions. The original right-hand
+JUMP-lite nested-square PNG is included again as consumed artwork.
 
 ## Current deck
 
@@ -26,15 +26,17 @@ for 23 minutes within the 25-minute slot. Stop on the QR page.
   JUMP overview. Its former 30-second reality-check slot now gives the overview
   time to explain the image count and units; the total plan remains 23 minutes.
 
-JUMP-lite now shows only **8.7 TB → 92 GB (~94× smaller)** for the same image
-cohort, using lossy JPEG XL. The original 115 TB JUMP archive would also involve
-subset selection. The numerical columns are not an area-proportional chart.
+JUMP-lite now shows the original **nested-square storage graphic**. It includes
+both subset selection and compression, with the full 115 TB release as context.
+The footer isolates **8.7 TB → 92 GB (~94× smaller)** for the same image cohort,
+using lossy JPEG XL. No pixel values or proportions of the artwork were changed.
 
 Direct author wording is preserved, including marimo dashboards, individual
 tools, plain take-home labels and GSK/NIH MIRA funding scoped to cp_measure and
 JUMP-lite. Thank you (PDF 20) now names both **Carpenter-Singh Lab** and
 **Carpenter-Shen Lab**; the presenter explains the move orally. The latest author
-application credits and removal of the visible uv row/demo-text link are preserved.
+application credits, including **Tim Treis, Theis Lab, Helmholtz-Munich**, and
+removal of the visible uv row/demo-text link are preserved.
 The original Mac-edited workflow remains exact. The detailed Nahual
 slide stays hidden. Both vector teaching diagrams use illustrative coordinates,
 not measured results; word2vec is an analogy, not the cell-feature algorithm.

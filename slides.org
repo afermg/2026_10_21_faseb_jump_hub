@@ -393,7 +393,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{block}{Connect to spatial omics software}
-\small Tim Treis, Treis Lab, Helmholtz-Munich\par
+\small Tim Treis, Theis Lab, Helmholtz-Munich\par
 \begin{itemize}
 \item Integration of morphological features with Squidpy.
 \end{itemize}
@@ -507,32 +507,19 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 
 * Additional slides
 
-** JUMP-lite: compression reduces storage
+** JUMP-lite: dataset size
 #+BEGIN_EXPORT latex
-\begin{columns}[c,onlytextwidth]
-\begin{column}{0.42\textwidth}
 \centering
-\textbf{Original TIFFs}\par\bigskip
-{\fontsize{38}{44}\selectfont 8.7 TB}
-\end{column}
-\begin{column}{0.10\textwidth}
-\centering\Huge $\longrightarrow$
-\end{column}
-\begin{column}{0.42\textwidth}
-\centering
-\textbf{JPEG XL (lossy)}\par\bigskip
-{\fontsize{38}{44}\selectfont 92 GB}
-\end{column}
-\end{columns}
-\bigskip\bigskip
-\centering Same image set $\cdot$ $\sim$94$\times$ smaller
+\includegraphics[height=0.78\textheight]{assets/jump-lite-paper.png}\par\smallskip
+{\footnotesize Same image set: 8.7 TB $\rightarrow$ 92 GB ($\sim$94$\times$; lossy JPEG XL).}
 #+END_EXPORT
 
 # Speaker note: Additional slide after the main-talk QR, at the presenter's request; not scheduled narration.
 # Compare the same JUMP-lite image cohort: 8.7 TB of original/raw TIFFs versus 92.0 GB at medium-quality (MQ) lossy JPEG XL compression.
 # Source: arXiv:2608.07632v3, section 3.1, reports these sizes and approximately 94-fold reduction. Values are rounded published totals, not a new measurement.
 # Do not use 115 TB as the compression-only baseline: that is the larger JUMP release and also includes the effect of subset selection.
-# The 4.8 TB Zstd store is losslessly compressed, not an uncompressed baseline. The two numeric columns are not an area-proportional chart.
+# The nested-square artwork is the original right-hand panel of Figure 1b, reused without changing pixels or proportions. It shows dataset selection as well as compression; the 115 TB full-release square is context, not a same-image compression baseline.
+# The 4.8 TB Zstd store is losslessly compressed, not an uncompressed baseline. MQ is the 92.0 GB lossy JPEG XL variant; areas in the source artwork encode storage sizes relative to the full release.
 # Lossy compression changes pixel values; validate suitability for the intended analysis. This slide makes no performance-equivalence or lossless-quality claim.
 # The earlier Target-2 recording is a separate subanalysis, not the main release cohort.
 
