@@ -227,14 +227,20 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 ** Identify and explore cell subpopulations
 *Interactive marimo notebook built from JUMP images and measurements*
 
-#+ATTR_LATEX: :width 0.96\linewidth :height 0.51\textheight :options keepaspectratio
-[[file:assets/demo-selection-545.png]]
+#+BEGIN_EXPORT latex
+\begin{center}
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-545.png}}
+\end{center}
+#+END_EXPORT
 
 - Each dot is one of 2,223 cells from a JUMP Target-2 plate.
 - Select cells to update their images, area distribution and measurement summaries.
+- [[https://doi.org/10.5281/zenodo.23462248][Watch the recorded demo (23 s) on Zenodo]].
 
 # Playback cue: PDF page 13, visible slide number 12. Play jump-cell-interactivity.mp4 in a local player.
 # The MP4 is a companion file, not embedded media. Narrate select -> inspect -> change channel -> reset -> select elsewhere.
+# Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0). Both snapshot images and their demo links are clickable.
+# Prefer local playback on stage; the public link is for later viewing.
 # This still shows a 545-cell selection; the gallery samples six cells, not every selected cell.
 # Notebook source: /work/users/amunoz/projects/jump-cell-browser-demo/notebook.py. No public notebook URL is asserted.
 # If playback fails, use this still and the next slide without troubleshooting on stage.
@@ -242,11 +248,15 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 ** How do cells in another region compare?
 *The same notebook, with a second selection*
 
-#+ATTR_LATEX: :width 0.96\linewidth :height 0.51\textheight :options keepaspectratio
-[[file:assets/demo-selection-224.png]]
+#+BEGIN_EXPORT latex
+\begin{center}
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-224.png}}
+\end{center}
+#+END_EXPORT
 
 - Select another region: 224 cells in this example.
 - Compare cell images, areas and measurement summaries.
+- [[https://doi.org/10.5281/zenodo.23462248][Watch the recorded demo (23 s) on Zenodo]].
 
 # Speaker note: One plate, six wells, twelve fields; no treatment or control assignments.
 # The reference is all loaded cells, including the selection. Feature-based selection changes distributions by construction.
@@ -403,9 +413,12 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \href{https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf}{\includegraphics[width=30mm]{assets/qr-slides.png}}
 \end{column}
 \end{columns}
+\medskip
+\centering\small\href{https://doi.org/10.5281/zenodo.23462248}{Watch the recorded demo (23 s) on Zenodo}
 #+END_EXPORT
 
-# Speaker note: Leave this dedicated QR slide visible at the end. The four destinations are unchanged; the codes are enlarged to 30 mm.
+# Speaker note: Leave this dedicated QR slide visible at the end. The four QR destinations are unchanged; the codes remain 30 mm.
+# The separate text link opens the public Zenodo recording, DOI 10.5281/zenodo.23462248 (CC BY 4.0).
 # The fourth QR targets the GitHub PDF viewer in afermg/2026_10_21_faseb_jump_hub, branch main, slides.pdf.
 # The repository remains private until the presenter explicitly authorizes making it public. The PDF must not be uploaded until final approval.
 # The QR is prepared but the PDF is intentionally absent; public audience access also requires the separate visibility approval. Do not expose other private projects.

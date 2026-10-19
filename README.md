@@ -29,14 +29,17 @@ authorized. No automatic PDF publication or visibility change is configured.
 - `assets/`: figures, screenshots, logos and four QR images.
 - `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
 
-Current Overleaf snapshot: `933429392d6b9e32e8ea7c56c83d676df80bee2d`.
+Current Overleaf snapshot: `de9927a06517cd1fde22e0fb4bd75b2462c524de`.
 All 21 Overleaf files are mirrored unchanged; this README and `.gitignore` are
 repository-specific additions. The deck contains 22 pages, with a 23-minute
 narration plan within the 25-minute slot. Gratitude is on page 20, the dedicated
 QR page is 21, and references are on page 22. The ORF card shows ~12,600 genes
 without the construct count; the dataset introduction identifies 12 acquiring
-laboratories. The video is a separate offline companion. Its requested Zenodo
-upload and links are pending authentication and licence confirmation.
+laboratories. The video remains a separate offline companion and is also public
+on [Zenodo](https://doi.org/10.5281/zenodo.23462248) under CC BY 4.0. Both snapshot
+images and demo text links on PDF pages 13/14, plus the resources-page link on
+page 21, open the recording. Only the MP4 was uploaded to Zenodo; the PDF and
+repository-publication gates above remain unchanged.
 
 Continue editing through the established Org-to-Overleaf pipeline. Direct
 Overleaf edits take content priority; preserve and reconcile them before
