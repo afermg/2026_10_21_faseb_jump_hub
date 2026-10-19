@@ -29,20 +29,25 @@ authorized. No automatic PDF publication or visibility change is configured.
 - `assets/`: figures, screenshots, logos and two QR images.
 - `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
 
-Current Overleaf snapshot: `6863455585a7e214dbbdca3ea853072004e6bd46`.
+Current Overleaf snapshot: `ea8d33b12ec3f17dd42843d635d1fd98278d9e02`.
 All 19 Overleaf files are mirrored unchanged; this README and `.gitignore` are
-repository-specific additions. The deck contains 22 pages, with a 23-minute
-narration plan within the 25-minute slot. Gratitude is on page 20, the dedicated
-QR page is 21, and references are on page 22. The ORF card shows ~12,600 genes
-without the construct count; the dataset introduction identifies 12 acquiring
-laboratories. The video remains a separate offline companion and is also public
-on [Zenodo](https://doi.org/10.5281/zenodo.23462248) under CC BY 4.0. Both snapshot
+repository-specific additions. The deck contains 23 pages, with a 23-minute
+narration plan within the 25-minute slot. The toolbox on page 15 includes marimo
+and uv. Page 16 introduces Nahual with DINOv2/DINOv3, OpenPhenom, MorphEm,
+Cellpose, StarDist and Trackastra as documented model examples. cp_measure and
+JUMP-lite follow. Gratitude is on page 21, references on 22, and the final QR
+page is 23. The historical speed-benchmark citation is removed.
+
+The ORF card shows ~12,600 genes without the construct count; the dataset
+introduction identifies 12 acquiring laboratories. The video remains a separate
+offline companion and is also public on
+[Zenodo](https://doi.org/10.5281/zenodo.23462248) under CC BY 4.0. Both snapshot
 images on PDF pages 13/14 and the demo text link on page 14 open the recording.
-Page 21 now contains only JUMP Hub and Slides (PDF), with two 40-mm QR codes and
-the visible shortlink `broad.io/jump`. Direct Overleaf edits through `77620e9`,
-including the revised wording and tools / cp_measure / JUMP-lite ordering, are
-preserved. Only the MP4 was uploaded to Zenodo; the PDF and repository-publication
-gates above remain unchanged.
+Page 23 contains only JUMP Hub and Slides (PDF), with two 40-mm QR codes and the
+visible shortlink `broad.io/jump`. Direct Overleaf edits through `25527fb`,
+including the revised wording and collaborator credits, are preserved.
+Only the MP4 was uploaded to Zenodo; the PDF and repository-publication gates
+above remain unchanged.
 
 Continue editing through the established Org-to-Overleaf pipeline. Direct
 Overleaf edits take content priority; preserve and reconcile them before
@@ -57,7 +62,7 @@ projects must remain private unless separately authorized.
 
 ## Credits
 
-Scientific references and tool links appear on the final References slide.
+Scientific references and tool links appear immediately before the final QR slide.
 Illustration/logo credits are no longer displayed there, at the presenter's
 request. Their provenance remains in the private authoring repository's
 [`docs/provenance.md`](https://github.com/afermg/org-overleaf-sync/blob/main/docs/provenance.md)

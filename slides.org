@@ -19,7 +19,7 @@
 # Audience: biologists. Slot: 25 minutes, including a prerecorded demo.
 # Planned pace: 23 minutes plus 2 minutes of buffer; see docs/presenter-notes.md.
 # Keep slides direct and question-led. Interpretation limits belong in notes.
-# Citations and figure credits are collected on the final References slide.
+# References precede the final QR slide; illustration provenance stays in the evidence documents.
 # Direct Overleaf edits take content priority: preserve and port them into Org.
 # Edit deck/slides.org in the source repository; the Overleaf Org copy is one-way.
 
@@ -266,14 +266,15 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 
 ** Modern tools make image analysis more accessible
 #+BEGIN_EXPORT latex
-\begin{tabular}{@{}p{0.23\textwidth}p{0.72\textwidth}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
 \textbf{Segmentation} & Cellpose: masks for cells and nuclei. \\[0.65em]
 \textbf{Profiles} & cp\_measure: images and masks $\rightarrow$ quantitative profiles. \\[0.65em]
-\textbf{Tracking} & Trackastra for cells/nuclei; specialised trackers for organelles. \\[0.65em]
-\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
-\textbf{Data handling} & Parquet tables, Zarr arrays and JPEG XL image compression.
-\end{tabular}\par\vspace{1.5em}
-\centering\textbf{AI streamlines combining these tools into workflows.}
+%\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
+\textbf{Next-Generation data formats} & Parquet tables, Zarr arrays and JPEG XL image compression. \\[0.65em]
+\textbf{Notebooks} & marimo: reactive notebooks and interactive apps. \\[0.65em]
+\textbf{Python setup} & uv: fast package management, environments and lockfiles.
+\end{tabular}\par\vspace{1em}
+\centering\textbf{AI can turn these tools into workflows.}
 #+END_EXPORT
 
 # Speaker note: This is a complementary toolbox, not a required five-step pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
@@ -281,7 +282,39 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 # Generalist/specialised learned representations can be adapted where model weights, training interfaces and licences permit; fine-tuning needs appropriate data and held-out evaluation.
 # Parquet is columnar tabular storage, Zarr stores chunked multidimensional arrays, and JPEG XL is an image codec; they serve different roles.
 # The agent-integration claim reflects the presenter's experience, not a measured speedup or a fully autonomous workflow. Experts validate the biology.
-# Source links are on the final References slide; illustration provenance is retained in docs/provenance.md.
+# marimo and uv address recurring Python workflow friction: reactive execution reduces hidden notebook state; uv manages Python environments and dependencies with lockfiles.
+# These are complementary tools, not a claim that every packaging or reproducibility problem is solved. Biological validation remains necessary.
+# Source links are on References; illustration provenance is retained in docs/provenance.md.
+
+** Try different image-analysis models with Nahual
+#+BEGIN_EXPORT latex
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.46\textwidth}
+\begin{itemize}
+\item Try different models from one Python workflow.
+\item Each model runs in its own environment.
+\item Compare outputs on the same images.
+\end{itemize}
+\end{column}
+\begin{column}{0.50\textwidth}
+\begin{block}{Examples available through Nahual}
+\begin{description}
+\item[Image features] DINOv2 / DINOv3, OpenPhenom, MorphEm
+\item[Segmentation] Cellpose, StarDist
+\item[Tracking] Trackastra
+\end{description}
+\end{block}
+\end{column}
+\end{columns}
+\medskip
+\centering\href{https://github.com/afermg/nahual}{\texttt{github.com/afermg/nahual}}
+#+END_EXPORT
+
+# Speaker note: Nahual connects a Python client to model servers in separate environments, avoiding incompatible dependencies in one shared environment.
+# Examples are documented wrappers, not models developed by Nahual or a new benchmark. Catalogue verified at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1.
+# DINOv2/v3 provide generalist visual features; OpenPhenom and MorphEm are microscopy-oriented ViT examples. Cellpose/StarDist provide masks; Trackastra links cells over time.
+# Nix deploys the wrappers. Most neural models require GPU resources; model-specific preprocessing, licences, weights and output conventions still apply.
+# Do not imply embeddings from different models share coordinates or dimensions, or that every wrapper was runtime-tested for this talk.
 
 ** Extract morphological profiles from your own images
 #+BEGIN_EXPORT latex
@@ -294,7 +327,8 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \textbf{cp\_measure: feature extraction in Python}
 \begin{itemize}
 \item Build profiles of thousands of features across channels and cell compartments.
-\item Integrate to your own workflows.
+\item Integrate to your own Python pipelines.
+\item Fastest software to obtain interpretable morphological features (>2x CellProfiler).
 \end{itemize}
 \end{column}
 \end{columns}
@@ -302,8 +336,9 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 
 # Speaker note: Feature schema verified with five channels and three object types: 995 columns/object, 2,985 object-feature pairs when combined.
 # That synthetic schema check disables Costes; aggregation/pivoting combines the API's object-type rows into a profile. Counts depend on configuration.
-# Historical benchmark context, no longer a visible bullet: published median intensity-kernel speedup (28.07x), not a CellProfiler comparison or whole-pipeline speedup.
-# Benchmark: synthetic 256/512/1024-pixel images, 16/64/256 objects, matched dependencies, single thread; cite the release report.
+# The presenter added the fastest/>2x CellProfiler bullet directly in Overleaf; it is preserved, not independently revalidated by this reference-cleanup task.
+# Historical benchmark context, no longer a visible bullet: published median intensity-kernel speedup (28.07x), not evidence for that CellProfiler comparison or whole-pipeline speedup.
+# Benchmark: synthetic 256/512/1024-pixel images, 16/64/256 objects, matched dependencies, single thread; retained in historical evidence only, not References.
 
 ** Developing new methods? Benchmark workflows with JUMP-lite
 #+ATTR_LATEX: :width 0.96\linewidth :height 0.60\textheight :options keepaspectratio
@@ -332,7 +367,7 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \end{column}
 \begin{column}{0.32\textwidth}
 \begin{block}{Compare imaging modalities}
-\small GSK collaboration\par
+\small Minh Doan, GSK \par
 \normalsize
 \begin{itemize}
 \item Compare bright-field, Cell Painting, cell-cycle and viability readouts.
@@ -341,7 +376,8 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \end{block}
 \end{column}
 \begin{column}{0.30\textwidth}
-\begin{block}{Connect to spatial omics}
+\begin{block}{Connect to spatial omics software}
+\small Tim Treis, Helmholtz-Munich \par
 \begin{itemize}
 \item Integration of morphological features with Squidpy.
 \end{itemize}
@@ -383,7 +419,44 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 # Speaker note: Thank Broad, Purdue and the JUMP partners. The partner sheet is historical.
 # Only JUMP prefixes were added to its headings; logos and collaborator entries are unchanged.
 # Edinburgh is credited on Kenneth's application slide, not repeated here. Purdue remains the confirmed affiliation.
-# The presenter requested separate gratitude and QR slides; advance to the QR page after thanking the contributors.
+# The presenter requested separate gratitude and QR slides. Show or skip References, then leave the final QR page visible.
+
+** References
+#+BEGIN_EXPORT latex
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.31\textwidth}
+\small
+\textbf{Assay and data}
+\begin{itemize}
+\item \href{https://doi.org/10.1038/nprot.2016.105}{Bray et al. (2016). Cell Painting.}\newline Nature Protocols.
+\item \href{https://doi.org/10.1038/s41573-020-00117-w}{Chandrasekaran et al. (2021).}\newline Image-based profiling. Nature Reviews Drug Discovery.
+\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{perturbation counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{12 centers}.
+\item \href{https://doi.org/10.1186/gb-2006-7-10-r100}{Carpenter et al. (2006). CellProfiler.}\newline Genome Biology.
+\end{itemize}
+\end{column}
+\begin{column}{0.32\textwidth}
+\small
+\textbf{Analysis toolbox}
+\begin{itemize}
+\item \href{https://arxiv.org/abs/2608.07632v3}{Muñoz et al. (2026). JUMP-lite.}\newline \href{https://github.com/afermg/JUMP_lite}{Data and documentation}.
+\item \href{https://arxiv.org/abs/2507.01163v1}{Muñoz et al. (2025). cp\_measure.}\newline \href{https://github.com/afermg/cp_measure}{Code}.
+\item \href{https://github.com/MouseLand/cellpose}{Cellpose}: cell/nucleus segmentation.
+\item \href{https://github.com/afermg/nahual}{Nahual}: image-model interfaces.
+\item \href{https://squidpy.readthedocs.io/}{Squidpy}: spatial molecular and image analysis.
+\end{itemize}
+\end{column}
+\begin{column}{0.31\textwidth}
+\small
+\textbf{Resources}
+\begin{itemize}
+\item \href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}: \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{biological questions and table export}.
+\item Recording: \href{https://github.com/afermg/JUMP_lite/blob/main/cpg_upload/TARGET2_ARTIFACTS_README.md}{JUMP Target-2 artifacts}.
+\item \href{https://marimo.io/}{marimo}: reactive Python notebooks.
+\item \href{https://docs.astral.sh/uv/}{uv}: Python environments and dependencies.
+\end{itemize}
+\end{column}
+\end{columns}
+#+END_EXPORT
 
 ** JUMP Hub and slides
 #+BEGIN_EXPORT latex
@@ -407,41 +480,3 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 # The Slides QR targets the GitHub PDF viewer in afermg/2026_10_21_faseb_jump_hub, branch main, slides.pdf.
 # The repository remains private until the presenter explicitly authorizes making it public. The PDF must not be uploaded until final approval.
 # The QR is prepared but the PDF is intentionally absent; public audience access also requires the separate visibility approval. Do not expose other private projects.
-# Briefly show references if useful, then return here.
-
-** References
-#+BEGIN_EXPORT latex
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.31\textwidth}
-\small
-\textbf{Assay and data}
-\begin{itemize}
-\item \href{https://doi.org/10.1038/nprot.2016.105}{Bray et al. (2016). Cell Painting.}\newline Nature Protocols.
-\item \href{https://doi.org/10.1038/s41573-020-00117-w}{Chandrasekaran et al. (2021).}\newline Image-based profiling. Nature Reviews Drug Discovery.
-\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{perturbation counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{12 centers}.
-\item \href{https://doi.org/10.1186/gb-2006-7-10-r100}{Carpenter et al. (2006). CellProfiler.}\newline Genome Biology.
-\item Data formats: \href{https://parquet.apache.org/}{Parquet}, \href{https://zarr.dev/}{Zarr}, \href{https://jpeg.org/jpegxl/}{JPEG XL}.
-\end{itemize}
-\end{column}
-\begin{column}{0.32\textwidth}
-\small
-\textbf{Analysis toolbox}
-\begin{itemize}
-\item \href{https://arxiv.org/abs/2608.07632v3}{Muñoz et al. (2026). JUMP-lite.}\newline \href{https://github.com/afermg/JUMP_lite}{Data and documentation}.
-\item \href{https://arxiv.org/abs/2507.01163v1}{Muñoz et al. (2025). cp\_measure.}\newline \href{https://github.com/afermg/cp_measure}{Code}; \href{https://github.com/afermg/cp_measure/blob/6ffe85e0e7111f4599ec5c884542a69bbbb9dc42/benchmarks/releases/v0.2.0.md}{v0.2.0 speed benchmark}.
-\item \href{https://github.com/MouseLand/cellpose}{Cellpose}: cell/nucleus segmentation.
-\item \href{https://github.com/weigertlab/trackastra}{Trackastra}: cell tracking.
-\item \href{https://github.com/afermg/nahual}{nahual}: image-model interfaces.
-\item \href{https://squidpy.readthedocs.io/}{Squidpy}: spatial molecular and image analysis.
-\end{itemize}
-\end{column}
-\begin{column}{0.31\textwidth}
-\small
-\textbf{Resources}
-\begin{itemize}
-\item \href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}: \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{biological questions and table export}.
-\item Recording: \href{https://github.com/afermg/JUMP_lite/blob/main/cpg_upload/TARGET2_ARTIFACTS_README.md}{JUMP Target-2 artifacts}.
-\end{itemize}
-\end{column}
-\end{columns}
-#+END_EXPORT
