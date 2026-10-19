@@ -12,7 +12,7 @@
 \usepackage{array}
 \setsansfont{FiraSans-Regular.otf}[BoldFont=FiraSans-Bold.otf,ItalicFont=FiraSans-Italic.otf,BoldItalicFont=FiraSans-BoldItalic.otf]
 \AtBeginDocument{\AtBeginSection[]{}}
-\institute{Research scientist, Carpenter-Shen Lab\\Purdue University}
+\institute{Carpenter-Shen Lab, Purdue University}
 \usetheme{moloch}
 \author{Alán F. Muñoz}
 \date{21 October 2026}
@@ -69,7 +69,7 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \begin{column}{0.48\textwidth}
 \begin{block}{Learned representations}
 \begin{itemize}
-\item Models learn visual features from training data, for example using neural networks.
+\item Models learn visual features from training data using neural networks.
 \item Images or cells are encoded as numerical feature vectors (embeddings).
 \end{itemize}
 \end{block}
@@ -80,7 +80,7 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \end{frame}
 \begin{frame}[label={sec:org0000004}]{JUMP: Joint Undertaking for Morphological Profiling}
 \begin{itemize}
-\item Nearly 139,000 distinct chemical and genetic perturbations in a public Cell Painting dataset.
+\item A public Cell Painting dataset acquired across \alert{12 laboratories}, covering nearly 139,000 chemical and genetic perturbations.
 \end{itemize}
 
 \begin{center}
@@ -96,7 +96,7 @@ Profiles summarize cellular appearance so we can compare and search large datase
 \item Which gene, compound or phenotype from your lab would you like to explore?
 \end{itemize}
 \end{frame}
-\begin{frame}[label={sec:org0000005}]{JUMP Hub complements your existing experiments}
+\begin{frame}[label={sec:org0000005}]{We make JUMP accessible via the JUMP Hub}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.58\textwidth}
 \centering
@@ -262,7 +262,7 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \small Kenneth Li, University of Edinburgh\par
 \normalsize
 \begin{itemize}
-\item Evaluate lysosomal acidification probes in amiodarone-treated iPSC-derived cardiomyocytes.
+\item Evaluate lysosomal acidification probes in cardiomyocytes.
 \item Measure probe uptake, lysosomal localization and morphological changes over time.
 \end{itemize}
 \end{block}
@@ -280,8 +280,7 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \begin{column}{0.30\textwidth}
 \begin{block}{Connect to spatial omics}
 \begin{itemize}
-\item Integrate image features with Squidpy.
-\item Relate tissue morphology to molecularly defined cell populations.
+\item Integration of morphological features with Squidpy.
 \end{itemize}
 \end{block}
 \end{column}
@@ -337,7 +336,7 @@ Using the JUMP Hub documentation, write a notebook that links selected cells to 
 \begin{itemize}
 \item \href{https://doi.org/10.1038/nprot.2016.105}{Bray et al. (2016). Cell Painting.}\newline Nature Protocols.
 \item \href{https://doi.org/10.1038/s41573-020-00117-w}{Chandrasekaran et al. (2021).}\newline Image-based profiling. Nature Reviews Drug Discovery.
-\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{metadata and count source}.
+\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{perturbation counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{12 centers}.
 \item \href{https://doi.org/10.1186/gb-2006-7-10-r100}{Carpenter et al. (2006). CellProfiler.}\newline Genome Biology.
 \item Data formats: \href{https://parquet.apache.org/}{Parquet}, \href{https://zarr.dev/}{Zarr}, \href{https://jpeg.org/jpegxl/}{JPEG XL}.
 \end{itemize}

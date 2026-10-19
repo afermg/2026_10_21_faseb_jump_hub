@@ -1,6 +1,6 @@
 # Uncovering biological relationships through morphological profiling: The JUMP-Cell Painting dataset and tools
 
-**Alán F. Muñoz** · Research scientist, Carpenter-Shen Lab · Purdue University
+**Alán F. Muñoz** · Carpenter-Shen Lab, Purdue University
 
 **21 October 2026** · FASEB: Organelle Cross-Talk in Cellular Homeostasis
 
@@ -29,12 +29,14 @@ authorized. No automatic PDF publication or visibility change is configured.
 - `assets/`: figures, screenshots, logos and four QR images.
 - `main.tex`: preserved legacy/unowned Overleaf file, **not** the current root.
 
-Current Overleaf snapshot: `4f7e33ef53a10fd75bae5159352f1545e3aae2d3`.
+Current Overleaf snapshot: `933429392d6b9e32e8ea7c56c83d676df80bee2d`.
 All 21 Overleaf files are mirrored unchanged; this README and `.gitignore` are
 repository-specific additions. The deck contains 22 pages, with a 23-minute
 narration plan within the 25-minute slot. Gratitude is on page 20, the dedicated
 QR page is 21, and references are on page 22. The ORF card shows ~12,600 genes
-without the construct count. The video is a separate offline companion.
+without the construct count; the dataset introduction identifies 12 acquiring
+laboratories. The video is a separate offline companion. Its requested Zenodo
+upload and links are pending authentication and licence confirmation.
 
 Continue editing through the established Org-to-Overleaf pipeline. Direct
 Overleaf edits take content priority; preserve and reconcile them before
