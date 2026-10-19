@@ -52,16 +52,16 @@
 # The editable SVG is retained separately. Schematic details are illustrative, not recovered quantitative data; original source and Mac-edit hashes are recorded in docs/assets.json.
 # Similarity helps prioritize biological hypotheses; it does not establish mechanism.
 
-** Why turn images into profiles?
+** Morphological profiling: Why turn images into profiles?
 Profiles are numerical descriptions of cells.
 
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
-\begin{block}{Engineered features: CellProfiler}
+\begin{block}{Engineered features (e.g., CellProfiler)}
 \begin{itemize}
-\item Size, shape, intensity, texture and spatial relationships.
-\item Interpretable but somewhat redundant.
+\item Size, shape, intensity, texture and relationships between channels and objects.
+\item Interpretable but partially redundant.
 \end{itemize}
 \end{block}
 \end{column}
@@ -80,8 +80,25 @@ Profiles are numerical descriptions of cells.
 # Normalization, training objectives and experimental context affect comparisons. Retain images for inspection.
 # Neither route alone establishes mechanism or removes batch effects. Do not claim one universally outperforms the other.
 
+** Words as vectors: word2vec
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.78\textheight :options keepaspectratio
+[[file:assets/word2vec-example.pdf]]
+
+#+BEGIN_EXPORT latex
+\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
+#+END_EXPORT
+
+# Speaker note: Start with words before moving to cells. Word2vec learns numerical word representations from language context.
+# The country-capital analogy is a teaching example: Paris minus France plus Italy can point toward Rome in a learned vector space.
+# These two-dimensional positions are invented, not a trained model output or a quantitative test. The arithmetic is approximate and depends on training and evaluation.
+# At the presenter's request the on-graphic "Illustrative 2D positions" caption is removed; this clarification remains in these notes and the SVG description.
+# The presenter also requested removing both Coordinate axis labels; axes remain unlabeled rather than being assigned artificial semantic meanings.
+# Real embeddings have many dimensions; individual axes are not predefined concepts such as age, gender or biological properties. Learned relations can reflect corpus biases.
+# The user-supplied Words As Vectors image inspired the teaching sequence; this is original vector artwork, not a claim that its hand-labelled axes are real word2vec coordinates.
+# Main-talk placement: immediately before JUMP; 30 seconds, borrowed from the earlier profiles introduction.
+
 ** JUMP: Joint Undertaking for Morphological Profiling
-- Public Cell Painting data: *12 laboratories*, nearly *139,000 perturbations*.
+- Public Cell Painting data: 12 laboratories, nearly *136,000 perturbations*.
 - *~58.3 million single-channel TIFF images*.
 
 #+BEGIN_EXPORT latex
@@ -102,8 +119,9 @@ Profiles are numerical descriptions of cells.
 
 # Speaker note: Counts use consortium metadata revision 016e865fa0691244e0860943e41c7d6a88ed2580, not JUMP-lite.
 # Count distinct JCP2022 IDs present in wells, excluding negative-control and empty IDs; retain positive controls.
-# Total 138,897 perturbation IDs. ORF: 15,128 constructs, 12,598 nonmissing annotated gene/locus IDs, rounded on the slide.
-# Presenter requested genes only on the ORF card. The overall perturbation total is not the sum of gene-level card counts.
+# Construct-level total: 138,897 perturbation IDs. ORF: 15,128 constructs, 12,598 nonmissing annotated gene/locus IDs, rounded on the slide.
+# The presenter changed the visible headline to nearly 136,000. The displayed gene-level counting gives 115,794 compounds + 7,975 CRISPR targets + 12,598 ORF gene/locus IDs = 136,367 modality-specific entries, approximately 136,000.
+# This is not 136,367 unique genes or distinct JCP2022 reagent IDs, nor a cross-modality deduplication; 138,897 remains the construct-level metadata total. Both definitions are retained rather than changing the verified input metadata.
 # Definitions and input hashes are in docs/jump-perturbation-counts.json.
 # Image count: 58,267,491 TIFF files summed across the 12 rows of stats/cpg0016_source_images_tiff_count.csv at the same pinned dataset revision; rounded to 58.3 million.
 # This is the published cpg0016 image-archive count (including controls), not cells or five-channel sites. Do not divide by five to claim a field count: the published site-count total does not reconcile with the TIFF total through a five-channel factor; accounting/coverage was not reconciled here.
@@ -112,7 +130,21 @@ Profiles are numerical descriptions of cells.
 # Verified in JUMP Hub data_description.md and terra_workspace.md at e742f5aa37472eb17f326ba8315d22b27e58f330; not every lab acquired every modality or perturbation.
 # This merges the former audience-question slide into JUMP, keeping that question before the Hub overview.
 
-** How do better models become tools that experimental biologists can use?
+** From words to cells: vectors for comparison
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
+[[file:assets/vector-interpretability.pdf]]
+
+# Speaker note: Main-talk transition immediately after JUMP: word vectors describe language context; cell profiles describe morphological appearance. Allow 30 seconds, borrowed from the JUMP overview.
+# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
+# This original illustration is a teaching cartoon, not measured data.
+# A/B are non-senescent examples and C/D senescent examples. A/C have interconnected mitochondria; B/D have fragmented mitochondria.
+# The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
+# Both groups include both mitochondrial patterns: no causal link between senescence and fragmentation is asserted. Fragmented means separate mitochondrial elements, not cristae partitioning.
+# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
+# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
+# Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
+
+** Computational methods improve in benchmarks, how do we ensure they benefit experimental biologists?
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
@@ -126,8 +158,6 @@ Can I use it to answer my biological question?
 \end{block}
 \end{column}
 \end{columns}
-\bigskip
-Setup, computing resources and coding can prevent practical use.
 #+END_EXPORT
 
 # Speaker note: We invest heavily in comparing models, but less in making those advances usable by experimental biologists.
@@ -146,7 +176,7 @@ Setup, computing resources and coding can prevent practical use.
 \item Does my gene or compound have a phenotype?
 \item Which phenotypes are similar?
 \item What changes in cells and organelles?
-\item Which cell populations stand out?
+\item Is the phenotype heterogeneous?
 \end{itemize}
 \end{column}
 \end{columns}
@@ -232,9 +262,9 @@ Setup, computing resources and coding can prevent practical use.
 # Speaker note: Inspect fields and channels; retrieve matched controls.
 # Speaker note: PROZ is not a negative-control label; the historical gallery is not a matched-control comparison.
 
-** Ask an AI assistant to build a notebook
+** We can leverage the curated documentation to build AI assistants
 #+BEGIN_QUOTE
-Using JUMP Hub docs, link selected cells to images and measurements. Record identifiers and analysis steps.
+Using the JUMP Hub docs, create a marimo dashboard to link selected cells to images and measurements.
 #+END_QUOTE
 
 - Shared tools support reproducible workflows.
@@ -248,7 +278,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 # The following recorded marimo notebook is implemented; it is a separate single-cell example, not a gene/control study.
 
 ** Identify and explore cell subpopulations
-*Interactive marimo notebook*
+Interactive marimo notebook
 
 #+BEGIN_EXPORT latex
 \begin{center}
@@ -363,7 +393,7 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
-\begin{block}{Evaluat new lysosomal probes}
+\begin{block}{Evaluate new lysosomal fluorescence probes}
 \small Kenneth Li, Vendrell Lab, University of Edinburgh\par
 \begin{itemize}
 \item Lysosomal acidification probes in cardiomyocytes.
@@ -432,11 +462,14 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 \includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
 \includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
 {\small Carpenter-Singh Lab \quad\textbullet\quad Carpenter-Shen Lab}\par\smallskip
-\includegraphics[width=0.98\linewidth,height=0.60\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
+{\small Anne E. Carpenter \quad Shantanu Singh \quad Beth Cimini}\par
+{\small Paula Llanos \quad Runxi Shen}\par\smallskip
+\includegraphics[width=0.98\linewidth,height=0.50\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
 {\small Work on cp\_measure and JUMP-lite was supported by GSK and NIH MIRA (R35 GM122547).}\par
 #+END_EXPORT
 
-# Speaker note: Thank the Carpenter-Singh Lab, Carpenter-Shen Lab, Broad, Purdue and the JUMP partners, and acknowledge GSK and NIH MIRA support.
+# Speaker note: Explicitly thank Anne E. Carpenter, Shantanu Singh, Beth Cimini, Paula Llanos and Runxi Shen, alongside the Carpenter-Singh Lab, Carpenter-Shen Lab, Broad, Purdue and JUMP partners, and acknowledge GSK and NIH MIRA support.
+# The presenter requested the five individual names; Runxi's full name is confirmed on slide 1 of the supplied PowerPoint. The partner-sheet pixels are unchanged; only its display-height limit is reduced to fit the two name lines.
 # The presenter will explain orally that the lab moved a couple of months ago; no move date or additional relocation claim is added to the slide.
 # R35 GM122547 is awarded to Anne E. Carpenter, not to the presenter individually; the presenter confirmed support through this grant.
 # Verified in cp_measure (arXiv:2507.01163v1, Acknowledgements) and Chandrasekaran et al. (2025), doi:10.1038/s41592-025-02753-9, Acknowledgments.
@@ -507,19 +540,31 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 
 * Additional slides
 
-** JUMP-lite: dataset size
+** JUMP-lite: a compact benchmark
 #+BEGIN_EXPORT latex
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.52\textwidth}
 \centering
-\includegraphics[height=0.78\textheight]{assets/jump-lite-paper.png}\par\smallskip
-{\footnotesize Same image set: 8.7 TB $\rightarrow$ 92 GB ($\sim$94$\times$; lossy JPEG XL).}
+\includegraphics[width=\linewidth]{assets/jump-lite-workflow.png}
+\end{column}
+\begin{column}{0.46\textwidth}
+\centering
+\includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{assets/jump-lite-squares.png}
+\end{column}
+\end{columns}
+\medskip
+\centering
+{\footnotesize Same selected images: 8.7 TB $\rightarrow$ 92 GB ($\sim$94$\times$ smaller; lossy JPEG XL).}
 #+END_EXPORT
 
 # Speaker note: Additional slide after the main-talk QR, at the presenter's request; not scheduled narration.
 # Compare the same JUMP-lite image cohort: 8.7 TB of original/raw TIFFs versus 92.0 GB at medium-quality (MQ) lossy JPEG XL compression.
 # Source: arXiv:2608.07632v3, section 3.1, reports these sizes and approximately 94-fold reduction. Values are rounded published totals, not a new measurement.
 # Do not use 115 TB as the compression-only baseline: that is the larger JUMP release and also includes the effect of subset selection.
-# The nested-square artwork is the original right-hand panel of Figure 1b, reused without changing pixels or proportions. It shows dataset selection as well as compression; the 115 TB full-release square is context, not a same-image compression baseline.
-# The 4.8 TB Zstd store is losslessly compressed, not an uncompressed baseline. MQ is the 92.0 GB lossy JPEG XL variant; areas in the source artwork encode storage sizes relative to the full release.
+# Adapted from slide 3 of the presenter-supplied get_slide_3.pptx. The workflow retains original image/profile/evaluation illustrations; the nested squares are redrawn with the same storage-area ratios and fewer labels.
+# Images -> profiles -> evaluation means comparing methods on shared data, including recovery of replicate and annotated biological relationships; this is not a new benchmark result or a promise of biological truth.
+# Repeated perturbation/cell/plate counts, preprocessing charts, model/tool names and intermediate lossless tiers are omitted. The supplied slide's 200 TB and cell-total statements are not carried into this deck.
+# The 115 TB full-release square is context for subset selection, not the same-image compression baseline. MQ is the 92.0 GB lossy JPEG XL variant. The omitted 4.8 TB Zstd tier is already losslessly compressed.
 # Lossy compression changes pixel values; validate suitability for the intended analysis. This slide makes no performance-equivalence or lossless-quality claim.
 # The earlier Target-2 recording is a separate subanalysis, not the main release cohort.
 
@@ -550,31 +595,3 @@ Using JUMP Hub docs, link selected cells to images and measurements. Record iden
 # Swap alternatives within a task through Nahual's common setup/process interface, not arbitrary swaps between incompatible task types.
 # Model-specific input preparation, dimensions, parameters, dependencies, licences and validation still apply. No universal plug-and-play or same-output guarantee is claimed.
 # Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
-
-** Words as vectors: word2vec
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.78\textheight :options keepaspectratio
-[[file:assets/word2vec-example.pdf]]
-
-#+BEGIN_EXPORT latex
-\hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
-#+END_EXPORT
-
-# Speaker note: Start with words before moving to cells. Word2vec learns numerical word representations from language context.
-# The country-capital analogy is a teaching example: Paris minus France plus Italy can point toward Rome in a learned vector space.
-# These two-dimensional positions are invented, not a trained model output or a quantitative test. The arithmetic is approximate and depends on training and evaluation.
-# Real embeddings have many dimensions; individual axes are not predefined concepts such as age, gender or biological properties. Learned relations can reflect corpus biases.
-# The user-supplied Words As Vectors image inspired the teaching sequence; this is original vector artwork, not a claim that its hand-labelled axes are real word2vec coordinates.
-
-** From words to cells: vectors for comparison
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
-[[file:assets/vector-interpretability.pdf]]
-
-# Speaker note: Additional slide for questions. Transition: word vectors describe language context; cell profiles describe morphological appearance.
-# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
-# This original illustration is a teaching cartoon, not measured data.
-# A/B are non-senescent examples and C/D senescent examples. A/C show interconnected mitochondria; B/D show fragmented mitochondria.
-# The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
-# Both groups include both mitochondrial patterns: no causal link between senescence and fragmentation is asserted. Fragmented means separate mitochondrial elements, not cristae partitioning.
-# Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
-# Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
-# Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.

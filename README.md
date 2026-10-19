@@ -4,69 +4,54 @@
 
 FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
-Private source mirror. Compile **slides.tex** with **XeLaTeX**; unowned legacy
-`main.tex` is preserved but is not the root. All **21 Overleaf files** are mirrored
-unchanged from `bab3b8064d6cabaf81d5fee89ef0e73c725e43c4`; this README and
-`.gitignore` are repository-specific additions. The original right-hand
-JUMP-lite nested-square PNG is included again as consumed artwork.
+Private source mirror. Compile **slides.tex** with **XeLaTeX**. Legacy unowned
+`main.tex` is preserved but is not the root. All **22 Overleaf files**
+match `2fd74070001afdcc50f763346d389ecf5535f573` exactly, plus this README and `.gitignore`.
 
-## Current deck
+**27 pages: 24 main-talk pages plus three additional slides.** The 23-minute
+plan retains a two-minute buffer in the 25-minute slot.
 
-**27 pages: 22 main-talk pages and five additional slides.** Narration is planned
-for 23 minutes within the 25-minute slot. Stop on the QR page.
+- Opening: Cell Painting (2), exact Mac-edited workflow (3), morphological profiles (4).
+- **Word2vec (5) → JUMP overview (6) → From words to cells (7).**
+- The word2vec Coordinate axis labels and earlier illustrative-positions caption
+  are removed; vectors, country/capital labels and equation are unchanged.
+  Teaching-coordinate qualifications remain in notes; axes have no invented
+  semantic labels. Word2vec is an analogy, not the cell-profile algorithm.
+- AI-assistant prompt (15) preserves the author's latest marimo-dashboard wording.
+- **Play the 23.16-second MP4 at PDF 16 / visible 15; return to PDF 17.**
+- Applications (20), take-homes (21), Thank you (22), References (23), **QR (24)**.
+- Thank you explicitly names **Anne E. Carpenter, Shantanu Singh, Beth Cimini,
+  Paula Llanos and Runxi Shen**, alongside both Carpenter-Singh and Carpenter-Shen
+  labs, Broad/Purdue and the original partner sheet. The move is explained orally.
+- Additional: compact JUMP-lite benchmark (25), reality check (26), Nahual (27).
+  The detailed Nahual slide remains hidden; swaps are within tasks.
 
-- JUMP overview (5): ~58.3 million single-channel TIFF images, alongside the
-  existing laboratory and perturbation counts. The public cpg0016 TIFF-count
-  table totals 58,267,491; these are neither imaging sites nor cells.
-- Applications (18): lysosomal probes, MisLocus, imaging modalities and Squidpy.
-- Close: take-homes (19), Thank you (20), References (21), QR (22).
-- Additional: JUMP-lite (23), reality check (24), Nahual (25), word2vec (26),
-  cell vectors (27). The reality-check content remains unchanged.
-- The image-count citation is with the other sources on References, not the
-  JUMP overview. Its former 30-second reality-check slot now gives the overview
-  time to explain the image count and units; the total plan remains 23 minutes.
+JUMP-lite uses three original workflow crops and simplified nested squares whose
+areas retain the storage ratios. Selection from 115 TB and same-cohort compression
+are distinct: **8.7 TB → 92 GB (~94× smaller; lossy JPEG XL)**. No performance-
+equivalence claim. The original crop remains in canonical history.
 
-JUMP-lite now shows the original **nested-square storage graphic**. It includes
-both subset selection and compression, with the full 115 TB release as context.
-The footer isolates **8.7 TB → 92 GB (~94× smaller)** for the same image cohort,
-using lossy JPEG XL. No pixel values or proportions of the artwork were changed.
+JUMP's 136,000 headline uses the gene-level modality tally (136,367), distinct
+from 138,897 construct/reagent IDs. The ~58.3 million count means single-channel
+TIFF images, not cells or sites; the source is cited on References (23).
+Funding stays scoped to cp_measure/JUMP-lite (GSK and NIH MIRA R35 GM122547,
+awarded to Anne E. Carpenter). The presenter's CellProfiler speed claim remains
+independently unvalidated. All other direct author edits are preserved, including
+Theis Lab, the lysosomal fluorescence-probe heading, heterogeneous-phenotype
+question, and removed uv/demo-text entries.
 
-Direct author wording is preserved, including marimo dashboards, individual
-tools, plain take-home labels and GSK/NIH MIRA funding scoped to cp_measure and
-JUMP-lite. Thank you (PDF 20) now names both **Carpenter-Singh Lab** and
-**Carpenter-Shen Lab**; the presenter explains the move orally. The latest author
-application credits, including **Tim Treis, Theis Lab, Helmholtz-Munich**, and
-removal of the visible uv row/demo-text link are preserved.
-The original Mac-edited workflow remains exact. The detailed Nahual
-slide stays hidden. Both vector teaching diagrams use illustrative coordinates,
-not measured results; word2vec is an analogy, not the cell-feature algorithm.
-
-## Playback and sources
-
-Play the separate 23.16-second video at **PDF 14 / visible slide 13**, then return
-to PDF 15. The two snapshot-image links open the public CC BY 4.0 recording:
-<https://doi.org/10.5281/zenodo.23462248>. Video is not embedded in the PDF.
-
-- Image count: <https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv>
-- Compression comparison: <https://arxiv.org/abs/2608.07632v3>, section 3.1.
-- JUMP Hub: <https://broad.io/jump>
+The exact Mac-edited workflow, cell-vector artwork and demo video are unchanged.
+The recording is an offline companion, not embedded PDF media; snapshot images
+on 16/17 link to its CC BY 4.0 record: <https://doi.org/10.5281/zenodo.23462248>.
+The Target-2 recording is separate from the main JUMP-lite release cohort.
 
 ## Release holds
 
-Keep this repository **private until explicitly authorized otherwise**.
-The presentation **slides.pdf remains absent and ignored**, pending final-slide
-approval. PDF upload and public visibility are independent approvals.
-The Slides QR reserves
-`https://github.com/afermg/2026_10_21_faseb_jump_hub/blob/main/slides.pdf`;
-audience access is not yet available. Both 40-mm codes and their payloads remain
-unchanged. Review source comments/history before any public release.
-
-Only these three specific vector figure PDFs are permitted source artwork:
-
-- `assets/cell-painting-edited.pdf`
-- `assets/vector-interpretability.pdf`
-- `assets/word2vec-example.pdf`
-
-These are not presentation-PDF releases. No reuse license is implied for earlier
-figures, institutional logos or other third-party material. Scientific qualifications
-and full provenance remain in the canonical authoring repository and local notes.
+Keep the GitHub repository **private**. Presentation **slides.pdf remains absent
+and ignored in Git**, pending explicit final-slide approval. Public visibility
+requires separate approval. The two 40-mm QR codes and payloads are unchanged;
+<https://broad.io/jump> remains visible/clickable. The reserved GitHub PDF-viewer URL is
+not audience-accessible yet. Only these three source-artwork PDFs are permitted:
+`assets/cell-painting-edited.pdf`, `assets/vector-interpretability.pdf`, and
+`assets/word2vec-example.pdf`. They are not presentation-PDF releases. No license
+for third-party logos/figures is implied; review source/history before release.
