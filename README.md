@@ -43,7 +43,9 @@ Use **slides.tex with XeLaTeX**,moloch and Fira Sans. Unowned main.tex is preser
 
 ## Presenter-requested corrections
 
-- Broad is centered above Carpenter-Singh and Cimini together;Purdue is centered above Carpenter-Shen on acknowledgements23. Logo pixels,names,partner artwork and funding text are unchanged. The other27pages are pixel-identical to the preceding restored-slide revision.
+- Preserved the latest direct author edit removing the Hub audience sentence on PDF8. No other slide changed in this preservation step.
+
+- Broad is centered above Carpenter-Singh and Cimini together;Purdue is centered above Carpenter-Shen on acknowledgements23. Logo pixels,names,partner artwork and funding text are unchanged. At the logo-alignment checkpoint,the other27pages were pixel-identical to the preceding restored-slide revision;the subsequent direct author edit changes only the Hub slide8.
 - Word2vec5 and biological representations6 are separate again,using their exact original figure PDFs,titles and citation placement. The merged triptych remains archived and is not consumed by the deck.
 - Tools15 is a standalone four-row list. The complete AI/workflow statement,example prompt and validation sentence sit beside the unchanged demo screenshot16,not on the tools slide.
 - The latest take-home wording is retained: “Guides and notebooks help AI agents build analysis workflows.” The later logo-alignment change leaves all other current live slide content unchanged.
@@ -66,6 +68,6 @@ Play the unchanged23.16-second MP4 separately on **PDF16 / visible15**,return to
 
 ## Verified publication
 
-- Canonical source: `c8678bdf80f2228bd32c137a7c6483a1fd94ef75`
-- Preserved live head: `9a2cfbada7858b2be340ed90c4528f08bd05eaa1`
-- Overleaf: `c40d8041d072882c64691bc930422d6ff732e726`
+- Canonical source: `d3aede55e6b56a400217357edca1bc56b14ebe70`
+- Preserved live head: `17f8038190eff2e128f1ea743a447dc57bb6cd2b`
+- Overleaf: `acece79ea72cbacee3606c6d68824306d659ae7c`

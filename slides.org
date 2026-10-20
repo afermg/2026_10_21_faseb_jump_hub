@@ -179,7 +179,6 @@ Can I use this data/these models to answer my biological questions? To design fo
 # JUMP Hub and the notebook demo address practical access. JUMP-lite supports method development; neither replaces experimental validation.
 
 ** We make JUMP accessible via the JUMP Hub
-For experimental biologists and computational experts alike.
 
 #+BEGIN_EXPORT latex
 \begin{columns}[c,onlytextwidth]
