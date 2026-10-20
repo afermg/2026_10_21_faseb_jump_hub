@@ -122,10 +122,11 @@ Profiles are numerical descriptions of cells.
 # Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
 
 ** JUMP: Joint Undertaking for Morphological Profiling
-- Public Cell Painting data: 12 laboratories, nearly 136,000 perturbations.
-- ~58.3 million images.
-
 #+BEGIN_EXPORT latex
+\begin{itemize}
+\item Public Cell Painting data: 12 laboratories, nearly 136,000 perturbations.
+\item \textasciitilde{}58.3 million images.
+\end{itemize}
 \begin{center}
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering CRISPR knockout\par\medskip{\Large\bfseries 7,975}\par gene targets}}
 \quad
@@ -159,12 +160,12 @@ Profiles are numerical descriptions of cells.
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \begin{block}{Methods development (ML)}
-Does the model improve benchmark performance?
+Does the model match known biology? Can we find new connections from looking at the whole picture?
 \end{block}
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{block}{Experimental biology}
-Can I use it to answer my biological question?
+Can I use this data/these models to answer my biological questions? To design follow-up experiments?
 \end{block}
 \end{column}
 \end{columns}
@@ -301,7 +302,7 @@ MYT1 and PROZ gallery examples
 ** Modern tools make image analysis more accessible
 #+BEGIN_EXPORT latex
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
-\textbf{Find cells and spots} & {\small Cellpose (cells); Spotiflow (spots)} \\[0.9em]
+\textbf{Find cells, nuclei and spots} & {\small Cellpose (cells and nuclei); Spotiflow (spots)} \\[0.9em]
 \textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
 \textbf{Measure cell appearance} & {\small cp\_measure} \\[0.9em]
 \textbf{Explore your results} & {\small marimo} \\[0.9em]
@@ -423,7 +424,7 @@ Interactive marimo notebook
 # Six embedding panels use fixed UMAP: CellProfiler+Harmony, MorphEm, DINOv2, OpenPhenom, SubCell and ViT-random, last. The displayed label is SubCell; the underlying data remain clipped-input SubCell only. Standard SubCell and the cell-count representation are omitted. Shared parameters: 15 neighbors, min_dist 0.1, Euclidean, spectral initialization, seed 20261020, single thread. No parameter tuning for separation. CellProfiler input remains the released259-coordinate corrected representation; its final visualization is UMAP, not PCA. No new Harmony fit or model inference.
 # GJA8 came from the prior frozen discovery-only CP screen; feature axes were selected exploratorily using discovery comparisons. PLK1 was originally highlighted after inspecting earlier results. This is an illustrative comparison, not a model ranking, causal claim or independent-guide validation. UMAP need not isolate GJA8 from controls. Same wells do not guarantee identical image encoding, aggregation or preprocessing. Removing the count plot does not rule out density/viability effects; prior count-baseline results are retained in the research archive. Current data/provenance: figures/two-phenotypes/. Main-talk slide immediately before profile extraction. Pacing:30s here plus45s for extraction, preserving their combined75s allocation.
 
-** Extract morphological profiles from your own images
+** Not just JUMP: Extract morphological profiles from your own images
 #+BEGIN_EXPORT latex
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.44\textwidth}
@@ -723,6 +724,21 @@ Runxi Shen
 # Model-specific input preparation, dimensions, parameters, dependencies, licences and validation still apply. No universal plug-and-play or same-output guarantee is claimed.
 # Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
 # Spotiflow is added as spot detection, not an interchangeable cell-boundary model. The Nahual wrapper rasterises detected centres into configurable disk labels for downstream measurement; disk geometry does not estimate a punctum's physical boundary.
+
+** JUMP-lite: comparing image representations
+#+BEGIN_EXPORT latex
+\centering\small
+Recover replicate perturbations and known biological relationships.\par\smallskip
+\includegraphics[width=0.99\linewidth,height=0.73\textheight,keepaspectratio]{assets/jump-lite-model-comparison.png}\par\smallskip
+{\scriptsize Raw images; colors normalized within each task. CellProfiler/count references use more sites per well.\par}
+{\fontsize{5.5}{6.5}\selectfont\color{gray}\hfill\href{https://arxiv.org/abs/2608.07632v3}{Adapted from Muñoz et al. (2026), Figure 5}\par}
+#+END_EXPORT
+
+# Final additional slide; unscheduled, after the Nahual slide. This is the published arXiv v3 Figure5, not the workflow already shown on page28 and not a new analysis of the illustrative controls on page20.
+# Compare four pretrained image representations plus ViT-rand with descriptive Raw-only CellProfiler and CellCount references. Eleven tasks: four phenotypic-activity (PA) replicate-retrieval tasks, two RefChemDB phenotypic-consistency (PC) tasks, and five MOTIVE relationship-retrieval tasks. PA uses perturbation replicates versus same-plate negative controls; PC uses shared-target annotations. CC=compound-compound, GG=gene-gene, CG=compound-gene retrieval.
+# Printed task-cell numbers are absolute scores: NAP for the six PA/PC tasks and Recall@1% for five MOTIVE tasks. Colors divide each score by its task-column maximum; the final All column is the mean of these normalized scores. A red cell does not mean perfect accuracy, and values cannot be treated as the same metric across all columns. Each representation averages over normalization configurations, not only its best run.
+# Preserve all original rows,values,labels and color scale,including CellCount and ViT-rand baselines. CellProfiler and CellCount are descriptive Raw-only references with more than four sites per well; image representations use four sites. No controlled CellProfiler superiority or compressed-setting ranking claim. Exact middle-model ranks remain uncertain; some model pretraining overlaps JUMP. Known annotation retrieval does not prove mechanism or physical interaction.
+# Raw-image paper inputs/processing differ from the current matched MQ/clipped-input UMAP illustration on page20. No new inference,recomputation or favorable-row selection. Extracted original RGB/alpha pixels from the public PDF,composited on white without resizing or redrawing. Full caption/source receipt: figures/jump-lite-model-comparison/.
 
 * Historical individual model figures :noexport:
 # Superseded by the single combined controls-only figure; retained solely as historical source, never exported.

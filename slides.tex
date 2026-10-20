@@ -93,7 +93,6 @@ Profiles are numerical descriptions of cells.
 \item Public Cell Painting data: 12 laboratories, nearly 136,000 perturbations.
 \item \textasciitilde{}58.3 million images.
 \end{itemize}
-
 \begin{center}
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering CRISPR knockout\par\medskip{\Large\bfseries 7,975}\par gene targets}}
 \quad
@@ -106,12 +105,12 @@ Profiles are numerical descriptions of cells.
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
 \begin{block}{Methods development (ML)}
-Does the model improve benchmark performance?
+Does the model match known biology? Can we find new connections from looking at the whole picture?
 \end{block}
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{block}{Experimental biology}
-Can I use it to answer my biological question?
+Can I use this data/these models to answer my biological questions? To design follow-up experiments?
 \end{block}
 \end{column}
 \end{columns}
@@ -210,7 +209,7 @@ MYT1 and PROZ gallery examples
 \end{frame}
 \begin{frame}[label={sec:org000000f}]{Modern tools make image analysis more accessible}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
-\textbf{Find cells and spots} & {\small Cellpose (cells); Spotiflow (spots)} \\[0.9em]
+\textbf{Find cells, nuclei and spots} & {\small Cellpose (cells and nuclei); Spotiflow (spots)} \\[0.9em]
 \textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
 \textbf{Measure cell appearance} & {\small cp\_measure} \\[0.9em]
 \textbf{Explore your results} & {\small marimo} \\[0.9em]
@@ -260,7 +259,7 @@ Interactive marimo notebook
 
 \hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
 \end{frame}
-\begin{frame}[label={sec:org0000014}]{Extract morphological profiles from your own images}
+\begin{frame}[label={sec:org0000014}]{Not just JUMP: Extract morphological profiles from your own images}
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.44\textwidth}
 \centering
@@ -436,7 +435,7 @@ Runxi Shen
 \end{columns}
 \end{frame}
 \section*{Additional slides}
-\label{sec:org000001e}
+\label{sec:org000001f}
 
 \begin{frame}[label={sec:org000001c}]{JUMP-lite: a compact benchmark}
 \begin{columns}[c,onlytextwidth]
@@ -465,5 +464,12 @@ Runxi Shen
 \textbf{Spot detection} & \fbox{Spotiflow} \\
 \textbf{Tracking} & \fbox{Trackastra}\ $\leftrightarrow$\ \fbox{Ultrack}
 \end{tabular}
+\end{frame}
+\begin{frame}[label={sec:org000001e}]{JUMP-lite: comparing image representations}
+\centering\small
+Recover replicate perturbations and known biological relationships.\par\smallskip
+\includegraphics[width=0.99\linewidth,height=0.73\textheight,keepaspectratio]{assets/jump-lite-model-comparison.png}\par\smallskip
+{\scriptsize Raw images; colors normalized within each task. CellProfiler/count references use more sites per well.\par}
+{\fontsize{5.5}{6.5}\selectfont\color{gray}\hfill\href{https://arxiv.org/abs/2608.07632v3}{Adapted from Muñoz et al. (2026), Figure 5}\par}
 \end{frame}
 \end{document}

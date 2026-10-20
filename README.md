@@ -6,10 +6,10 @@ FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
 Use **`slides.tex` with XeLaTeX**, moloch and Fira Sans. Legacy, unowned `main.tex` is preserved but is **not** the compilation root.
 
-- **29 PDF pages:27main-talk +2additional**,23-minute narration in a25-minute slot.
-- Overleaf commit: `e8a6a90b59948cd3e1739364091c3345e11430c5`
-- Canonical source commit: `e27cb6e045a2c44a72dc3b1a6ef1e9a4ff66568a`
-- Direct author changes through `dee36e090c8968d4f68303a4c6d990ddc09b72c4` preserved.
+- **30 PDF pages:27main-talk +3additional**,23-minute narration in a25-minute slot.
+- Overleaf commit: `4858b265d312dc271cff5960eb83a4863047a78f`
+- Canonical source commit: `d44ded71defa221db48e5572ecbbde3a03b6c964`
+- Direct author changes through `963449eb24fdad3077b324112c099e8407667a3d` preserved.
 
 ## Current slide order
 
@@ -19,10 +19,11 @@ Use **`slides.tex` with XeLaTeX**, moloch and Fira Sans. Legacy, unowned `main.t
 | 10 | Tutorials,how-tos and resources |
 | 16–19 | Modern tools → AI → notebook(play18,return19) |
 | 20 | **Positive controls contextualize the perturbations** |
-| 21 | Extract morphological profiles from your own images |
+| 21 | Not just JUMP:Extract morphological profiles from your own images |
 | 22–23 | Applications → MisLocus |
 | 24–27 | Take-homes → Thanks/funding → References → QR closing |
 | 28–29 | Additional JUMP-lite → Nahual |
+| 30 | JUMP-lite:comparing image representations (published Figure5) |
 
 MisLocus23 is labeled **Unpublished data (preprint coming soon)**, with the author-removed personal/lab caption absent and the small adaptation footer retained, with no displayed Hugging Face link. Its scale sentence reports approximately3million cells,1,541reference/variant alleles and282genes,excluding controls; source documentation is retained as internal provenance. The two original LZTR1 image panels are unchanged.
 
@@ -41,3 +42,5 @@ Only three artwork PDFs are tracked:`assets/vector-interpretability.pdf`,`assets
 The unchanged23.16-second MP4 is separate from the PDF:<https://doi.org/10.5281/zenodo.23462248>,CC BY4.0.
 
 Latest display edit:the SubCell label no longer includes “(clipped)”,but its underlying clipped-input profiles are unchanged. ViT-random is last. The uv environments/dependencies reference is removed. The updated ML heading,preprint note and cp_measure/JUMP-lite funding credit preserve the latest direct author edits. Controls20/extraction21 share30+45seconds,keeping1380seconds total. No additional positive-control validation results were added in this layout-only revision.
+
+Latest addition:the final slide30 reproduces the complete published Figure5 from arXiv:2608.07632v3,with attribution and the extra-site CellProfiler/count caveat. It complements the workflow slide28. Original figure rows/values/labels are retained;no new benchmark analysis was run. The Cellpose toolbox label explicitly includes cells and nuclei. The control-figure “Measured feature axes...” footer is removed;methods and unchanged data remain in the notes/evidence. The expanded model/biology questions and “Not just JUMP” heading preserve the latest author edits.
