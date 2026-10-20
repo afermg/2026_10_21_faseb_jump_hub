@@ -158,7 +158,7 @@ Profiles are numerical descriptions of cells.
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
-\begin{block}{Method development}
+\begin{block}{Methods development (ML)}
 Does the model improve benchmark performance?
 \end{block}
 \end{column}
@@ -410,6 +410,19 @@ Interactive marimo notebook
 # Nix deploys the wrappers. Most neural models require GPU resources; model-specific preprocessing, licences, weights and output conventions still apply.
 # Do not imply embeddings from different models share coordinates or dimensions, or that every wrapper was runtime-tested for this talk.
 
+** Positive controls contextualize the perturbations
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
+[[file:assets/real-embeddings-combined.png]]
+
+#+BEGIN_EXPORT latex
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
+#+END_EXPORT
+
+# Current paired example: 5,750 matched wells: 567 PLK1 positive-control wells, 10 GJA8 perturbation wells and 5,173 negative controls. GJA8 is a discovery-selected phenotype example, NOT an annotated positive control or independent validation reagent. Two of 569 PLK1 wells were excluded for known missing MQ image chunks. Same wells in every panel; MYT1/NPC1 and other exploratory candidates are excluded before fitting/display.
+# Large left panel uses genuine Nuclei_AreaShape_Area and Nuclei_AreaShape_Eccentricity, centered on plate-negative medians and scaled by pooled discovery-negative MAD*1.4826. These are named measured features, not UMAP/PCA axes or learned coordinates. The full-range view retains all wells; the labeled inset magnifies the control/GJA8 region. PLK1 shows smaller, more eccentric nuclei relative to controls; GJA8 shows larger, moderately more eccentric nuclei in these well-level measurements. Do not infer mechanism from these features.
+# Six embedding panels use fixed UMAP: CellProfiler+Harmony, MorphEm, DINOv2, OpenPhenom, SubCell and ViT-random, last. The displayed label is SubCell; the underlying data remain clipped-input SubCell only. Standard SubCell and the cell-count representation are omitted. Shared parameters: 15 neighbors, min_dist 0.1, Euclidean, spectral initialization, seed 20261020, single thread. No parameter tuning for separation. CellProfiler input remains the released259-coordinate corrected representation; its final visualization is UMAP, not PCA. No new Harmony fit or model inference.
+# GJA8 came from the prior frozen discovery-only CP screen; feature axes were selected exploratorily using discovery comparisons. PLK1 was originally highlighted after inspecting earlier results. This is an illustrative comparison, not a model ranking, causal claim or independent-guide validation. UMAP need not isolate GJA8 from controls. Same wells do not guarantee identical image encoding, aggregation or preprocessing. Removing the count plot does not rule out density/viability effects; prior count-baseline results are retained in the research archive. Current data/provenance: figures/two-phenotypes/. Main-talk slide immediately before profile extraction. Pacing:30s here plus45s for extraction, preserving their combined75s allocation.
+
 ** Extract morphological profiles from your own images
 #+BEGIN_EXPORT latex
 \begin{columns}[c,onlytextwidth]
@@ -522,7 +535,7 @@ LZTR1 G248R\par\smallskip
 \end{column}
 \end{columns}\medskip
 \centering\small
-Unpublished data
+Unpublished data (preprint coming soon)
 #+END_EXPORT
 
 #+BEGIN_EXPORT latex
@@ -574,7 +587,7 @@ Runxi Shen
 \end{column}
 \end{columns}\par\smallskip
 \includegraphics[width=0.98\linewidth,height=0.50\textheight,keepaspectratio]{assets/jump-partners.png}\par\medskip
-{\small Work on cp\_measure was supported by GSK and NIH MIRA (R35 GM122547).}\par
+{\small Work on cp\_measure and JUMP-lite was supported by GSK and NIH MIRA (R35 GM122547).}\par
 #+END_EXPORT
 
 # Speaker note: Explicitly thank Anne E. Carpenter and Shantanu Singh (Carpenter-Singh Lab), Beth Cimini and Paula Llanos together (Cimini Lab), and Runxi Shen (Carpenter-Shen Lab), alongside Broad, Purdue and JUMP partners, and acknowledge GSK and NIH MIRA support.
@@ -618,7 +631,6 @@ Runxi Shen
 \item \href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}: \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{biological questions and table export}.
 \item Recording: \href{https://github.com/afermg/JUMP_lite/blob/main/cpg_upload/TARGET2_ARTIFACTS_README.md}{JUMP Target-2 artifacts}.
 \item \href{https://marimo.io/}{marimo}: reactive Python notebooks.
-\item \href{https://docs.astral.sh/uv/}{uv}: Python environments and dependencies.
 \end{itemize}
 \end{column}
 \end{columns}
@@ -711,19 +723,6 @@ Runxi Shen
 # Model-specific input preparation, dimensions, parameters, dependencies, licences and validation still apply. No universal plug-and-play or same-output guarantee is claimed.
 # Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
 # Spotiflow is added as spot detection, not an interchangeable cell-boundary model. The Nahual wrapper rasterises detected centres into configurable disk labels for downstream measurement; disk geometry does not estimate a punctum's physical boundary.
-
-** Two perturbations, distinct nuclear phenotypes
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
-[[file:assets/real-embeddings-combined.png]]
-
-#+BEGIN_EXPORT latex
-\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
-#+END_EXPORT
-
-# Current paired example: 5,750 matched wells: 567 PLK1 positive-control wells, 10 GJA8 perturbation wells and 5,173 negative controls. GJA8 is a discovery-selected phenotype example, NOT an annotated positive control or independent validation reagent. Two of 569 PLK1 wells were excluded for known missing MQ image chunks. Same wells in every panel; MYT1/NPC1 and other exploratory candidates are excluded before fitting/display.
-# Large left panel uses genuine Nuclei_AreaShape_Area and Nuclei_AreaShape_Eccentricity, centered on plate-negative medians and scaled by pooled discovery-negative MAD*1.4826. These are named measured features, not UMAP/PCA axes or learned coordinates. The full-range view retains all wells; the labeled inset magnifies the control/GJA8 region. PLK1 shows smaller, more eccentric nuclei relative to controls; GJA8 shows larger, moderately more eccentric nuclei in these well-level measurements. Do not infer mechanism from these features.
-# Six embedding panels use fixed UMAP: CellProfiler+Harmony, MorphEm, DINOv2, OpenPhenom, ViT-random and clipped-input SubCell. Standard SubCell and the cell-count representation are omitted. Shared parameters: 15 neighbors, min_dist 0.1, Euclidean, spectral initialization, seed 20261020, single thread. No parameter tuning for separation. CellProfiler input remains the released259-coordinate corrected representation; its final visualization is UMAP, not PCA. No new Harmony fit or model inference.
-# GJA8 came from the prior frozen discovery-only CP screen; feature axes were selected exploratorily using discovery comparisons. PLK1 was originally highlighted after inspecting earlier results. This is an illustrative comparison, not a model ranking, causal claim or independent-guide validation. UMAP need not isolate GJA8 from controls. Same wells do not guarantee identical image encoding, aggregation or preprocessing. Removing the count plot does not rule out density/viability effects; prior count-baseline results are retained in the research archive. Current data/provenance: figures/two-phenotypes/. Additional slide; no scheduled narration.
 
 * Historical individual model figures :noexport:
 # Superseded by the single combined controls-only figure; retained solely as historical source, never exported.
