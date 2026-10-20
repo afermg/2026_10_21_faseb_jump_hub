@@ -151,7 +151,7 @@ MYT1 example
 \end{center}
 
 \begin{itemize}
-\item We precalculated statistical metrics for every pair.
+\item Precomputed comparisons between perturbation profiles.
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org000000b}]{How does cell morphology change?}
@@ -229,13 +229,11 @@ Interactive marimo notebook
 \end{itemize}
 \end{frame}
 \begin{frame}[label={sec:org0000011}]{Modern tools make image analysis more accessible}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
-\textbf{Segmentation / spots} & Cellpose: cell/nucleus masks; Spotiflow: fluorescent spots. \\[0.65em]
-\textbf{Tracking} & Trackastra and Ultrack: link cells over time. \\[0.65em]
-\textbf{Profiles} & cp\_measure: images + masks $\rightarrow$ profiles. \\[0.65em]
-%\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
-\textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
-\textbf{Notebooks} & marimo: reactive notebooks and dashboards. \\[0.65em]
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
+\textbf{Find cells and spots} & {\small Cellpose (cells); Spotiflow (spots)} \\[0.9em]
+\textbf{Follow cells over time} & {\small Trackastra / Ultrack} \\[0.9em]
+\textbf{Measure cell appearance} & {\small cp\_measure} \\[0.9em]
+\textbf{Explore your results} & {\small marimo} \\[0.9em]
 \end{tabular}\par\vspace{1em}
 \centering\textbf{AI can turn these individual tools into workflows.}
 \end{frame}
@@ -250,7 +248,7 @@ Interactive marimo notebook
 \begin{itemize}
 \item Thousands of features across channels and compartments.
 \item Fits your Python pipeline.
-\item Fastest software to obtain interpretable morphological features (>2x CellProfiler).
+\item Fast software to obtain interpretable morphological features (>2x CellProfiler).
 \end{itemize}
 \end{column}
 \end{columns}

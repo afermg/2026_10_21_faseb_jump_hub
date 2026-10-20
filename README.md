@@ -6,7 +6,7 @@ FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
 Private source mirror. Compile **slides.tex** with **XeLaTeX**. The unowned
 legacy main.tex is retained but is not the root. All 24 Overleaf files
-match `b674ed4f1cc7c20b7fb75272304764f738e315f4` exactly, plus this README and `.gitignore`.
+match `98beed0bd7a6fbd7d48c2747b0004ea4bbdbd049` exactly, plus this README and `.gitignore`.
 
 **28 pages: 24 main-talk pages plus four additional slides.** Planned narration
 is 23 minutes, leaving a two-minute buffer in the 25-minute slot.
@@ -22,9 +22,9 @@ is 23 minutes, leaving a two-minute buffer in the 25-minute slot.
 - **Play the 23.16-second MP4 at PDF16 / visible15; return to PDF17.** The recording
   is a separate offline companion, not PDF-embedded media. Both still images link
   to <https://doi.org/10.5281/zenodo.23462248> (CC BY 4.0).
-- Toolbox18 restores **Trackastra / Ultrack** tracking and adds **Spotiflow** spot
-  detection alongside Cellpose masks. Nahual27 also lists Spotiflow, explicitly
-  distinguished from cell-boundary segmentation.
+- Toolbox18 leads with **find cells/spots, follow cells over time, measure cell
+  appearance and explore results**. All six requested tool names remain as smaller
+  supporting examples; storage-format details move to notes. Nahual27 is unchanged.
 - Applications20, take-homes21, acknowledgements22, References23, **closing QR24**.
 - Named lab groups: **Carpenter-Singh Lab — Anne E. Carpenter, Shantanu Singh**;
   **Cimini Lab — Beth Cimini, Paula Llanos**; **Carpenter-Shen Lab — Runxi Shen**.
@@ -40,7 +40,10 @@ is 23 minutes, leaving a two-minute buffer in the 25-minute slot.
   clinical-pathogenicity claim; the source clinical photo/contact emails are omitted.
   The main talk and its timings do not include this additional visual example.
 
-Latest direct author wording/order/funding is preserved. JUMP's136,000 headline
+Latest direct author wording/order/funding is preserved except the requested
+corrections: MYT1 now says **Precomputed comparisons between perturbation profiles.**
+The speed sentence uses **Fast** instead of **Fastest**; its >2x CellProfiler
+comparison is retained, not independently validated. JUMP's136,000 headline
 is the136,367 gene-level modality tally, not the138,897 reagent-ID total or a
 cross-modality unique-gene count. The~58.3million count denotes single-channel
 TIFF files, not cells or sites. The presenter's CellProfiler speed claim remains

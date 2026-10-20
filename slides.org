@@ -203,9 +203,10 @@ MYT1 example
 #+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
 [[file:assets/hub-matches.png]]
 
-- We precalculated statistical metrics for every pair.
+- Precomputed comparisons between perturbation profiles.
 
-# Speaker note: JSON export is documented by the current JUMP_rr tutorial. Do not promise a CSV button.
+# Speaker note: These are precomputed comparisons between perturbation profiles in the available tables, not a claim of exhaustive coverage or experiments combining two perturbations.
+# JSON export is documented by the current JUMP_rr tutorial. Do not promise a CSV button.
 # Profile similarity is not proof of a shared mechanism. This historical MYT1 example is separate from AVPR2 below.
 
 ** How does cell morphology change?
@@ -316,18 +317,17 @@ Interactive marimo notebook
 
 ** Modern tools make image analysis more accessible
 #+BEGIN_EXPORT latex
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
-\textbf{Segmentation / spots} & Cellpose: cell/nucleus masks; Spotiflow: fluorescent spots. \\[0.65em]
-\textbf{Tracking} & Trackastra and Ultrack: link cells over time. \\[0.65em]
-\textbf{Profiles} & cp\_measure: images + masks $\rightarrow$ profiles. \\[0.65em]
-%\textbf{Learned features} & Generalist and specialised models that can be fine-tuned. \\[0.65em]
-\textbf{Data formats} & Parquet tables; Zarr arrays; JPEG XL compression. \\[0.65em]
-\textbf{Notebooks} & marimo: reactive notebooks and dashboards. \\[0.65em]
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
+\textbf{Find cells and spots} & {\small Cellpose (cells); Spotiflow (spots)} \\[0.9em]
+\textbf{Follow cells over time} & {\small Trackastra / Ultrack} \\[0.9em]
+\textbf{Measure cell appearance} & {\small cp\_measure} \\[0.9em]
+\textbf{Explore your results} & {\small marimo} \\[0.9em]
 \end{tabular}\par\vspace{1em}
 \centering\textbf{AI can turn these individual tools into workflows.}
 #+END_EXPORT
 
-# Speaker note: This is a complementary toolbox, not a required five-step pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
+# Speaker note: Lead with four biological actions, not package explanations: find cells/spots, follow cells over time, measure cell appearance, explore results. Tool names are supporting examples, not a required pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
+# Parquet/Zarr/JPEG XL implementation details move off the visible toolbox into these notes; the main talk need not teach storage formats. The post-QR Nahual model catalogue remains available for technical questions.
 # Cellpose provides cell/nucleus segmentation. Spotiflow detects fluorescent puncta; its Nahual wrapper converts detected centres into configurable disk labels, not measured object boundaries.
 # Trackastra links segmented cells/nuclei; Ultrack combines candidate segmentations and tracking. Restored names are task alternatives with model-specific inputs, not a claim of validated tracking for every organelle.
 # Generalist/specialised learned representations can be adapted where model weights, training interfaces and licences permit; fine-tuning needs appropriate data and held-out evaluation.
@@ -379,7 +379,7 @@ Interactive marimo notebook
 \begin{itemize}
 \item Thousands of features across channels and compartments.
 \item Fits your Python pipeline.
-\item Fastest software to obtain interpretable morphological features (>2x CellProfiler).
+\item Fast software to obtain interpretable morphological features (>2x CellProfiler).
 \end{itemize}
 \end{column}
 \end{columns}
@@ -387,7 +387,7 @@ Interactive marimo notebook
 
 # Speaker note: Feature schema verified with five channels and three object types: 995 columns/object, 2,985 object-feature pairs when combined.
 # That synthetic schema check disables Costes; aggregation/pivoting combines the API's object-type rows into a profile. Counts depend on configuration.
-# The presenter added the fastest/>2x CellProfiler bullet directly in Overleaf; it is preserved, not independently revalidated by this reference-cleanup task.
+# The presenter requested Fast instead of Fastest. The >2x CellProfiler comparison remains at their instruction and has not been independently revalidated; it needs matched benchmark evidence.
 # Historical benchmark context, no longer a visible bullet: published median intensity-kernel speedup (28.07x), not evidence for that CellProfiler comparison or whole-pipeline speedup.
 # Benchmark: synthetic 256/512/1024-pixel images, 16/64/256 objects, matched dependencies, single thread; retained in historical evidence only, not References.
 
