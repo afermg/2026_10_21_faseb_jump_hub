@@ -201,17 +201,16 @@ Can I use it to answer my biological question?
 # Availability is not phenotypic activity: use the perturbation-level corrected p-value to assess a detectable profile.
 # Homepage captured 18 October 2026; other interface screenshots are historical examples.
 
-** Beyond this talk: tutorials, how-tos and resources
-We added practical guides to help biologists use JUMP.
+** Tutorials, how-tos and resources
+The Hub contains practical guides to help biologists use JUMP.
 
 #+BEGIN_EXPORT latex
 \medskip
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.68\textwidth}@{}}
-\textbf{Tutorials} & \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/0_overview.html}{Six runnable notebooks: profiles, metadata, activity, images, clusters and gene information.} \\[1em]
+\textbf{Tutorials} & \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/0_overview.html}{Six curated runnable notebooks: profiles, metadata, statistic} \\[1em]
 \textbf{How-to guides} & \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{No-code gene/compound queries}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/0_overview.html\#morpheus}{explore similarity heatmaps}. \\[1em]
 \textbf{Beyond today's examples} & \href{https://broadinstitute.github.io/jump_hub/explanations/data_description.html}{Dataset explanations}, \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/17_mislocus_example.html}{protein-localisation analysis} and a \href{https://ciminilab.github.io/GuideToCellPainting/}{Guide to Cell Painting for Biologists}.
 \end{tabular}\par\bigskip
-\centering\small\href{https://broad.io/jump}{Start at broad.io/jump}
 #+END_EXPORT
 
 # Speaker note: Give a 30-second overview, borrowed from the Hub introduction (75 to45seconds). Explicitly say we added tutorials/how-tos, and the Hub links to useful resources beyond the examples covered in this talk. These are alternative starting points, not compulsory steps.
@@ -466,7 +465,7 @@ Interactive marimo notebook
 \begin{block}{Compare imaging modalities}
 \small Minh Doan, GSK Bioimaging Analytics\par
 \begin{itemize}
-\item Bright-field, Cell Painting, cell cycle and viability.
+\item Bright-field time seriesq, Cell Painting, cell cycle and viability.
 \item Shared and complementary compound responses.
 \end{itemize}
 \end{block}
@@ -523,7 +522,6 @@ LZTR1 G248R\par\smallskip
 \end{column}
 \end{columns}\medskip
 \centering\small
-Johan Fredin, Carpenter-Shen Lab, Purdue University\par\smallskip
 Unpublished data
 #+END_EXPORT
 
@@ -714,7 +712,7 @@ Runxi Shen
 # Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
 # Spotiflow is added as spot detection, not an interchangeable cell-boundary model. The Nahual wrapper rasterises detected centres into configurable disk labels for downstream measurement; disk geometry does not estimate a punctum's physical boundary.
 
-** Positive and negative controls across embedding models
+** Two perturbations, distinct nuclear phenotypes
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
 [[file:assets/real-embeddings-combined.png]]
 
@@ -722,9 +720,10 @@ Runxi Shen
 \hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
 #+END_EXPORT
 
-# Seven panels, only PLK1 positive and negative controls. MYT1 is removed before fitting/display. Same125wells:20PLK1,55no-guide,50non-targeting. Six DL collections use500matched MQsites and validated control-scaled well profiles, projected with fixed UMAP (neighbors15,min_dist0.1,Euclidean,spectral initialization,seed20261020). No separation-driven tuning. Each point is a well; shape marks plate/run.
-# CellProfiler uses the released259-dimensional Harmony/PCA/chromosome-arm-corrected CRISPR representation from the pinned recipe, matched by source/plate/well. Its panel uses a new2D full-SVD PCA, not UMAP; no new Harmony fitting or extra scaling. Derived from interpretable measurements, but transformed coordinates are not individual interpretable features. Identical wells do not guarantee identical aggregation/input encoding between CP and DL.
-# PLK1 was chosen after earlier inspection. Illustrative, not an unbiased benchmark/model ranking/mechanistic claim. UMAP alters apparent separation; independent axes are not comparable between models. Density, viability, batch effects, model inputs and unaudited pretraining exposure remain limitations. Original evidence retained; current inputs/coordinates/settings/checks in comparison-data/ and harmony-input/. Additional slide, no scheduled narration.
+# Current paired example: 5,750 matched wells: 567 PLK1 positive-control wells, 10 GJA8 perturbation wells and 5,173 negative controls. GJA8 is a discovery-selected phenotype example, NOT an annotated positive control or independent validation reagent. Two of 569 PLK1 wells were excluded for known missing MQ image chunks. Same wells in every panel; MYT1/NPC1 and other exploratory candidates are excluded before fitting/display.
+# Large left panel uses genuine Nuclei_AreaShape_Area and Nuclei_AreaShape_Eccentricity, centered on plate-negative medians and scaled by pooled discovery-negative MAD*1.4826. These are named measured features, not UMAP/PCA axes or learned coordinates. The full-range view retains all wells; the labeled inset magnifies the control/GJA8 region. PLK1 shows smaller, more eccentric nuclei relative to controls; GJA8 shows larger, moderately more eccentric nuclei in these well-level measurements. Do not infer mechanism from these features.
+# Six embedding panels use fixed UMAP: CellProfiler+Harmony, MorphEm, DINOv2, OpenPhenom, ViT-random and clipped-input SubCell. Standard SubCell and the cell-count representation are omitted. Shared parameters: 15 neighbors, min_dist 0.1, Euclidean, spectral initialization, seed 20261020, single thread. No parameter tuning for separation. CellProfiler input remains the released259-coordinate corrected representation; its final visualization is UMAP, not PCA. No new Harmony fit or model inference.
+# GJA8 came from the prior frozen discovery-only CP screen; feature axes were selected exploratorily using discovery comparisons. PLK1 was originally highlighted after inspecting earlier results. This is an illustrative comparison, not a model ranking, causal claim or independent-guide validation. UMAP need not isolate GJA8 from controls. Same wells do not guarantee identical image encoding, aggregation or preprocessing. Removing the count plot does not rule out density/viability effects; prior count-baseline results are retained in the research archive. Current data/provenance: figures/two-phenotypes/. Additional slide; no scheduled narration.
 
 * Historical individual model figures :noexport:
 # Superseded by the single combined controls-only figure; retained solely as historical source, never exported.
