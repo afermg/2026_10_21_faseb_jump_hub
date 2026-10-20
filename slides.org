@@ -439,7 +439,7 @@ Standard tools support reproducible analysis; biological expertise remains essen
 
 ** Not just JUMP: Extract morphological profiles from your own images
 #+BEGIN_EXPORT latex
-\begin{columns}[c,onlytextwidth]
+\begin{columns} [c,onlytextwidth]
 \begin{column}{0.44\textwidth}
 \centering
 \includegraphics[width=0.98\linewidth,height=0.66\textheight,keepaspectratio]{assets/cp-measure-paper.png}
@@ -665,7 +665,6 @@ Runxi Shen
 \item \href{https://github.com/CellProfiling/subcell-embed}{SubCell}.
 \item \href{https://github.com/facebookresearch/dinov2}{ViT-random: DINOv2 code}.
 \item \href{https://github.com/immunogenomics/harmony}{Harmony}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{JUMP recipe}.
-\item \href{https://umap-learn.readthedocs.io/}{UMAP}.
 \item \href{https://parquet.apache.org/}{Parquet}; \href{https://zarr.dev/}{Zarr}; \href{https://jpeg.org/jpegxl/}{JPEG XL}.
 \end{itemize}
 \end{column}
@@ -694,6 +693,7 @@ Runxi Shen
 # The Slides QR targets the GitHub PDF viewer in afermg/2026_10_21_faseb_jump_hub, branch main, slides.pdf.
 # On 2026-10-20 the presenter explicitly approved uploading the validated slides.pdf and making this QR-linked repository public after checking tool references.
 # This approval applies to the presentation repository only; the authoring repository and Overleaf projects remain private.
+# The presenter subsequently requested that the public PDF end at this QR slide. Keep all additional slides in the full Overleaf deck; exclude them only from the public PDF.
 
 * Additional slides
 
