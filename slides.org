@@ -12,7 +12,7 @@
 #+LATEX_HEADER: \usepackage{array}
 #+LATEX_HEADER: \setsansfont{FiraSans-Regular.otf}[BoldFont=FiraSans-Bold.otf,ItalicFont=FiraSans-Italic.otf,BoldItalicFont=FiraSans-BoldItalic.otf]
 #+LATEX_HEADER: \AtBeginDocument{\AtBeginSection[]{}}
-#+LATEX_HEADER: \institute{Carpenter-Shen Lab, Purdue University}
+#+LATEX_HEADER: \institute{Carpenter-Shen Lab, Purdue University; Carpenter-Singh Lab, Broad Institute}
 #+PROPERTY: header-args :eval never-export
 
 # Conference: FASEB Organelle Cross-Talk in Cellular Homeostasis.
@@ -41,11 +41,19 @@
 \end{columns}
 #+END_EXPORT
 
+#+BEGIN_EXPORT latex
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://github.com/afermg/2024_10_i2k_poster_flashtalk/blob/bf1db9f818dcc2704bd5ad388c3173a3426f8faf/figs/cellpainting.png}{Source: Muñoz, I2K (2024); assay: Bray et al. (2016)}}
+#+END_EXPORT
+
 # Speaker note: The five-channel-plus-merged panel from the I2K poster remains unchanged, including labels and scale bar.
 
 ** Cell Painting connects images to measurements
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.72\textheight :options keepaspectratio
 [[file:assets/cell-painting-edited.pdf]]
+
+#+BEGIN_EXPORT latex
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.1038/s41573-020-00117-w}{Adapted from Chandrasekaran et al. (2021), Fig. 1a}}
+#+END_EXPORT
 
 # Speaker note: Narrate stain → image → measure → compare; the figure carries the on-screen explanation.
 # Speaker note: The presenter edited this reconstruction in Inkscape on the Mac; the deck uses a vector PDF exported there with outlined text.
@@ -69,7 +77,7 @@ Profiles are numerical descriptions of cells.
 \begin{block}{Learned representations}
 \begin{itemize}
 \item Features learned from images by neural networks.
-\item Numerical vectors (embeddings).
+\item Non-redundant numerical vectors (embeddings).
 \end{itemize}
 \end{block}
 \end{column}
@@ -92,10 +100,10 @@ Profiles are numerical descriptions of cells.
 # The country-capital analogy is a teaching example: Paris minus France plus Italy can point toward Rome in a learned vector space.
 # These two-dimensional positions are invented, not a trained model output or a quantitative test. The arithmetic is approximate and depends on training and evaluation.
 # At the presenter's request the on-graphic "Illustrative 2D positions" caption is removed; this clarification remains in these notes and the SVG description.
-# The presenter also requested removing both Coordinate axis labels; axes remain unlabeled rather than being assigned artificial semantic meanings.
+# The presenter subsequently requested generic Feature 1 / Feature 2 labels; these are not assigned artificial semantic meanings.
 # Real embeddings have many dimensions; individual axes are not predefined concepts such as age, gender or biological properties. Learned relations can reflect corpus biases.
 # The user-supplied Words As Vectors image inspired the teaching sequence; this is original vector artwork, not a claim that its hand-labelled axes are real word2vec coordinates.
-# Main-talk placement: immediately before JUMP; 30 seconds, borrowed from the earlier profiles introduction.
+# Main-talk placement: word2vec, then cell vectors, then JUMP; 30 seconds, borrowed from the earlier profiles introduction.
 
 ** From words to cells: vectors for comparison
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
@@ -103,7 +111,9 @@ Profiles are numerical descriptions of cells.
 
 # Speaker note: Follow word2vec immediately with cell vectors, before JUMP, preserving the presenter's latest direct order edit. Word vectors describe language context; cell profiles describe morphological appearance. Allow 30 seconds, borrowed from the JUMP overview.
 # Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
-# This original illustration is a teaching cartoon, not measured data.
+# This original illustration is a teaching cartoon, not measured data. The presenter requested removing the visible Same cells/illustrative-positions footer; keep the limitation here and in provenance.
+# Cell cartoons are enlarged with clearer boundaries, nuclei and separate branched/punctate mitochondrial shapes. Coordinates, class labels and right-hand embedding geometry remain unchanged.
+# The vertical axis now reads exactly Granularity Mito Channel, at the presenter's request.
 # A/B are non-senescent examples and C/D senescent examples. The vertical axis is an illustrative mitochondrial-channel granularity measurement at a specified spatial scale.
 # The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
 # Granularity describes image-signal structure across spatial scales; it is not a direct measure of mitochondrial fragmentation, organelle number or cristae. The retained network-like/punctate cartoons do not determine the invented scores. Both example groups span the illustrated granularity values; no causal link to senescence is asserted.
@@ -125,7 +135,7 @@ Profiles are numerical descriptions of cells.
 \end{center}
 #+END_EXPORT
 
-- Which gene, compound or phenotype interests you?
+# The presenter removed the visible audience-question bullet in Overleaf.
 
 # Speaker note: ORF means open reading frame. JUMP used lentiviral ORF delivery, a 48-hour readout and no blasticidin selection in imaging wells; do not label this transient expression merely because the assay is short-term.
 # The introduced coding sequence supports extra protein production; it does not activate the endogenous promoter, guarantee protein activity or ensure uniform expression in every cell.
@@ -142,9 +152,9 @@ Profiles are numerical descriptions of cells.
 # Exact source URLs, input hashes and sums are in docs/jump-image-counts.json.
 # The principal dataset spans 12 data-generating centers. Its 13 Metadata_Source IDs include source_7 and source_13 from the same center.
 # Verified in JUMP Hub data_description.md and terra_workspace.md at e742f5aa37472eb17f326ba8315d22b27e58f330; not every lab acquired every modality or perturbation.
-# This merges the former audience-question slide into JUMP, keeping that question before the Hub overview.
+# The audience question is no longer a visible bullet, preserving the latest author edit.
 
-** Computational methods improve in benchmarks, how do we ensure they benefit experimental biologists?
+** How do we ensure improvements in computational models/methods benefit experimental biologists?
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
@@ -174,18 +184,40 @@ Can I use it to answer my biological question?
 \begin{column}{0.39\textwidth}
 \begin{itemize}
 \item Does my gene or compound have a phenotype?
-\item Which phenotypes are similar?
+\item Which perturbations cause similar phenotypes?
 \item What changes in cells and organelles?
-\item Is the phenotype heterogeneous?
+\item Is the phenotype heterogeneous across cells/samples?
 \end{itemize}
 \end{column}
 \end{columns}
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://broadinstitute.github.io/jump_hub/}{Source: JUMP Hub (2026)}}
 #+END_EXPORT
 
 # Speaker note: Complementary to the researcher's other methods, such as transcriptomics, as clarified in the presenter's reply to Anne.
 # These are alternative entry points, not compulsory steps. Cell-subpopulation exploration is the separate notebook example.
 # Availability is not phenotypic activity: use the perturbation-level corrected p-value to assess a detectable profile.
 # Homepage captured 18 October 2026; other interface screenshots are historical examples.
+
+** Beyond this talk: tutorials, how-tos and resources
+We added practical guides to help biologists use JUMP.
+
+#+BEGIN_EXPORT latex
+\medskip
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.68\textwidth}@{}}
+\textbf{Tutorials} & \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/0_overview.html}{Six runnable notebooks: profiles, metadata, activity, images, clusters and gene information.} \\[1em]
+\textbf{How-to guides} & \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{No-code gene/compound queries}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/0_overview.html\#morpheus}{explore similarity heatmaps}. \\[1em]
+\textbf{Beyond today's examples} & \href{https://broadinstitute.github.io/jump_hub/explanations/data_description.html}{Dataset explanations}, \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/17_mislocus_example.html}{protein-localisation analysis} and a \href{https://ciminilab.github.io/GuideToCellPainting/}{Guide to Cell Painting for Biologists}.
+\end{tabular}\par\bigskip
+\centering\small\href{https://broad.io/jump}{Start at broad.io/jump}
+#+END_EXPORT
+
+# Speaker note: Give a 30-second overview, borrowed from the Hub introduction (75 to45seconds). Explicitly say we added tutorials/how-tos, and the Hub links to useful resources beyond the examples covered in this talk. These are alternative starting points, not compulsory steps.
+# The six notebook topics are retrieve profiles, add metadata, calculate activity, display perturbation images, explore distance clusters and query genes externally. Notebook overview links offer Colab, Terra or local Python with documented dependencies.
+# No-code guides include availability queries, JUMP_rr and Morpheus heatmaps. Dataset explanations describe experimental context. The Guide to Cell Painting for Biologists is an external Cimini Lab resource linked by the Hub, not a guide newly authored by us.
+# The MisLocus how-to is a separate VarChAMP companion workflow, not a JUMP assay or one of the Colab notebooks. Do not promise it runs in Colab.
 
 ** Was my gene or compound tested?
 - Find your gene or compound.
@@ -195,6 +227,7 @@ Can I use it to answer my biological question?
 #+ATTR_LATEX: :width 0.90\linewidth :height 0.42\textheight :options keepaspectratio
 [[file:assets/hub-identifiers.png]]
 
+# Historical artwork provenance is retained in docs/assets.json; visible Cell Circuits credit removed at the presenter's request.
 # Speaker note: Use the current availability tools for a new query. The illustration is an archived 2024 interface.
 
 ** Which perturbations produce related phenotypes?
@@ -205,9 +238,10 @@ MYT1 example
 
 - Precomputed comparisons between perturbation profiles.
 
+# Historical artwork provenance is retained in docs/assets.json; visible Cell Circuits credit removed at the presenter's request.
 # Speaker note: These are precomputed comparisons between perturbation profiles in the available tables, not a claim of exhaustive coverage or experiments combining two perturbations.
 # JSON export is documented by the current JUMP_rr tutorial. Do not promise a CSV button.
-# Profile similarity is not proof of a shared mechanism. This historical MYT1 example is separate from AVPR2 below.
+# Profile similarity is not proof of a shared mechanism. This historical MYT1 example is separate from AVPR2 below. Its rightmost JCP2022 column reads JCP2022_804400: the same CRISPR reagent used in the additional embedding figures, not ORF overexpression. Those new figures use different processing and are not a reproduction of these similarity scores.
 
 ** How does cell morphology change?
 AVPR2 overexpression example
@@ -218,6 +252,7 @@ AVPR2 overexpression example
 - Feature to investigate: mitochondria--AGP overlap.
 - Check images: mitochondria versus actin, Golgi and plasma membrane.
 
+# Historical artwork provenance is retained in docs/assets.json; visible Cell Circuits credit removed at the presenter's request.
 # Speaker note: JCP2022_905491 maps to AVPR2 in the pinned ORF metadata, so the perturbation is overexpression.
 # Screenshot: Cells / Correlation_K_Mito / AGP, normalized feature median -0.21309228714749423.
 # The K overlap coefficient is intensity-dependent. Its normalized median is not a raw overlap fraction or a negative Pearson correlation.
@@ -260,8 +295,31 @@ MYT1 and PROZ gallery examples
 #+ATTR_LATEX: :width 0.93\linewidth :height 0.55\textheight :options keepaspectratio
 [[file:assets/hub-gallery.png]]
 
+# Historical artwork provenance is retained in docs/assets.json; visible Cell Circuits credit removed at the presenter's request.
 # Speaker note: Inspect fields and channels; retrieve matched controls.
 # Speaker note: PROZ is not a negative-control label; the historical gallery is not a matched-control comparison.
+
+** Modern tools make image analysis more accessible
+#+BEGIN_EXPORT latex
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
+\textbf{Find cells and spots} & {\small Cellpose (cells); Spotiflow (spots)} \\[0.9em]
+\textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
+\textbf{Measure cell appearance} & {\small cp\_measure} \\[0.9em]
+\textbf{Explore your results} & {\small marimo} \\[0.9em]
+\end{tabular}\par\vspace{1em}
+\centering\textbf{AI can turn these individual tools into workflows.}
+#+END_EXPORT
+
+# Speaker note: Lead with four biological actions, not package explanations: find cells/spots, follow cells over time, measure cell appearance, explore results. Tool names are supporting examples, not a required pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
+# Parquet/Zarr/JPEG XL implementation details move off the visible toolbox into these notes; the main talk need not teach storage formats. The post-QR Nahual model catalogue remains available for technical questions.
+# Cellpose provides cell/nucleus segmentation. Spotiflow detects fluorescent puncta; its Nahual wrapper converts detected centres into configurable disk labels, not measured object boundaries.
+# Trackastra links segmented cells/nuclei; Ultrack combines candidate segmentations and tracking. Restored names are task alternatives with model-specific inputs, not a claim of validated tracking for every organelle.
+# Generalist/specialised learned representations can be adapted where model weights, training interfaces and licences permit; fine-tuning needs appropriate data and held-out evaluation.
+# Parquet is columnar tabular storage, Zarr stores chunked multidimensional arrays, and JPEG XL is an image codec; they serve different roles.
+# The agent-integration claim reflects the presenter's experience, not a measured speedup or a fully autonomous workflow. Experts validate the biology.
+# marimo and uv address recurring Python workflow friction: reactive execution reduces hidden notebook state; uv manages Python environments and dependencies with lockfiles.
+# These are complementary tools, not a claim that every packaging or reproducibility problem is solved. Biological validation remains necessary.
+# Source links are on References; illustration provenance is retained in docs/provenance.md.
 
 ** We can leverage the curated documentation to build AI assistants
 #+BEGIN_QUOTE
@@ -271,7 +329,7 @@ Using the JUMP Hub docs, create a marimo dashboard to link selected cells to ima
 - Shared tools support reproducible workflows.
 - Biological experts validate the results.
 
-# Speaker note: Researchers and agents can use the same documentation and tools. Optional model extensions through Nahual are on additional page 25.
+# Speaker note: Researchers and agents can use the same documentation and tools. Optional model extensions through Nahual are on additional page 29.
 
 # Speaker note: Use an external AI assistant, not a built-in Hub chatbot. Generated code is a draft requiring verification.
 # Presenter experience: without shared tools, agents may solve the same problem in different ways. Tested implementations, recorded parameters and versions support consistency; experts validate the biological interpretation.
@@ -290,7 +348,11 @@ Interactive marimo notebook
 - Each dot is a cell: 2,223 from one Target-2 plate.
 - Select cells; inspect images, area and other features.
 
-# Playback cue: PDF page 14, visible slide number 13. Play jump-cell-interactivity.mp4 in a local player; return to PDF page 15.
+#+BEGIN_EXPORT latex
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+#+END_EXPORT
+
+# Playback cue: PDF page 18, visible slide number 17. Play jump-cell-interactivity.mp4 in a local player; return to PDF page 19.
 # The MP4 is a companion file, not embedded media. Narrate select -> inspect -> change channel -> reset -> select elsewhere.
 # Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0). Both snapshot images and their demo links are clickable.
 # Prefer local playback on stage; the public link is for later viewing.
@@ -308,34 +370,16 @@ Interactive marimo notebook
 - Second selection: 224 cells.
 - Compare images and measurements.
 
+#+BEGIN_EXPORT latex
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
+#+END_EXPORT
+
 # Speaker note: One plate, six wells, twelve fields; no treatment or control assignments.
 # The reference is all loaded cells, including the selection. Feature-based selection changes distributions by construction.
 # UMAP separation does not establish treatment effects or mechanism. Cells are not independent experimental replicates.
 # The middle 50% is an interquartile range, not a confidence interval.
 # Crops share pixel scale and fixed contrast; white outlines identify the selected objects, with some neighbors/truncation visible.
 # This Target-2 Zstd example is separate from the main JUMP-lite release cohort.
-
-** Modern tools make image analysis more accessible
-#+BEGIN_EXPORT latex
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}@{}}
-\textbf{Find cells and spots} & {\small Cellpose (cells); Spotiflow (spots)} \\[0.9em]
-\textbf{Follow cells over time} & {\small Trackastra / Ultrack} \\[0.9em]
-\textbf{Measure cell appearance} & {\small cp\_measure} \\[0.9em]
-\textbf{Explore your results} & {\small marimo} \\[0.9em]
-\end{tabular}\par\vspace{1em}
-\centering\textbf{AI can turn these individual tools into workflows.}
-#+END_EXPORT
-
-# Speaker note: Lead with four biological actions, not package explanations: find cells/spots, follow cells over time, measure cell appearance, explore results. Tool names are supporting examples, not a required pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
-# Parquet/Zarr/JPEG XL implementation details move off the visible toolbox into these notes; the main talk need not teach storage formats. The post-QR Nahual model catalogue remains available for technical questions.
-# Cellpose provides cell/nucleus segmentation. Spotiflow detects fluorescent puncta; its Nahual wrapper converts detected centres into configurable disk labels, not measured object boundaries.
-# Trackastra links segmented cells/nuclei; Ultrack combines candidate segmentations and tracking. Restored names are task alternatives with model-specific inputs, not a claim of validated tracking for every organelle.
-# Generalist/specialised learned representations can be adapted where model weights, training interfaces and licences permit; fine-tuning needs appropriate data and held-out evaluation.
-# Parquet is columnar tabular storage, Zarr stores chunked multidimensional arrays, and JPEG XL is an image codec; they serve different roles.
-# The agent-integration claim reflects the presenter's experience, not a measured speedup or a fully autonomous workflow. Experts validate the biology.
-# marimo and uv address recurring Python workflow friction: reactive execution reduces hidden notebook state; uv manages Python environments and dependencies with lockfiles.
-# These are complementary tools, not a claim that every packaging or reproducibility problem is solved. Biological validation remains necessary.
-# Source links are on References; illustration provenance is retained in docs/provenance.md.
 
 ** Try different image-analysis models with Nahual :noexport:
 #+BEGIN_EXPORT latex
@@ -385,6 +429,10 @@ Interactive marimo notebook
 \end{columns}
 #+END_EXPORT
 
+#+BEGIN_EXPORT latex
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2507.01163v1}{Adapted from Muñoz et al. (2025), Fig. 1}}
+#+END_EXPORT
+
 # Speaker note: Feature schema verified with five channels and three object types: 995 columns/object, 2,985 object-feature pairs when combined.
 # That synthetic schema check disables Costes; aggregation/pivoting combines the API's object-type rows into a profile. Counts depend on configuration.
 # The presenter requested Fast instead of Fastest. The >2x CellProfiler comparison remains at their instruction and has not been independently revalidated; it needs matched benchmark evidence.
@@ -424,7 +472,7 @@ Interactive marimo notebook
 \end{block}
 \end{column}
 \begin{column}{0.48\textwidth}
-\begin{block}{Connect to spatial omics software}
+\begin{block}{Integrated in spatial omics software}
 \small Tim Treis, Theis Lab, Helmholtz-Munich\par
 \begin{itemize}
 \item Integration of morphological features with Squidpy.
@@ -445,6 +493,51 @@ Interactive marimo notebook
 # Extraction includes Cell Painting, cell cycle, viability and bright-field time courses (with/without virtual staining).
 # The concordance notebook compares active-compound sets and activity rankings across assays; no new concordance result or metric is claimed here.
 # The spatial integration is supported by cp_measure's published Xenium/H&E/Squidpy example, not a built-in Hub capability.
+
+** MisLocus: a single-cell image benchmark
+#+BEGIN_EXPORT latex
+\small MisLocus contains $\sim$3 million cells spanning 1,541 reference/variant alleles across 282 genes, excluding controls.\par\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.54\textwidth}
+\centering
+\small Does a variant change where the protein is located?\par\medskip
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+LZTR1 reference\par\smallskip
+\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-reference.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
+\centering
+LZTR1 G248R\par\smallskip
+\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-g248r.png}
+\end{minipage}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{block}{Protein mislocalisation}
+\begin{itemize}
+\item Compare reference and variant proteins.
+\item Test for localisation changes.
+\item Evaluate image representations.
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}\medskip
+\centering\small
+Johan Fredin, Carpenter-Shen Lab, Purdue University\par\smallskip
+Unpublished data
+#+END_EXPORT
+
+#+BEGIN_EXPORT latex
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}Adapted from Carpenter-Shen Lab; unpublished data}
+#+END_EXPORT
+
+# Adapted from slide 4 of the presenter-supplied get_slide_3.pptx. The presenter requested this immediately after Applications; allow 30 seconds within the existing 90-second applications allocation. JUMP-lite stays after the QR.
+# Exact source microscopy pixels: image17.png is LZTR1 reference; image18.png is LZTR1 G248R, verified from slide XML image/text positions. Original aspect ratios retained; no cropping, enhancement or reanalysis.
+# Images illustrate the source's comparison; they do not by themselves establish a reproducible localisation change, causation or clinical pathogenicity. Controls, replicate analysis and independent evidence are needed.
+# The source's patient photograph, Noonan-syndrome causal framing, contact emails, redundant QR, model list and detailed workflow are omitted. Do not infer a clinical claim from these images.
+# MisLocus benchmarks image representations/analysis using the VarChAMP collection; this adaptation does not claim new image acquisition or new results. Credit retains the existing application-slide attribution.
+# Scale is the public dataset README's biological cohort, excluding control observations and recurring control identities: 3,002,837 cells, 1,541 alleles (250 references + 1,291 variants), 282 genes. The larger uploaded total including controls is 3,332,309 cells and 1,562 alleles across six imaging batches. Only 1,055 variants in125genes have a matched reference; do not imply every variant has one. README snapshot and pinned revision in figures/mislocus-example/scale-evidence.json. This is a documented count, not a new independent manifest census.
+# The presenter requested removal of the MisLocus Hugging Face link and on-slide attribution as unpublished data. No dataset link is displayed on this slide. The previously checked public README is retained solely as count provenance; unpublished attribution does not assert that no data are publicly accessible. No manuscript, comments or unrelated proposal slides are distributed.
 
 ** Take-home messages
 - Profiles: quantify cell state.
@@ -575,6 +668,10 @@ Runxi Shen
 {\footnotesize Same selected images: 8.7 TB $\rightarrow$ 92 GB ($\sim$94$\times$ smaller; lossy JPEG XL).}
 #+END_EXPORT
 
+#+BEGIN_EXPORT latex
+\par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Adapted from Muñoz et al. (2026)}}
+#+END_EXPORT
+
 # Speaker note: Additional slide after the main-talk QR, at the presenter's request; not scheduled narration.
 # Compare the same JUMP-lite image cohort: 8.7 TB of original/raw TIFFs versus 92.0 GB at medium-quality (MQ) lossy JPEG XL compression.
 # Source: arXiv:2608.07632v3, section 3.1, reports these sizes and approximately 94-fold reduction. Values are rounded published totals, not a new measurement.
@@ -586,7 +683,8 @@ Runxi Shen
 # Lossy compression changes pixel values; validate suitability for the intended analysis. This slide makes no performance-equivalence or lossless-quality claim.
 # The earlier Target-2 recording is a separate subanalysis, not the main release cohort.
 
-** Reality check: from profiles to biology
+** Reality check: from profiles to biology :noexport:
+# Removed from the presented deck at the presenter's explicit request; retained only as historical source.
 - Batch effects can resemble biology.
 - Similar profiles do not establish a shared mechanism.
 - The bottleneck is experimental follow-up.
@@ -616,41 +714,100 @@ Runxi Shen
 # Model names verified in the Nahual catalogue at 56aa3fe1c36fe891a933a76d05db6fca2c3673f1; the model names are not newly developed models or runtime benchmark results.
 # Spotiflow is added as spot detection, not an interchangeable cell-boundary model. The Nahual wrapper rasterises detected centres into configurable disk labels for downstream measurement; disk geometry does not estimate a punctum's physical boundary.
 
-** MisLocus: a single-cell image benchmark
+** Positive and negative controls across embedding models
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
+[[file:assets/real-embeddings-combined.png]]
+
 #+BEGIN_EXPORT latex
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.54\textwidth}
-\centering
-\small Does a variant change where the protein is located?\par\medskip
-\begin{minipage}[t]{0.47\linewidth}
-\centering
-LZTR1 reference\par\smallskip
-\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-reference.png}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.47\linewidth}
-\centering
-LZTR1 G248R\par\smallskip
-\includegraphics[width=\linewidth,keepaspectratio]{assets/mislocus-lztr1-g248r.png}
-\end{minipage}
-\end{column}
-\begin{column}{0.42\textwidth}
-\begin{block}{Protein mislocalisation}
-\begin{itemize}
-\item Compare reference and variant proteins.
-\item Test for localisation changes.
-\item Evaluate image representations.
-\end{itemize}
-\end{block}
-\end{column}
-\end{columns}\medskip
-\centering\small
-Johan Fredin, Carpenter-Shen Lab, Purdue University\par\smallskip
-\href{https://huggingface.co/datasets/anonymous-xyz96/MisLocus}{Dataset: MisLocus on Hugging Face}
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; models: \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}, \href{https://github.com/facebookresearch/dinov2}{DINOv2}, \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}, \href{https://github.com/CellProfiling/subcell-embed}{SubCell}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{CellProfiler/Harmony recipe}}
 #+END_EXPORT
 
-# Additional visual example, adapted from slide 4 of the presenter-supplied get_slide_3.pptx; zero scheduled main-talk time. JUMP-lite remains unchanged on PDF 25.
-# Exact source microscopy pixels: image17.png is LZTR1 reference; image18.png is LZTR1 G248R, verified from slide XML image/text positions. Original aspect ratios retained; no cropping, enhancement or reanalysis.
-# Images illustrate the source's comparison; they do not by themselves establish a reproducible localisation change, causation or clinical pathogenicity. Controls, replicate analysis and independent evidence are needed.
-# The source's patient photograph, Noonan-syndrome causal framing, contact emails, redundant QR, model list and detailed workflow are omitted. Do not infer a clinical claim from these images.
-# MisLocus benchmarks image representations/analysis using the VarChAMP collection; this adaptation does not claim new image acquisition or new results. Credit retains the existing application-slide attribution.
-# The dataset link was decoded from the supplied slide's QR (image20.png) and returned HTTP 200 when checked. No manuscript, comments or unrelated proposal slides are distributed.
+# Seven panels, only PLK1 positive and negative controls. MYT1 is removed before fitting/display. Same125wells:20PLK1,55no-guide,50non-targeting. Six DL collections use500matched MQsites and validated control-scaled well profiles, projected with fixed UMAP (neighbors15,min_dist0.1,Euclidean,spectral initialization,seed20261020). No separation-driven tuning. Each point is a well; shape marks plate/run.
+# CellProfiler uses the released259-dimensional Harmony/PCA/chromosome-arm-corrected CRISPR representation from the pinned recipe, matched by source/plate/well. Its panel uses a new2D full-SVD PCA, not UMAP; no new Harmony fitting or extra scaling. Derived from interpretable measurements, but transformed coordinates are not individual interpretable features. Identical wells do not guarantee identical aggregation/input encoding between CP and DL.
+# PLK1 was chosen after earlier inspection. Illustrative, not an unbiased benchmark/model ranking/mechanistic claim. UMAP alters apparent separation; independent axes are not comparable between models. Density, viability, batch effects, model inputs and unaudited pretraining exposure remain limitations. Original evidence retained; current inputs/coordinates/settings/checks in comparison-data/ and harmony-input/. Additional slide, no scheduled narration.
+
+* Historical individual model figures :noexport:
+# Superseded by the single combined controls-only figure; retained solely as historical source, never exported.
+** PLK1 positive control: MorphEm
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
+[[file:assets/real-embedding-morphem.png]]
+
+#+BEGIN_EXPORT latex
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; \href{https://huggingface.co/CaicedoLab/MorphEm}{Model documentation}}
+#+END_EXPORT
+
+# Speaker note: Original analysis of released MQ embeddings, not a redrawn published result. Each dot is a well: MYT1 CRISPR JCP2022_804400 (5 wells), PLK1 positive control JCP2022_805264 (20), and105negative controls on the same five source_13 plates CP-CC9-R1-R5-20;130wells/520sites, exactly shared across all six model/input collections.
+# Per-coordinate median across tiles/sites within a well, matching the long-form extraction branch. Subtract plate-negative median and scale by pooled centered-negative SD; full-SVD unsupervised PCA on the selected cohort. Arrows show group-centroid displacement from the negative-control centroid, not individual-cell vectors. Axis variance fractions are recorded.
+# MYT1 overlaps the controls in these leading two-dimensional projections; do not claim distinct MYT1 clusters. PLK1 supplies a strong positive-control shift in the pretrained representations; random-weight output is retained without tuning. This selected example is not a model-ranking benchmark or absence-of-phenotype test.
+# Same reagent IDs across replicate wells, not independent guides. Plate/run shapes expose residual variation. Cell density, viability and image-processing effects can contribute. Documented pretraining exposure and model-specific tiling/channel inputs remain limitations.
+# No senescence assignments, physical-contact or mechanistic claims. NPC1 is excluded at the presenter's request. Additional slide for questions only; zero scheduled main-talk time.
+
+** PLK1 positive control: DINOv2
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
+[[file:assets/real-embedding-dinov2.png]]
+
+#+BEGIN_EXPORT latex
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; \href{https://github.com/facebookresearch/dinov2}{Model documentation}}
+#+END_EXPORT
+
+# Speaker note: Original analysis of released MQ embeddings, not a redrawn published result. Each dot is a well: MYT1 CRISPR JCP2022_804400 (5 wells), PLK1 positive control JCP2022_805264 (20), and105negative controls on the same five source_13 plates CP-CC9-R1-R5-20;130wells/520sites, exactly shared across all six model/input collections.
+# Per-coordinate median across tiles/sites within a well, matching the long-form extraction branch. Subtract plate-negative median and scale by pooled centered-negative SD; full-SVD unsupervised PCA on the selected cohort. Arrows show group-centroid displacement from the negative-control centroid, not individual-cell vectors. Axis variance fractions are recorded.
+# MYT1 overlaps the controls in these leading two-dimensional projections; do not claim distinct MYT1 clusters. PLK1 supplies a strong positive-control shift in the pretrained representations; random-weight output is retained without tuning. This selected example is not a model-ranking benchmark or absence-of-phenotype test.
+# Same reagent IDs across replicate wells, not independent guides. Plate/run shapes expose residual variation. Cell density, viability and image-processing effects can contribute. Documented pretraining exposure and model-specific tiling/channel inputs remain limitations.
+# No senescence assignments, physical-contact or mechanistic claims. NPC1 is excluded at the presenter's request. Additional slide for questions only; zero scheduled main-talk time.
+
+** PLK1 positive control: OpenPhenom
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
+[[file:assets/real-embedding-openphenom.png]]
+
+#+BEGIN_EXPORT latex
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; \href{https://huggingface.co/recursionpharma/OpenPhenom}{Model documentation}}
+#+END_EXPORT
+
+# Speaker note: Original analysis of released MQ embeddings, not a redrawn published result. Each dot is a well: MYT1 CRISPR JCP2022_804400 (5 wells), PLK1 positive control JCP2022_805264 (20), and105negative controls on the same five source_13 plates CP-CC9-R1-R5-20;130wells/520sites, exactly shared across all six model/input collections.
+# Per-coordinate median across tiles/sites within a well, matching the long-form extraction branch. Subtract plate-negative median and scale by pooled centered-negative SD; full-SVD unsupervised PCA on the selected cohort. Arrows show group-centroid displacement from the negative-control centroid, not individual-cell vectors. Axis variance fractions are recorded.
+# MYT1 overlaps the controls in these leading two-dimensional projections; do not claim distinct MYT1 clusters. PLK1 supplies a strong positive-control shift in the pretrained representations; random-weight output is retained without tuning. This selected example is not a model-ranking benchmark or absence-of-phenotype test.
+# Same reagent IDs across replicate wells, not independent guides. Plate/run shapes expose residual variation. Cell density, viability and image-processing effects can contribute. Documented pretraining exposure and model-specific tiling/channel inputs remain limitations.
+# No senescence assignments, physical-contact or mechanistic claims. NPC1 is excluded at the presenter's request. Additional slide for questions only; zero scheduled main-talk time.
+
+** PLK1 positive control: SubCell
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
+[[file:assets/real-embedding-subcell.png]]
+
+#+BEGIN_EXPORT latex
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; \href{https://github.com/CellProfiling/subcell-embed}{Model documentation}}
+#+END_EXPORT
+
+# Speaker note: Original analysis of released MQ embeddings, not a redrawn published result. Each dot is a well: MYT1 CRISPR JCP2022_804400 (5 wells), PLK1 positive control JCP2022_805264 (20), and105negative controls on the same five source_13 plates CP-CC9-R1-R5-20;130wells/520sites, exactly shared across all six model/input collections.
+# Per-coordinate median across tiles/sites within a well, matching the long-form extraction branch. Subtract plate-negative median and scale by pooled centered-negative SD; full-SVD unsupervised PCA on the selected cohort. Arrows show group-centroid displacement from the negative-control centroid, not individual-cell vectors. Axis variance fractions are recorded.
+# MYT1 overlaps the controls in these leading two-dimensional projections; do not claim distinct MYT1 clusters. PLK1 supplies a strong positive-control shift in the pretrained representations; random-weight output is retained without tuning. This selected example is not a model-ranking benchmark or absence-of-phenotype test.
+# Same reagent IDs across replicate wells, not independent guides. Plate/run shapes expose residual variation. Cell density, viability and image-processing effects can contribute. Documented pretraining exposure and model-specific tiling/channel inputs remain limitations.
+# No senescence assignments, physical-contact or mechanistic claims. NPC1 is excluded at the presenter's request. Additional slide for questions only; zero scheduled main-talk time.
+
+** PLK1 positive control: ViT-random baseline
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
+[[file:assets/real-embedding-dinov2_random.png]]
+
+#+BEGIN_EXPORT latex
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; \href{https://github.com/facebookresearch/dinov2}{Model documentation}}
+#+END_EXPORT
+
+# Speaker note: Original analysis of released MQ embeddings, not a redrawn published result. Each dot is a well: MYT1 CRISPR JCP2022_804400 (5 wells), PLK1 positive control JCP2022_805264 (20), and105negative controls on the same five source_13 plates CP-CC9-R1-R5-20;130wells/520sites, exactly shared across all six model/input collections.
+# Per-coordinate median across tiles/sites within a well, matching the long-form extraction branch. Subtract plate-negative median and scale by pooled centered-negative SD; full-SVD unsupervised PCA on the selected cohort. Arrows show group-centroid displacement from the negative-control centroid, not individual-cell vectors. Axis variance fractions are recorded.
+# MYT1 overlaps the controls in these leading two-dimensional projections; do not claim distinct MYT1 clusters. PLK1 supplies a strong positive-control shift in the pretrained representations; random-weight output is retained without tuning. This selected example is not a model-ranking benchmark or absence-of-phenotype test.
+# Same reagent IDs across replicate wells, not independent guides. Plate/run shapes expose residual variation. Cell density, viability and image-processing effects can contribute. Documented pretraining exposure and model-specific tiling/channel inputs remain limitations.
+# No senescence assignments, physical-contact or mechanistic claims. NPC1 is excluded at the presenter's request. Additional slide for questions only; zero scheduled main-talk time.
+
+** PLK1 positive control: SubCell, clipped-input variant
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.85\textheight :options keepaspectratio
+[[file:assets/real-embedding-subcell_clip01.png]]
+
+#+BEGIN_EXPORT latex
+\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://arxiv.org/abs/2608.07632v3}{Data: JUMP-lite (2026)}; \href{https://github.com/CellProfiling/subcell-embed}{Model documentation}}
+#+END_EXPORT
+
+# Speaker note: Original analysis of released MQ embeddings, not a redrawn published result. Each dot is a well: MYT1 CRISPR JCP2022_804400 (5 wells), PLK1 positive control JCP2022_805264 (20), and105negative controls on the same five source_13 plates CP-CC9-R1-R5-20;130wells/520sites, exactly shared across all six model/input collections.
+# Per-coordinate median across tiles/sites within a well, matching the long-form extraction branch. Subtract plate-negative median and scale by pooled centered-negative SD; full-SVD unsupervised PCA on the selected cohort. Arrows show group-centroid displacement from the negative-control centroid, not individual-cell vectors. Axis variance fractions are recorded.
+# MYT1 overlaps the controls in these leading two-dimensional projections; do not claim distinct MYT1 clusters. PLK1 supplies a strong positive-control shift in the pretrained representations; random-weight output is retained without tuning. This selected example is not a model-ranking benchmark or absence-of-phenotype test.
+# Same reagent IDs across replicate wells, not independent guides. Plate/run shapes expose residual variation. Cell density, viability and image-processing effects can contribute. Documented pretraining exposure and model-specific tiling/channel inputs remain limitations.
+# No senescence assignments, physical-contact or mechanistic claims. NPC1 is excluded at the presenter's request. Additional slide for questions only; zero scheduled main-talk time.

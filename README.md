@@ -1,62 +1,40 @@
-# Uncovering biological relationships through morphological profiling: The JUMP-Cell Painting dataset and tools
+# JUMP Hub — FASEB presentation source
 
-**Alán F. Muñoz · Carpenter-Shen Lab, Purdue University**
-
+**Uncovering biological relationships through morphological profiling: The JUMP-Cell Painting dataset and tools**
+Alán F. Muñoz — Carpenter-Shen Lab, Purdue University; Carpenter-Singh Lab, Broad Institute
 FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
-Private source mirror. Compile **slides.tex** with **XeLaTeX**. The unowned
-legacy main.tex is retained but is not the root. All 24 Overleaf files
-match `98beed0bd7a6fbd7d48c2747b0004ea4bbdbd049` exactly, plus this README and `.gitignore`.
+Use **`slides.tex` with XeLaTeX**, moloch and Fira Sans. Legacy, unowned `main.tex` is preserved but is **not** the compilation root.
 
-**28 pages: 24 main-talk pages plus four additional slides.** Planned narration
-is 23 minutes, leaving a two-minute buffer in the 25-minute slot.
+- **29 PDF pages:26main-talk +3additional**,23-minute narration in a25-minute slot.
+- Overleaf commit: `17f5305fb3082b4a288022e530168ace46730ed3`
+- Canonical source commit: `7eb09b9f4fae1cd86c64770e2b2af4da0889ec90`
+- Direct author changes through `28f4ae2da174fbafbac24520f561cbb7b7691f71` preserved.
 
-- The latest author-edited opening is **word2vec (5) → cell vectors (6) → JUMP (7)**.
-  Word2vec now has generic **Feature 1** (horizontal) / **Feature 2** (vertical)
-  labels; its vector geometry, country/capital labels and equation are unchanged.
-- The cell-vector example uses **mitochondrial granularity**, not fragmentation.
-  This is an illustrative scale-dependent image-signal measurement, not an
-  organelle count or a diagnostic score. Geometry and the learned panel are unchanged.
-- All five Beamer alert spans are removed while their text remains, including
-  MYT1 example, AVPR2 overexpression example, the gallery labels and JUMP counts.
-- **Play the 23.16-second MP4 at PDF16 / visible15; return to PDF17.** The recording
-  is a separate offline companion, not PDF-embedded media. Both still images link
-  to <https://doi.org/10.5281/zenodo.23462248> (CC BY 4.0).
-- Toolbox18 leads with **find cells/spots, follow cells over time, measure cell
-  appearance and explore results**. All six requested tool names remain as smaller
-  supporting examples; storage-format details move to notes. Nahual27 is unchanged.
-- Applications20, take-homes21, acknowledgements22, References23, **closing QR24**.
-- Named lab groups: **Carpenter-Singh Lab — Anne E. Carpenter, Shantanu Singh**;
-  **Cimini Lab — Beth Cimini, Paula Llanos**; **Carpenter-Shen Lab — Runxi Shen**.
-  Broad/Purdue and the original partner sheet remain. The move is explained orally.
-- Latest author funding sentence: **Work on cp_measure was supported by GSK and
-  NIH MIRA (R35 GM122547).** The grant awardee is Anne E. Carpenter.
-- **JUMP-lite25 is unchanged**, including its compact workflow and storage squares.
-  Selection from115TB and same-cohort lossy compression8.7TB→92GB (~94×) remain
-  distinct. No performance-equivalence claim. Reality26 is unchanged; Nahual27
-  retains its model examples and adds Spotiflow spot detection.
-- **MisLocus28** adapts slide4 of the supplied PowerPoint, retaining exact LZTR1
-  reference/G248R microscopy pixels and original aspect ratios. No reanalysis or
-  clinical-pathogenicity claim; the source clinical photo/contact emails are omitted.
-  The main talk and its timings do not include this additional visual example.
+## Current slide order
 
-Latest direct author wording/order/funding is preserved except the requested
-corrections: MYT1 now says **Precomputed comparisons between perturbation profiles.**
-The speed sentence uses **Fast** instead of **Fastest**; its >2x CellProfiler
-comparison is retained, not independently validated. JUMP's136,000 headline
-is the136,367 gene-level modality tally, not the138,897 reagent-ID total or a
-cross-modality unique-gene count. The~58.3million count denotes single-channel
-TIFF files, not cells or sites. The presenter's CellProfiler speed claim remains
-independently unvalidated. The exact Mac-edited workflow and demo MP4
-are unchanged. The Target-2 recording is separate from the main JUMP-lite cohort.
+| PDF page | Content |
+|---|---|
+| 5–7 | Word2vec → clearer cell vectors → JUMP |
+| 10 | Tutorials,how-tos and resources beyond this talk |
+| 16–18 | Modern tools → AI assistants → interactive notebook |
+| 18–19 | Play separate MP4 at18(visible17);return to19 |
+| 21–22 | Applications → **MisLocus,in the main talk** |
+| 24–26 | Acknowledgements/funding → References → QR closing |
+| 27–29 | Additional JUMP-lite → Nahual → combined control figure |
+
+MisLocus22 is labeled **Unpublished data**, retaining Johan Fredin/Carpenter-Shen/Purdue attribution, with no displayed Hugging Face link. Its scale sentence reports approximately3million cells,1,541reference/variant alleles and282genes,excluding controls; source documentation is retained as internal provenance. The two original LZTR1 image panels are unchanged.
+
+Page29 contains **one seven-panel figure**:20PLK1positive-control wells and105negative controls in each panel. MYT1 is excluded from fitting/display. Six deep-learning collections use fixed UMAP; the released Harmony/PCA/arm-corrected CellProfiler representation uses a clearly labeled PCA view. CellProfiler derives from interpretable measurements,but transformed axes are not individual feature values. Same wells do not imply identical preprocessing; axes are independent. Post-hoc positive-control selection is illustrative,not a model-ranking benchmark.
+
+Reality check and the six separate model slides are not exported. All four visible “Adapted from Muñoz,Cell Circuits(2024)” credits are removed; provenance is retained elsewhere. Exact Mac workflow,word2vec,JUMP-lite artwork,microscopy pixels,video and both40-mm QR payloads are preserved. The cell schematic remains illustrative despite removal of its visible disclaimer; the axis reads **Granularity Mito Channel**.
+
+All six toolbox names remain:Cellpose,Spotiflow,Trackastra,Ultrack,cp_measure,marimo. Use **Fast**,not Fastest; the retained>2×CellProfiler claim is independently unvalidated. Full scientific qualifications,editable figures and analysis evidence are in the canonical repository and local delivery,not this source-only mirror.
 
 ## Release holds
 
-Keep the GitHub repository **private**. Presentation **slides.pdf is absent and
-ignored in Git** until explicit final-slide approval. Public visibility requires
-separate authorization. Both40-mm QR payloads and visible/clickable
-<https://broad.io/jump> are retained. The reserved GitHub PDF-viewer URL is not yet
-audience-accessible. Only three source-artwork PDF exceptions are permitted:
-`assets/cell-painting-edited.pdf`, `assets/vector-interpretability.pdf` and
-`assets/word2vec-example.pdf`. These do not authorize presentation-PDF release.
-Third-party images/logos retain their original rights; no new license is implied.
+**Private repository; no presentation `slides.pdf` tracked or uploaded.** Public PDF release,repository visibility change and new Mac transfer require separate approval. The Slides QR still points to the absent presentation PDF in this private repository and is not publicly usable yet.
+
+Only three artwork PDFs are tracked:`assets/vector-interpretability.pdf`,`assets/cell-painting-edited.pdf`,`assets/word2vec-example.pdf`.
+
+The unchanged23.16-second MP4 is separate from the PDF:<https://doi.org/10.5281/zenodo.23462248>,CC BY4.0.
