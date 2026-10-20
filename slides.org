@@ -90,7 +90,7 @@ Start with a simple question: are control and perturbed cells different?
 # Normalization, training objectives and experimental context affect comparisons. Retain images for inspection.
 # Neither route alone establishes mechanism or removes batch effects. Do not claim one universally outperforms the other.
 
-** Words as vectors: word2vec :noexport:
+** Words as vectors: word2vec
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.78\textheight :options keepaspectratio
 [[file:assets/word2vec-example.pdf]]
 
@@ -107,15 +107,11 @@ Start with a simple question: are control and perturbed cells different?
 # The user-supplied Words As Vectors image inspired the teaching sequence; this is original vector artwork, not a claim that its hand-labelled axes are real word2vec coordinates.
 # Main-talk placement: word2vec, then cell vectors, then JUMP; 30 seconds, borrowed from the earlier profiles introduction.
 
-** Different representations let us compare cells
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.80\textheight :options keepaspectratio
-[[file:assets/representations-three-panels.png]]
+** From words to cells: vectors for comparison
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
+[[file:assets/vector-interpretability.pdf]]
 
-#+BEGIN_EXPORT latex
-\hfill{\scriptsize Word representation: \href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
-#+END_EXPORT
-
-# Speaker note: One 60-second slide combines the former word and cell-vector slides. Start with control versus knockout or compound A versus compound B, not vector arithmetic. Point briefly to the city example, then the two representations of the same illustrative cells.
+# Speaker note: Restored as a separate slide after word2vec at the presenter's explicit request. Allow30seconds for each;their combined60seconds are unchanged. Keep the simpler control-versus-perturbed comparison established earlier in the talk.
 # Blue means non-senescent example cells A/B; orange means senescent example cells C/D, not different cell types. The coordinates are invented and unchanged; they are not an assay result or a demonstration of treatment translation.
 # Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
 # This original illustration is a teaching cartoon, not measured data. The presenter requested removing the visible Same cells/illustrative-positions footer; keep the limitation here and in provenance.
@@ -317,12 +313,7 @@ MYT1 and PROZ gallery examples
 \textbf{Follow cells and organelles over time} & {\small Trackastra / Ultrack} \\[0.9em]
 \textbf{Measure cell and organelle appearance} & {\small cp\_measure} \\[0.9em]
 \textbf{Explore your results} & {\small marimo} \\[0.9em]
-\end{tabular}\par\smallskip
-\textbf{AI can assemble these tools into workflows.}\par
-\begin{quote}\small
-Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selected cells to images and measurements.
-\end{quote}
-{\small Standard tools support reproducible analysis; biological expertise remains essential.\par}
+\end{tabular}
 #+END_EXPORT
 
 # Speaker note: Lead with four biological actions, not package explanations: find cells/spots, follow cells over time, measure cell appearance, explore results. Tool names are supporting examples, not a required pipeline. Accessibility refers to image analysis, not the price of imaging hardware.
@@ -344,7 +335,7 @@ Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selec
 - Standard tools support reproducible workflows.
 - Follow-up experts validate the results.
 
-# Speaker note: Researchers and agents can use the same documentation and tools. Optional model extensions through Nahual are on additional page 26.
+# Speaker note: Researchers and agents can use the same documentation and tools. Optional model extensions through Nahual are on additional page 27.
 
 # Speaker note: Use an external AI assistant, not a built-in Hub chatbot. Generated code is a draft requiring verification.
 # Presenter experience: without shared tools, agents may solve the same problem in different ways. Tested implementations, recorded parameters and versions support consistency; experts validate the biological interpretation.
@@ -355,19 +346,27 @@ Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selec
 Interactive marimo notebook
 
 #+BEGIN_EXPORT latex
-\begin{center}
-\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=0.96\linewidth,height=0.51\textheight,keepaspectratio]{assets/demo-selection-545.png}}
-\end{center}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.59\textwidth}
+\centering
+\href{https://doi.org/10.5281/zenodo.23462248}{\includegraphics[width=\linewidth,height=0.60\textheight,keepaspectratio]{assets/demo-selection-545.png}}\par\smallskip
+{\scriptsize Each dot is a cell: 2,223 from one Target-2 plate.\par
+Select cells; inspect images, area and other features.\par}
+\end{column}
+\begin{column}{0.38\textwidth}
+\small
+\textbf{AI can assemble these tools into workflows.}\par\medskip
+\textit{Example prompt: Using the JUMP Hub docs, create a marimo dashboard to link selected cells to images and measurements.}\par\medskip
+Standard tools support reproducible analysis; biological expertise remains essential.\par
+\end{column}
+\end{columns}
 #+END_EXPORT
-
-- Each dot is a cell: 2,223 from one Target-2 plate.
-- Select cells; inspect images, area and other features.
 
 #+BEGIN_EXPORT latex
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.5281/zenodo.23462248}{Source: Muñoz (2026), JUMP Target-2 notebook recording}}
 #+END_EXPORT
 
-# Playback cue: PDF page 15, visible slide number 14. Play jump-cell-interactivity.mp4 in a local player; return to PDF page 16.
+# Playback cue: PDF page 16, visible slide number 15. Play jump-cell-interactivity.mp4 in a local player; return to PDF page 17.
 # The MP4 is a companion file, not embedded media. Narrate select -> inspect -> change channel -> reset -> select elsewhere.
 # Public recording: https://doi.org/10.5281/zenodo.23462248 (CC BY 4.0). Both snapshot images and their demo links are clickable.
 # Prefer local playback on stage; the public link is for later viewing.
@@ -570,7 +569,7 @@ Unpublished data (preprint coming soon)
 - JUMP provides public Cell Painting data for around 136,000 chemical and genetic perturbations.
 - Biologists can use JUMP Hub to find tested genes and compounds, compare phenotypes and inspect images.
 - Open-source image-analysis tools extend morphological profiling to your own experiments.
-- Guides and notebooks help computational biologists and AI agents build analysis workflows.
+- Guides and notebooks help AI agents build analysis workflows.
 - Morphological similarities suggest hypotheses that require biological validation.
 
 # Speaker note: The presenter requested explicit take-home points on expert validation and reproducible tools.
@@ -581,8 +580,16 @@ Unpublished data (preprint coming soon)
 ** Thank you
 #+BEGIN_EXPORT latex
 \centering
-\includegraphics[width=0.20\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}\hspace{0.07\linewidth}
-\includegraphics[width=0.24\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}\par\smallskip
+\begin{columns}[c,onlytextwidth]
+\begin{column}{0.65\textwidth}
+\centering
+\includegraphics[width=0.30\linewidth,height=0.08\textheight,keepaspectratio]{assets/broad-logo.png}
+\end{column}
+\begin{column}{0.34\textwidth}
+\centering
+\includegraphics[width=0.70\linewidth,height=0.08\textheight,keepaspectratio]{assets/purdue-logo.png}
+\end{column}
+\end{columns}\par\smallskip
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.34\textwidth}
 \centering\small
@@ -750,11 +757,11 @@ Recover replicate perturbations and known biological relationships.\par\smallski
 {\fontsize{5.5}{6.5}\selectfont\color{gray}\hfill\href{https://arxiv.org/abs/2608.07632v3}{Adapted from Muñoz et al. (2026), Figure 5}\par}
 #+END_EXPORT
 
-# Final additional slide; unscheduled, after the Nahual slide. This is the published arXiv v3 Figure5, not the workflow already shown on page25 and not a new analysis of the illustrative controls on page17.
+# Final additional slide; unscheduled, after the Nahual slide. This is the published arXiv v3 Figure5, not the workflow already shown on page26 and not a new analysis of the illustrative controls on page18.
 # Compare four pretrained image representations plus ViT-rand with descriptive Raw-only CellProfiler and CellCount references. Eleven tasks: four phenotypic-activity (PA) replicate-retrieval tasks, two RefChemDB phenotypic-consistency (PC) tasks, and five MOTIVE relationship-retrieval tasks. PA uses perturbation replicates versus same-plate negative controls; PC uses shared-target annotations. CC=compound-compound, GG=gene-gene, CG=compound-gene retrieval.
 # Printed task-cell numbers are absolute scores: NAP for the six PA/PC tasks and Recall@1% for five MOTIVE tasks. Colors divide each score by its task-column maximum; the final All column is the mean of these normalized scores. A red cell does not mean perfect accuracy, and values cannot be treated as the same metric across all columns. Each representation averages over normalization configurations, not only its best run.
 # Preserve all original rows,values,labels and color scale,including CellCount and ViT-rand baselines. CellProfiler and CellCount are descriptive Raw-only references with more than four sites per well; image representations use four sites. No controlled CellProfiler superiority or compressed-setting ranking claim. Exact middle-model ranks remain uncertain; some model pretraining overlaps JUMP. Known annotation retrieval does not prove mechanism or physical interaction.
-# Raw-image paper inputs/processing differ from the current matched MQ/clipped-input UMAP illustration on page17. No new inference,recomputation or favorable-row selection. Extracted original RGB/alpha pixels from the public PDF,composited on white without resizing or redrawing. Full caption/source receipt: figures/jump-lite-model-comparison/.
+# Raw-image paper inputs/processing differ from the current matched MQ/clipped-input UMAP illustration on page18. No new inference,recomputation or favorable-row selection. Extracted original RGB/alpha pixels from the public PDF,composited on white without resizing or redrawing. Full caption/source receipt: figures/jump-lite-model-comparison/.
 
 * Historical individual model figures :noexport:
 # Superseded by the single combined controls-only figure; retained solely as historical source, never exported.
