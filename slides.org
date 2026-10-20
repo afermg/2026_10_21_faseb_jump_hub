@@ -128,7 +128,7 @@ Start with a simple question: are control and perturbed cells different?
 #+BEGIN_EXPORT latex
 \begin{itemize}
 \item Public Cell Painting data: 12 laboratories, around 136,000 perturbations.
-\item \textasciitilde{}58.3 million images.
+\item \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/d2512d978ca17aafead0e99de66386337e6312e4/inputs/cell_counts}{1.8 billion cells}; \textasciitilde{}58.3 million images.
 \end{itemize}
 \begin{center}
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering CRISPR knockout\par\medskip{\Large\bfseries 7,975}\par gene targets}}
@@ -154,6 +154,8 @@ Start with a simple question: are control and perturbed cells different?
 # Image count: 58,267,491 TIFF files summed across the 12 rows of stats/cpg0016_source_images_tiff_count.csv at the same pinned dataset revision; rounded to 58.3 million.
 # This is the published cpg0016 image-archive count (including controls), not cells or five-channel sites. Do not divide by five to claim a field count: the published site-count total does not reconcile with the TIFF total through a five-channel factor; accounting/coverage was not reconciled here.
 # Exact source URLs, input hashes and sums are in docs/jump-image-counts.json.
+# Cell count: 1,810,840,525 across the pinned compound,ORF and CRISPR cell-count inputs at jump-profiling-recipe d2512d978ca17aafead0e99de66386337e6312e4; displayed as 1.8 billion at the presenter's request.
+# Includes source_7; excludes the pilot datasets and source_15,which has no counts in those inputs. This counts cells across represented wells,not distinct perturbations,images or cells retained in a filtered profile release. Existing count verification is documented in JUMP Hub;no new segmentation or independent recount was performed for this slide. See docs/jump-cell-count-20261020.md.
 # The principal dataset spans 12 data-generating centers. Its 13 Metadata_Source IDs include source_7 and source_13 from the same center.
 # Verified in JUMP Hub data_description.md and terra_workspace.md at e742f5aa37472eb17f326ba8315d22b27e58f330; not every lab acquired every modality or perturbation.
 # The audience question is no longer a visible bullet, preserving the latest author edit.

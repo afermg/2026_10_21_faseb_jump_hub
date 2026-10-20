@@ -8,6 +8,8 @@ FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
 ## Published slides
 
+The JUMP overview on PDF7 includes **1.8 billion cells**,rounded from the documented1,810,840,525cells across the pinned compound,ORF and CRISPR inputs. [Cell-count source](https://github.com/broadinstitute/jump-profiling-recipe/tree/d2512d978ca17aafead0e99de66386337e6312e4/inputs/cell_counts).
+
 - [View the slides](./slides.pdf) — the unchanged Slides QR destination.
 - [Download the PDF](https://raw.githubusercontent.com/afermg/2026_10_21_faseb_jump_hub/main/slides.pdf).
 - [JUMP Hub](https://broadinstitute.github.io/jump_hub/).
@@ -26,6 +28,6 @@ Illustrative word/cell coordinates are invented,not measured data. PLK1 is the a
 ## Validated PDF
 
 - Public pages:25,ending at QR.
-- Public PDF SHA256:`adf0ed2efdcee7db6ff0c5ea9ac1a7acb8d0c0469da1e78ff4a54db7b9fecd42`.
-- Full-deck PDF SHA256:`4755583db67ed58302febaa3212cdc9b55b9ed3cc698137a2c70847f5ee7b049`.
+- Public PDF SHA256:`dddd96c66890e23a79888da6132b7b01617340d750a31d33eaf6b3e09f2b014b`.
+- Full-deck PDF SHA256:`1d6ff55a885fcf3ba8e5ad55319c8d76da99421c98a1b6807ac5b5d5abe13dba`.
 - Repository remains public;future PDF updates are manual,not automatic.
