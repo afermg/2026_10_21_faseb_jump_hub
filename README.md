@@ -4,43 +4,70 @@
 Alán F. Muñoz — Carpenter-Shen Lab, Purdue University; Carpenter-Singh Lab, Broad Institute
 FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
-Use **`slides.tex` with XeLaTeX**, moloch and Fira Sans. Legacy, unowned `main.tex` is preserved but is **not** the compilation root.
+**27 PDF pages: 24 main + 3 additional.** Scheduled narration remains 23 minutes in a 25-minute slot. PDF page numbers are one higher than visible counters.
 
-- **30 PDF pages:27main-talk +3additional**,23-minute narration in a25-minute slot.
-- Overleaf commit: `4858b265d312dc271cff5960eb83a4863047a78f`
-- Canonical source commit: `d44ded71defa221db48e5572ecbbde3a03b6c964`
-- Direct author changes through `963449eb24fdad3077b324112c099e8407667a3d` preserved.
+Use **slides.tex with XeLaTeX**, moloch and Fira Sans. Unowned main.tex is preserved but is not the compilation root.
 
 ## Current slide order
 
 | PDF page | Content |
 |---|---|
-| 5–7 | Word2vec → cell vectors → JUMP |
-| 10 | Tutorials,how-tos and resources |
-| 16–19 | Modern tools → AI → notebook(play18,return19) |
-| 20 | **Positive controls contextualize the perturbations** |
-| 21 | Not just JUMP:Extract morphological profiles from your own images |
-| 22–23 | Applications → MisLocus |
-| 24–27 | Take-homes → Thanks/funding → References → QR closing |
-| 28–29 | Additional JUMP-lite → Nahual |
-| 30 | JUMP-lite:comparing image representations (published Figure5) |
+| 1 | Title |
+| 2 | What is Cell Painting? |
+| 3 | Cell Painting turns images into measurements |
+| 4 | Morphological profiling: How to turn images into profiles |
+| 5 | Different representations let us compare cells |
+| 6 | JUMP: Joint Undertaking for Morphological Profiling |
+| 7 | We make JUMP accessible via the JUMP Hub |
+| 8 | Tutorials, how-tos and resources |
+| 9 | Was my gene or compound tested? |
+| 10 | Which perturbations produce related phenotypes? |
+| 11 | How does cell morphology change? |
+| 12 | Use JUMP as a screen for your phenotype of interest |
+| 13 | What do the perturbed cells look like? |
+| 14 | Modern tools make image analysis more accessible |
+| 15 | Identify and explore cell subpopulations |
+| 16 | How do cells in another region compare? |
+| 17 | Positive controls contextualize perturbations in both learned and engineered representations |
+| 18 | Not just JUMP: Extract morphological profiles from your own images |
+| 19 | Applications of JUMP and our tools across biological questions |
+| 20 | MisLocus: a single-cell image benchmark |
+| 21 | Take-home messages |
+| 22 | Thank you |
+| 23 | References |
+| 24 | JUMP Hub and slides |
+| 25 | JUMP-lite: a compact benchmark |
+| 26 | Nahual: swap models within one workflow |
+| 27 | JUMP-lite: comparing image representations |
 
-MisLocus23 is labeled **Unpublished data (preprint coming soon)**, with the author-removed personal/lab caption absent and the small adaptation footer retained, with no displayed Hugging Face link. Its scale sentence reports approximately3million cells,1,541reference/variant alleles and282genes,excluding controls; source documentation is retained as internal provenance. The two original LZTR1 image panels are unchanged.
+## Open-comment revision
 
-Page20 compares **PLK1 and GJA8** across5,750matched wells:567PLK1,10GJA8 and5,173negative controls. PLK1 is the annotated positive control;GJA8 is a selected phenotype example,not an annotated control. A large measured nuclear-area/eccentricity plot accompanies six fixed UMAPs:CellProfiler+Harmony,MorphEm,DINOv2,OpenPhenom,SubCell and ViT-random last. Cell count and standard SubCell are not displayed. The labeled zoom complements the full-range feature plot;UMAP overlap is retained. Selection is exploratory,not a model ranking or evidence of count-independent morphology.
+Addressed the 12 still-open threads containing new Anne feedback, prioritizing five clear, complete-sentence take-home messages. Resolved review threads and author-only threads were not reworked. No comments were posted, resolved or deleted.
 
-Reality check and the six separate model slides are not exported. All four visible “Adapted from Muñoz,Cell Circuits(2024)” credits are removed; provenance is retained elsewhere. Exact Mac workflow,word2vec,JUMP-lite artwork,microscopy pixels,video and both40-mm QR payloads are preserved. The cell schematic remains illustrative despite removal of its visible disclaimer; the axis reads **Granularity Mito Channel**.
+- Original slides 16/17 are combined on PDF14: all six tools, the Cellpose cells/nuclei label, and the example prompt remain together.
+- Original word/cell-vector slides are combined on PDF5. Start with control-versus-perturbed comparison; no analogy arithmetic. Blue/non-senescent and orange/senescent label illustrative states, not different cell types.
+- The workflow uses consistent structure colors. Its original Mac-edited SVG/PDF and the original word/cell-vector artwork remain unchanged in canonical source, local delivery and Git history. The generated deck now consumes two PNG derivatives instead of those three standalone artwork PDFs.
+- The redundant methods/biology transition is absorbed into the Hub introduction. The homepage is cropped and enlarged; no-code guides precede notebooks, and availability wording describes existing experiments.
+- Five take-homes cover public JUMP scale, Hub exploration, profiling new images, computational/AI workflows, and biological validation.
 
-All six toolbox names remain:Cellpose,Spotiflow,Trackastra,Ultrack,cp_measure,marimo. Use **Fast**,not Fastest; the retained>2×CellProfiler claim is independently unvalidated. Full scientific qualifications,editable figures and analysis evidence are in the canonical repository and local delivery,not this source-only mirror.
+Latest direct author edits are preserved, including cell-and-organelle wording, the expanded controls and Applications titles, the Taipale image credit, and Anne in the Carpenter-Shen acknowledgement. The author's ~5x CellProfiler wording is retained, not independently benchmarked in this editorial pass.
+
+## Scientific and delivery boundaries
+
+Control comparison17 still uses the same 5,750 wells: 567 PLK1,10 GJA8 and5,173 negatives. PLK1 is the annotated positive control; GJA8 is a selected phenotype example, not another annotated control. Measured nuclear features and all six fixed UMAPs are unchanged. SubCell remains clipped-input despite its shorter display label; ViT-random is last. No count panel or explanatory footer is restored. Selection is exploratory; removing the count plot does not establish count-independent morphology.
+
+The final published Figure5 comparison27 is separate from that illustration. It retains all original paper rows/values, including CellCount, and the extra-site CellProfiler/count caveat. Workflow25 and Nahual26 remain additional material. No new scientific analysis or additional positive-control validation was performed.
+
+The MisLocus scale and original microscopy panels, JUMP-lite artwork, video and QR payloads are unchanged. Other scientific limits and provenance remain in presenter notes and the canonical source. The workflow/representation drawings are illustrative, not measured data.
+
+The unchanged 23.16-second MP4 is separate from the PDF: play on **PDF15 / visible14**, return to **PDF16**. Its existing public release remains https://doi.org/10.5281/zenodo.23462248 (CC BY4.0).
 
 ## Release holds
 
-**Private repository; no presentation `slides.pdf` tracked or uploaded.** Public PDF release,repository visibility change and new Mac transfer require separate approval. The Slides QR still points to the absent presentation PDF in this private repository and is not publicly usable yet.
+**Private source repository; no presentation slides.pdf uploaded or pushed.** PDF publication, public repository visibility and a new Mac transfer require separate approval. The Slides QR still targets the absent presentation PDF and is not publicly usable. The three original artwork-PDF names remain the only exceptions in the PDF ignore policy; none are consumed by this revision's generated bundle.
 
-Only three artwork PDFs are tracked:`assets/vector-interpretability.pdf`,`assets/cell-painting-edited.pdf`,`assets/word2vec-example.pdf`.
+## Verified publication
 
-The unchanged23.16-second MP4 is separate from the PDF:<https://doi.org/10.5281/zenodo.23462248>,CC BY4.0.
-
-Latest display edit:the SubCell label no longer includes “(clipped)”,but its underlying clipped-input profiles are unchanged. ViT-random is last. The uv environments/dependencies reference is removed. The updated ML heading,preprint note and cp_measure/JUMP-lite funding credit preserve the latest direct author edits. Controls20/extraction21 share30+45seconds,keeping1380seconds total. No additional positive-control validation results were added in this layout-only revision.
-
-Latest addition:the final slide30 reproduces the complete published Figure5 from arXiv:2608.07632v3,with attribution and the extra-site CellProfiler/count caveat. It complements the workflow slide28. Original figure rows/values/labels are retained;no new benchmark analysis was run. The Cellpose toolbox label explicitly includes cells and nuclei. The control-figure “Measured feature axes...” footer is removed;methods and unchanged data remain in the notes/evidence. The expanded model/biology questions and “Not just JUMP” heading preserve the latest author edits.
+- Canonical source: `6a369afef960003eda2f646fe9fd041cd486c29d`
+- Preserved author head: `3645632e42e94a5a4bc5e13a0e682cdeaf7ea631`
+- Overleaf: `ea4f972a893106fc32d384c19caf16861f427c70`
