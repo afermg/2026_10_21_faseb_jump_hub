@@ -133,7 +133,7 @@ Start with a simple question: are control and perturbed cells different?
 \begin{center}
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering CRISPR knockout\par\medskip{\Large\bfseries 7,975}\par gene targets}}
 \quad
-\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Gene overexpression (ORF)\par\smallskip{\Large\bfseries $\sim$12,600}\par genes}}
+\fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering\small Gene overexpression (ORF)\par\smallskip{\Large\bfseries 12,609}\par genes}}
 \quad
 \fbox{\parbox[c][29mm][c]{0.27\linewidth}{\centering Compound treatment\par\medskip{\Large\bfseries 115,794}\par compounds}}
 \end{center}
@@ -625,35 +625,48 @@ Runxi Shen
 
 ** References
 #+BEGIN_EXPORT latex
+{\footnotesize All named tools and models below are clickable.}
+\medskip
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.31\textwidth}
-\small
-\textbf{Assay and data}
+\begin{column}{0.32\textwidth}
+\footnotesize
+\textbf{Assay, data and resources}
 \begin{itemize}
-\item \href{https://doi.org/10.1038/nprot.2016.105}{Bray et al. (2016). Cell Painting.}\newline Nature Protocols.
-\item \href{https://doi.org/10.1038/s41573-020-00117-w}{Chandrasekaran et al. (2021).}\newline Image-based profiling. Nature Reviews Drug Discovery.
-\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{perturbation counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{12 centers}; \href{https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv}{image count}.
-\item \href{https://doi.org/10.1186/gb-2006-7-10-r100}{Carpenter et al. (2006). CellProfiler.}\newline Genome Biology.
+\item \href{https://doi.org/10.1038/nprot.2016.105}{Cell Painting (Bray, 2016)}; \href{https://doi.org/10.1038/s41573-020-00117-w}{profiling review (2021)}.
+\item \href{https://jump-cellpainting.broadinstitute.org/}{JUMP consortium}; \href{https://github.com/jump-cellpainting/datasets/tree/016e865fa0691244e0860943e41c7d6a88ed2580/metadata}{counts}; \href{https://github.com/broadinstitute/jump_hub/blob/e742f5aa37472eb17f326ba8315d22b27e58f330/explanations/data_description.md}{centers}; \href{https://github.com/jump-cellpainting/datasets/blob/016e865fa0691244e0860943e41c7d6a88ed2580/stats/cpg0016_source_images_tiff_count.csv}{images}.
+\item \href{https://arxiv.org/abs/2608.07632v3}{JUMP-lite paper}; \href{https://github.com/afermg/JUMP_lite}{data/code}.
+\item \href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}; \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{how-to guides}; \href{https://broadinstitute.github.io/jump_hub/howto/notebooks/0_overview.html}{notebooks}.
+\item \href{https://ciminilab.github.io/GuideToCellPainting/}{Guide to Cell Painting}.
+\item \href{https://doi.org/10.5281/zenodo.23462248}{Demo recording}; \href{https://github.com/afermg/JUMP_lite/blob/main/cpg_upload/TARGET2_ARTIFACTS_README.md}{Target-2 artifacts}.
+\item \href{https://arxiv.org/abs/1301.3781}{word2vec (Mikolov, 2013)}.
 \end{itemize}
 \end{column}
 \begin{column}{0.32\textwidth}
-\small
-\textbf{Analysis toolbox}
+\footnotesize
+\textbf{Image-analysis toolbox}
 \begin{itemize}
-\item \href{https://arxiv.org/abs/2608.07632v3}{Muñoz et al. (2026). JUMP-lite.}\newline \href{https://github.com/afermg/JUMP_lite}{Data and documentation}.
-\item \href{https://arxiv.org/abs/2507.01163v1}{Muñoz et al. (2025). cp\_measure.}\newline \href{https://github.com/afermg/cp_measure}{Code}.
-\item \href{https://github.com/MouseLand/cellpose}{Cellpose}: cell/nucleus segmentation.
-\item \href{https://github.com/afermg/nahual}{Nahual}: image-model interfaces.
-\item \href{https://squidpy.readthedocs.io/}{Squidpy}: spatial molecular and image analysis.
+\item \href{https://github.com/afermg/cp_measure}{cp\_measure}; \href{https://arxiv.org/abs/2507.01163v1}{paper}.
+\item \href{https://cellprofiler.org/}{CellProfiler}; \href{https://doi.org/10.1186/gb-2006-7-10-r100}{paper}.
+\item \href{https://github.com/MouseLand/cellpose}{Cellpose}; \href{https://github.com/stardist/stardist}{StarDist}.
+\item \href{https://github.com/weigertlab/spotiflow}{Spotiflow}: spot detection.
+\item \href{https://github.com/weigertlab/trackastra}{Trackastra}; \href{https://github.com/royerlab/ultrack}{Ultrack}.
+\item \href{https://github.com/afermg/nahual}{Nahual}: model interfaces.
+\item \href{https://marimo.io/}{marimo}; \href{https://docs.astral.sh/uv/}{uv}.
+\item \href{https://squidpy.readthedocs.io/}{Squidpy}; \href{https://github.com/cmap/morpheus.js}{Morpheus}.
 \end{itemize}
 \end{column}
-\begin{column}{0.31\textwidth}
-\small
-\textbf{Resources}
+\begin{column}{0.32\textwidth}
+\footnotesize
+\textbf{Representations and methods}
 \begin{itemize}
-\item \href{https://broadinstitute.github.io/jump_hub/}{JUMP Hub}: \href{https://broadinstitute.github.io/jump_hub/howto/interactive/1_jumprr_steps.html}{biological questions and table export}.
-\item Recording: \href{https://github.com/afermg/JUMP_lite/blob/main/cpg_upload/TARGET2_ARTIFACTS_README.md}{JUMP Target-2 artifacts}.
-\item \href{https://marimo.io/}{marimo}: reactive Python notebooks.
+\item \href{https://github.com/facebookresearch/dinov2}{DINOv2}; \href{https://github.com/facebookresearch/dinov3}{DINOv3}.
+\item \href{https://huggingface.co/CaicedoLab/MorphEm}{MorphEm}.
+\item \href{https://huggingface.co/recursionpharma/OpenPhenom}{OpenPhenom}.
+\item \href{https://github.com/CellProfiling/subcell-embed}{SubCell}.
+\item \href{https://github.com/facebookresearch/dinov2}{ViT-random: DINOv2 code}.
+\item \href{https://github.com/immunogenomics/harmony}{Harmony}; \href{https://github.com/broadinstitute/jump-profiling-recipe/tree/a917fa79342ff92cf0ea05d6d9174d9028a90f8f}{JUMP recipe}.
+\item \href{https://umap-learn.readthedocs.io/}{UMAP}.
+\item \href{https://parquet.apache.org/}{Parquet}; \href{https://zarr.dev/}{Zarr}; \href{https://jpeg.org/jpegxl/}{JPEG XL}.
 \end{itemize}
 \end{column}
 \end{columns}
@@ -679,8 +692,8 @@ Runxi Shen
 # Speaker note: Leave this QR slide visible at the end of the main talk. The following additional slides are for questions. The two codes remain 40 mm.
 # The presenter supplied broad.io/jump as the visible shortlink. The two existing QR payloads are unchanged.
 # The Slides QR targets the GitHub PDF viewer in afermg/2026_10_21_faseb_jump_hub, branch main, slides.pdf.
-# The repository remains private until the presenter explicitly authorizes making it public. The PDF must not be uploaded until final approval.
-# The QR is prepared but the PDF is intentionally absent; public audience access also requires the separate visibility approval. Do not expose other private projects.
+# On 2026-10-20 the presenter explicitly approved uploading the validated slides.pdf and making this QR-linked repository public after checking tool references.
+# This approval applies to the presentation repository only; the authoring repository and Overleaf projects remain private.
 
 * Additional slides
 

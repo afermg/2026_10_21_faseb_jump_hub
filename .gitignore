@@ -16,3 +16,6 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# Presenter-approved public presentation PDF.
+!/slides.pdf
