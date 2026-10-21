@@ -51,15 +51,15 @@
 Profiles are numerical descriptions of cells.
 
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.66\textheight :options keepaspectratio
-[[file:assets/cell-painting-consistent-colors.png]]
+[[file:assets/cell-painting-edited.pdf]]
 
 #+BEGIN_EXPORT latex
 \par\smallskip\hfill{\fontsize{5.5}{6.5}\selectfont\color{gray}\href{https://doi.org/10.1038/s41573-020-00117-w}{Adapted from Chandrasekaran et al. (2021), Fig. 1a}}
 #+END_EXPORT
 
 # Speaker note: Narrate stain → image → measure → compare; the figure carries the on-screen explanation.
-# Speaker note: This color-consistent derivative retains the presenter's Mac-edited workflow geometry. The original SVG/PDF are unchanged and archived; only the displayed derivative recolors the miniature cells and named structures consistently.
-# Colors denote schematic structures, not different cell types or treatment groups. Schematic details are illustrative, not recovered quantitative data; original source and Mac-edit hashes remain in docs/assets.json.
+# Speaker note: At the presenter's request, restore the exact Mac-edited workflow PDF from before the color-consistency edits. Its earlier palette and cell drawings are unchanged; no new shape or color edits were made.
+# Colors and shapes are illustrative, not measured phenotypes or validated health labels. Original source and Mac-edit hashes remain in docs/assets.json; the superseded color-consistent derivative is retained separately.
 # Similarity helps prioritize biological hypotheses; it does not establish mechanism.
 
 ** Morphological profiling: How to turn images into profiles
