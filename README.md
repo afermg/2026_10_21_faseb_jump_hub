@@ -8,7 +8,9 @@ FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
 ## Published slides
 
-The representation slide6 now labels blue A/B **Control** and orange C/D **Perturbation**. Only those two legend labels changed;coordinates,colors,drawings and axes are unchanged. The original artwork remains preserved in source/history.
+The word2vec slide5 illustrates **man → woman** and **king → queen**,with `v(king) − v(man) + v(woman) ≈ v(queen)`. Positions are invented teaching coordinates,not trained-model output.
+
+The profiles and cell-vector slides use **Classical features**;the controls-slide title uses **classical representations**. The cell-vector legend remains blue A/B **Control**,orange C/D **Perturbation**. Vector coordinates,arrows,colors,cell drawings and axes are unchanged. Earlier artwork remains preserved in source/history.
 
 The JUMP overview on PDF7 includes **1.8 billion cells**,rounded from the documented1,810,840,525cells across the pinned compound,ORF and CRISPR inputs. [Cell-count source](https://github.com/broadinstitute/jump-profiling-recipe/tree/d2512d978ca17aafead0e99de66386337e6312e4/inputs/cell_counts).
 
@@ -30,6 +32,6 @@ Illustrative word/cell coordinates are invented,not measured data. PLK1 is the a
 ## Validated PDF
 
 - Public pages:25,ending at QR.
-- Public PDF SHA256:`3e122bfc505716e48cbbeca957b69f0399ba2b65657fc0a7088db68bf037bb61`.
-- Full-deck PDF SHA256:`36003bb6bc4bfdc51e04761d13ff140cd8bce36b23ff02ec39c8c991d3c9a4cd`.
+- Public PDF SHA256:`0a00beb080d314d5bb49ec8dcdb63ce1e4c4ece216db5175e244468b3675dbe4`.
+- Full-deck PDF SHA256:`2b78c579794235d873f39ceed9dcf63b7d5e6472d661d2d677bbb49a42151f81`.
 - Repository remains public;future PDF updates are manual,not automatic.

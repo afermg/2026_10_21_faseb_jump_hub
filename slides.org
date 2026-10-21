@@ -68,7 +68,7 @@ Start with a simple question: are control and perturbed cells different?
 #+BEGIN_EXPORT latex
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.48\textwidth}
-\begin{block}{Engineered features (e.g., CellProfiler)}
+\begin{block}{Classical features (e.g., CellProfiler)}
 \begin{itemize}
 \item Size, shape, intensity, texture and relationships between channels and objects.
 \item Interpretable but partially redundant.
@@ -92,14 +92,14 @@ Start with a simple question: are control and perturbed cells different?
 
 ** Words as vectors: word2vec
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.78\textheight :options keepaspectratio
-[[file:assets/word2vec-example.pdf]]
+[[file:assets/word2vec-king-queen.pdf]]
 
 #+BEGIN_EXPORT latex
 \hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
 #+END_EXPORT
 
 # Speaker note: Start with words before moving to cells. Word2vec learns numerical word representations from language context.
-# The country-capital analogy is a teaching example: Paris minus France plus Italy can point toward Rome in a learned vector space.
+# The man-to-woman and king-to-queen analogy is a teaching example: king minus man plus woman can point toward queen in a learned vector space.
 # These two-dimensional positions are invented, not a trained model output or a quantitative test. The arithmetic is approximate and depends on training and evaluation.
 # At the presenter's request the on-graphic "Illustrative 2D positions" caption is removed; this clarification remains in these notes and the SVG description.
 # The presenter subsequently requested generic Feature 1 / Feature 2 labels; these are not assigned artificial semantic meanings.
@@ -113,7 +113,7 @@ Start with a simple question: are control and perturbed cells different?
 
 # Speaker note: Restored as a separate slide after word2vec at the presenter's explicit request. Allow30seconds for each;their combined60seconds are unchanged. Keep the simpler control-versus-perturbed comparison established earlier in the talk.
 # Blue means Control examples A/B; orange means Perturbation examples C/D, not different cell types. The coordinates are invented and unchanged; they are not an assay result or a demonstration of treatment translation.
-# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
+# Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Classical measurements and learned image embeddings are distinct routes.
 # This original illustration is a teaching cartoon, not measured data. The presenter requested removing the visible Same cells/illustrative-positions footer; keep the limitation here and in provenance.
 # Cell cartoons retain their clearer boundaries,nuclei and separate branched/punctate mitochondrial shapes. Only the legend labels change;coordinates,colors and right-hand embedding geometry remain unchanged. The original artwork is preserved alongside this derivative.
 # The vertical axis reads exactly Granularity Mito Channel,at the presenter's request.
@@ -122,7 +122,7 @@ Start with a simple question: are control and perturbed cells different?
 # Granularity describes image-signal structure across spatial scales;it is not a direct measure of mitochondrial fragmentation,organelle number or cristae. The retained network-like/punctate cartoons do not determine the invented scores. Both example groups span the illustrated granularity values.
 # Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
 # Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
-# Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
+# Classical features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.
 
 ** JUMP: Joint Undertaking for Morphological Profiling
 #+BEGIN_EXPORT latex
@@ -426,7 +426,7 @@ Standard tools support reproducible analysis; biological expertise remains essen
 # Nix deploys the wrappers. Most neural models require GPU resources; model-specific preprocessing, licences, weights and output conventions still apply.
 # Do not imply embeddings from different models share coordinates or dimensions, or that every wrapper was runtime-tested for this talk.
 
-** Positive controls contextualize perturbations in both learned and engineered representations
+** Positive controls contextualize perturbations in both learned and classical representations
 #+ATTR_LATEX: :width 0.94\linewidth :height 0.80\textheight :options keepaspectratio
 [[file:assets/real-embeddings-combined.png]]
 
