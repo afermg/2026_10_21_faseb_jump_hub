@@ -19,3 +19,5 @@
 
 # Presenter-approved public presentation PDF.
 !/slides.pdf
+# Label-only vector-artwork derivative.
+!assets/vector-control-perturbation.pdf

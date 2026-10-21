@@ -109,17 +109,17 @@ Start with a simple question: are control and perturbed cells different?
 
 ** From words to cells: vectors for comparison
 #+ATTR_LATEX: :width 0.99\linewidth :height 0.83\textheight :options keepaspectratio
-[[file:assets/vector-interpretability.pdf]]
+[[file:assets/vector-control-perturbation.pdf]]
 
 # Speaker note: Restored as a separate slide after word2vec at the presenter's explicit request. Allow30seconds for each;their combined60seconds are unchanged. Keep the simpler control-versus-perturbed comparison established earlier in the talk.
-# Blue means non-senescent example cells A/B; orange means senescent example cells C/D, not different cell types. The coordinates are invented and unchanged; they are not an assay result or a demonstration of treatment translation.
+# Blue means Control examples A/B; orange means Perturbation examples C/D, not different cell types. The coordinates are invented and unchanged; they are not an assay result or a demonstration of treatment translation.
 # Word2vec is an analogy for numerical representations, not the algorithm used for these cells. Engineered measurements and learned image embeddings are distinct routes.
 # This original illustration is a teaching cartoon, not measured data. The presenter requested removing the visible Same cells/illustrative-positions footer; keep the limitation here and in provenance.
-# Cell cartoons are enlarged with clearer boundaries, nuclei and separate branched/punctate mitochondrial shapes. Coordinates, class labels and right-hand embedding geometry remain unchanged.
-# The vertical axis now reads exactly Granularity Mito Channel, at the presenter's request.
-# A/B are non-senescent examples and C/D senescent examples. The vertical axis is an illustrative mitochondrial-channel granularity measurement at a specified spatial scale.
-# The cartoon draws senescent examples larger, but cell area alone is not a senescence diagnostic. Context, controls and orthogonal senescence markers are needed.
-# Granularity describes image-signal structure across spatial scales; it is not a direct measure of mitochondrial fragmentation, organelle number or cristae. The retained network-like/punctate cartoons do not determine the invented scores. Both example groups span the illustrated granularity values; no causal link to senescence is asserted.
+# Cell cartoons retain their clearer boundaries,nuclei and separate branched/punctate mitochondrial shapes. Only the legend labels change;coordinates,colors and right-hand embedding geometry remain unchanged. The original artwork is preserved alongside this derivative.
+# The vertical axis reads exactly Granularity Mito Channel,at the presenter's request.
+# A/B are Control examples and C/D Perturbation examples. The vertical axis is an illustrative mitochondrial-channel granularity measurement at a specified spatial scale.
+# The larger orange examples illustrate one possible morphological difference,not a universal perturbation effect or evidence of causality. Biological interpretation requires controls,context and experimental validation.
+# Granularity describes image-signal structure across spatial scales;it is not a direct measure of mitochondrial fragmentation,organelle number or cristae. The retained network-like/punctate cartoons do not determine the invented scores. Both example groups span the illustrated granularity values.
 # Named measurements have explicit definitions; learned coordinates can mix visual patterns and need not map one-to-one to a biological feature.
 # Only two illustrative embedding coordinates are shown, not a fitted UMAP or measured model output. Similarity can still help compare cells; preprocessing, scaling and metric choice matter.
 # Engineered features are not automatically mechanistic explanations, and interpretability methods can sometimes help investigate learned representations.

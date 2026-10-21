@@ -8,6 +8,8 @@ FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
 ## Published slides
 
+The representation slide6 now labels blue A/B **Control** and orange C/D **Perturbation**. Only those two legend labels changed;coordinates,colors,drawings and axes are unchanged. The original artwork remains preserved in source/history.
+
 The JUMP overview on PDF7 includes **1.8 billion cells**,rounded from the documented1,810,840,525cells across the pinned compound,ORF and CRISPR inputs. [Cell-count source](https://github.com/broadinstitute/jump-profiling-recipe/tree/d2512d978ca17aafead0e99de66386337e6312e4/inputs/cell_counts).
 
 - [View the slides](./slides.pdf) — the unchanged Slides QR destination.
@@ -28,6 +30,6 @@ Illustrative word/cell coordinates are invented,not measured data. PLK1 is the a
 ## Validated PDF
 
 - Public pages:25,ending at QR.
-- Public PDF SHA256:`dddd96c66890e23a79888da6132b7b01617340d750a31d33eaf6b3e09f2b014b`.
-- Full-deck PDF SHA256:`1d6ff55a885fcf3ba8e5ad55319c8d76da99421c98a1b6807ac5b5d5abe13dba`.
+- Public PDF SHA256:`c63d636c51b36c81643157d2dddaae5cae1675cf8e4f498ca47dde85bf72d3d3`.
+- Full-deck PDF SHA256:`b86f49bbe4ff1d073198e7d38e9ec8a303a3b35b7e69ee2a344970baa94a58d6`.
 - Repository remains public;future PDF updates are manual,not automatic.
