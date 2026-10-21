@@ -91,10 +91,12 @@ Start with a simple question: are control and perturbed cells different?
 # Neither route alone establishes mechanism or removes batch effects. Do not claim one universally outperforms the other.
 
 ** Words as vectors: word2vec
-#+ATTR_LATEX: :width 0.99\linewidth :height 0.78\textheight :options keepaspectratio
+#+ATTR_LATEX: :width 0.99\linewidth :height 0.70\textheight :options keepaspectratio
 [[file:assets/word2vec-king-queen.pdf]]
 
 #+BEGIN_EXPORT latex
+\par\smallskip
+{\centering\small Machine Learning models is compression.\par}
 \hfill{\scriptsize\href{https://arxiv.org/abs/1301.3781}{Mikolov et al. (2013)}}
 #+END_EXPORT
 
