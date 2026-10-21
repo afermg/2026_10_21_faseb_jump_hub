@@ -192,7 +192,7 @@ Can I use this data/these models to answer my biological questions? To design fo
 \begin{columns}[c,onlytextwidth]
 \begin{column}{0.60\textwidth}
 \centering
-\includegraphics[width=0.98\linewidth,height=0.71\textheight,keepaspectratio,trim=420bp 160bp 420bp 430bp,clip]{assets/jump-hub-homepage.png}
+\includegraphics[width=0.98\linewidth,height=0.71\textheight,keepaspectratio]{assets/jump-hub-homepage.png}
 \end{column}
 \begin{column}{0.37\textwidth}
 \textbf{Biologists can find out:}\par\smallskip
@@ -213,7 +213,7 @@ Can I use this data/these models to answer my biological questions? To design fo
 # Speaker note: Complementary to the researcher's other methods, such as transcriptomics, as clarified in the presenter's reply to Anne.
 # These are alternative entry points, not compulsory steps. Cell-subpopulation exploration is the separate notebook example.
 # Availability is not phenotypic activity: use the perturbation-level corrected p-value to assess a detectable profile.
-# Homepage captured 18 October 2026; other interface screenshots are historical examples.
+# Homepage recaptured 21 October 2026 at native 3x browser pixel density; only the same Choose Your Own Path section is shown. Other interface screenshots are historical examples.
 
 ** Tutorials, how-tos and resources
 The Hub contains practical guides to help biologists use JUMP.
@@ -577,10 +577,8 @@ Unpublished data (preprint coming soon)
 - Biologists can use JUMP Hub to find tested genes and compounds, compare phenotypes and inspect images.
 - Open-source image-analysis tools extend morphological profiling to your own experiments.
 - Guides and notebooks help scientists or AI agents build analysis workflows.
-- Morphological similarities suggest hypotheses that require biological validation.
 
-# Speaker note: The presenter requested explicit take-home points on expert validation and reproducible tools.
-# The first three retain the approved core messages; expert validation is separated from the third, and reproducible tools are added as the fifth.
+# Speaker note: Preserve the author's four take-home messages; the final similarity/validation bullet was removed directly in Overleaf on 21 October 2026.
 # These are conclusions, not required workflow steps. Foundation-building is ongoing, not a claim of a fully autonomous validated system.
 # Shared tools reduce variation in agent-chosen implementations; versioned inputs, parameters and biological validation still matter.
 

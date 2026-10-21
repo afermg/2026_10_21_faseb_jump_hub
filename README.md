@@ -8,6 +8,8 @@ FASEB: Organelle Cross-Talk in Cellular Homeostasis · 21 October 2026
 
 ## Published slides
 
+The Hub homepage screenshot on PDF8 was recaptured on21October2026 at native3×browser resolution:2280×1230pixels for the same displayed section. It is not an upscaled older screenshot;the slide wording and layout are unchanged.
+
 The word2vec slide5 illustrates **man → woman** and **king → queen**,with `v(king) − v(man) + v(woman) ≈ v(queen)`. Positions are invented teaching coordinates,not trained-model output.
 
 The profiles and cell-vector slides use **Classical features**;the controls-slide title uses **classical representations**. The cell-vector legend remains blue A/B **Control**,orange C/D **Perturbation**. Vector coordinates,arrows,colors,cell drawings and axes are unchanged. Earlier artwork remains preserved in source/history.
@@ -32,6 +34,6 @@ Illustrative word/cell coordinates are invented,not measured data. PLK1 is the a
 ## Validated PDF
 
 - Public pages:25,ending at QR.
-- Public PDF SHA256:`dc73880c6f6e6375ad443c3b8e889ad969e274511759ce5205fa3a8f35cbc7eb`.
-- Full-deck PDF SHA256:`ff923549aa764e3960f243b8e01a2a1b23be1d4dc0b238395135199d2dd51576`.
+- Public PDF SHA256:`d8fb35f3cf08894baa1eeb591656a10513a25869a33e3032ef303ef8ab00266a`.
+- Full-deck PDF SHA256:`5004f54a6b5fd77163de280ef0d900b5ca5f64692acf245ec799c98fdad91f72`.
 - Repository remains public;future PDF updates are manual,not automatic.
