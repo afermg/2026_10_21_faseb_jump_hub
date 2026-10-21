@@ -570,7 +570,7 @@ Unpublished data (preprint coming soon)
 - JUMP provides public Cell Painting data for around 136,000 chemical and genetic perturbations.
 - Biologists can use JUMP Hub to find tested genes and compounds, compare phenotypes and inspect images.
 - Open-source image-analysis tools extend morphological profiling to your own experiments.
-- Guides and notebooks help AI agents build analysis workflows.
+- Guides and notebooks help scientists or AI agents build analysis workflows.
 - Morphological similarities suggest hypotheses that require biological validation.
 
 # Speaker note: The presenter requested explicit take-home points on expert validation and reproducible tools.

@@ -30,6 +30,6 @@ Illustrative word/cell coordinates are invented,not measured data. PLK1 is the a
 ## Validated PDF
 
 - Public pages:25,ending at QR.
-- Public PDF SHA256:`c63d636c51b36c81643157d2dddaae5cae1675cf8e4f498ca47dde85bf72d3d3`.
-- Full-deck PDF SHA256:`b86f49bbe4ff1d073198e7d38e9ec8a303a3b35b7e69ee2a344970baa94a58d6`.
+- Public PDF SHA256:`e52dbde3dbed1302e7de3e3f3854a09dc29780c0315ded4ba799a17f60cf09d4`.
+- Full-deck PDF SHA256:`e9461c0c4ae5de01167b3c39e80ffe28f564663805ff65beaff196a8205afd6d`.
 - Repository remains public;future PDF updates are manual,not automatic.
